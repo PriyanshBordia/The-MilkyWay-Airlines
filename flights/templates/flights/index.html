@@ -1,0 +1,70 @@
+{% extends "flights/base.html" %}
+
+{% block title %}
+    Andrømed Airlines
+{% endblock %}
+
+{% block head %}
+    <style media="screen">
+        #book-flight
+        {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelector('#book').disabled = true;
+
+            document.querySelector('#first-name').onkeyup = () => {
+
+                if (document.querySelector('#first-name').value.length > 0 && (document.querySelector('#first-name').value).trim() !== '')
+                    document.querySelector('#book').disabled = false;
+                else
+                    document.querySelector('#book').disabled = true;
+            };
+
+            document.querySelector('#book').onclick = () => {
+                if (document.querySelector('#first-name').value.length > 0 && (document.querySelector('#first-name').value).trim() !== '')
+                    document.querySelector('#book').disabled = false;
+                else
+                    document.querySelector('#book').disabled = true;
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div id="book-flight">
+        <h1> Andrømed Airlines &#9992;</h1>
+        <hr>
+        <br>
+
+        <form id="form" action="{% url 'book' %}" method="post">
+            {% csrf_token %}
+            <select name="flight_id">
+                {% for flight in flights %}
+                    <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <input id="first-name" type="text" autocomplete="off" autofocus placeholder="First Name" name="first">
+            <input id="last-name" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last">
+            <select name="age">
+                {% for i in "12345678910" %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <select name="sex">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="X" default=true>No</option>
+            </select>
+            <button id="book" class = "button btn btn-primary ml-2">Book Flight.</button>
+        </form>
+    </div>
+{% endblock %}
