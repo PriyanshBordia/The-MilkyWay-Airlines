@@ -6,8 +6,8 @@ from django.utils.datastructures import MultiValueDictKeyError
 from .models import  Airport, Flight, Passenger
 
 # Create your views here.
-def index(request):
-    return render(request, "flights/index.html", context={"flights": Flight.objects.all()})
+def home(request):
+    return render(request, "flights/home.html", context={"flights": Flight.objects.all()})
 
 
 def flight(request, flight_id):

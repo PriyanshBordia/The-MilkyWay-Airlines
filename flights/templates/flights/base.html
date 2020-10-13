@@ -26,13 +26,15 @@
         <title> | {% block title %}{% endblock %}</title>
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        <main>
+            {% block body %}
+            {% endblock %}
 
-        <div class="fixed bottom">
-            <footer class = "button">
-                &copy; 2020 MilkyWay Airlines, Inc.
-            </footer>
-        </div>
+            <div class="fixed bottom">
+                <footer class = "button">
+                    &copy; 2020 MilkyWay Airlines, Inc.
+                </footer>
+            </div>
+        </main>
     </body>
 </html>
