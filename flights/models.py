@@ -13,16 +13,17 @@ class Airport(models.Model):
 
 
 class Flight(models.Model):
+
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
 
-    origin_date = models.DateField(null=True)
-    destination_date = models.DateField(null=True)
+    origin_date = models.DateTimeField(null=True)
+    destination_date = models.DateTimeField(null=True)
 
     duration = models.IntegerField()
 
     def __str__(self):
-        return f"{self.id}. {self.origin} to {self.destination}, in {self.duration}."
+        return f"{self.id}. {self.origin} to {self.destination}, in {self.duration} mins."
 
     def is_valid_flight(self):
         return ((self.origin != self.destination) and (self.duration > 0) and (self.origin_date < self.destination_date))
@@ -40,19 +41,40 @@ class Passenger(models.Model):
 
     email = models.EmailField()
 
-    ph_no = models.IntegerField(blank=False, default=00000000)
+    ph_no = models.BigIntegerField(blank=False, default=00000000)
 
     flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
 
     def __str__(self):
         return f"{self.first} {self.last}"
 
+    def is_valid_passenger(self):
+        return (self.age > 0 and len(self.first) > 0)
+
     def _flight_boardings_(self):
         return flights
 
-class Ticket(models.Model):
-    Choices = [
-    ('E', 'Economy'), ]
+class Food(models.Model):
+    """docstring for Food."""
 
-    price = models.FloatField()
-    hospitality = models.CharField(max_length=1, choices=Choices)
+    price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
+    name = models.CharField(max_length=64)
+
+    def __str__(self, arg):
+        return f"{self.name}\t{self.price}"
+
+class Ticket(models.Model):
+
+    Modes = [('E', 'Economy-Class'), ('B', 'Bussiness-Class'), ('A', 'First-Class'),]
+    Types = [('A', 'Aisle'), ('M', 'Middle'), ('W', 'Window'), ]
+
+    hospitality = models.CharField(max_length=1, choices=Modes)
+
+    seat = models.CharField(max_length=1, choices=Types, blank=False, default='M')
+
+    price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
+
+    food = models.ManyToManyField(Food, related_name="cusines", blank=True)
+
+    def __str__(self, arg):
+        return f"{self.name}\t{self.price}"
