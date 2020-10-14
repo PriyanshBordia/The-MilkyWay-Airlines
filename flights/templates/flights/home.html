@@ -1,23 +1,41 @@
 <!-- templates/flights/home.html -->
 
 {% extends 'flights/base.html' %}
+{% load humanize %}
 
 {% block title %}
-    Home
+    The MilkyWay Airlines
+{% endblock %}
+
+{% block head %}
+    <!-- <link rel="stylesheet" href="/"> -->
 {% endblock %}
 
 {% block body %}
+    {% if user.is_authenticated %}
+        <div class="container fluid-container my-container mt-4">
+            <form class="form-travel" action="index.html" method="post">
+                <div class="form-travel-head form-text h2 form-heading mt-2">
+                    Hi! :), <br>
+                    {{ user.username }} <br>
+                    Welcome Back.
+                </div>
+                <div class="form-travel-container mt-3">
+                    <button type="submit" class="btn btn-outline-primary form-travel-button">Travel</button>
+                </div>
+            </form>
+        </div>
 
-{% if user.is_authenticated %}
-    Hi.! {{ user.username }}
-    <br>
-    <a href="{% url 'logout' %}">Logout</a>
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
-
-{% else %}
-    <p>You are not loged in</p>
-    <a href="{% url 'login' %}">Log in</a>
-
-{% endif %}
+    {% else %}
+    <div class="container fluid-container my-container mt-4">
+        <div class="form-text h2 form-heading mt-2">
+            Hello!, <br>
+            Log In to travel around the globe.
+        </div>
+        <div class="form-travel-container mt-2">
+            <button type="submit" class="btn btn-outline-primary form-travel-button"><a href="{% url 'login' %}">Log in</a></button>
+        </div>
+    </div>
+    {% endif %}
 
 {% endblock %}

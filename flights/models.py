@@ -23,7 +23,7 @@ class Flight(models.Model):
     duration = models.IntegerField()
 
     def __str__(self):
-        return f"{self.id}. {self.origin} to {self.destination}, in {self.duration} mins."
+        return f"{self.origin} to {self.destination}, in {self.duration} mins."
 
     def is_valid_flight(self):
         return ((self.origin != self.destination) and (self.duration > 0) and (self.origin_date < self.destination_date))
@@ -55,13 +55,12 @@ class Passenger(models.Model):
         return flights
 
 class Food(models.Model):
-    """docstring for Food."""
 
     price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
     name = models.CharField(max_length=64)
 
-    def __str__(self, arg):
-        return f"{self.name}\t{self.price}"
+    def __str__(self):
+        return f"{self.name}"
 
 class Ticket(models.Model):
 
@@ -69,12 +68,11 @@ class Ticket(models.Model):
     Types = [('A', 'Aisle'), ('M', 'Middle'), ('W', 'Window'), ]
 
     hospitality = models.CharField(max_length=1, choices=Modes)
-
     seat = models.CharField(max_length=1, choices=Types, blank=False, default='M')
-
-    price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
 
     food = models.ManyToManyField(Food, related_name="cusines", blank=True)
 
-    def __str__(self, arg):
-        return f"{self.name}\t{self.price}"
+    price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=0)
+
+    def __str__(self):
+        return f"{self.hospitality}{self.seat}{self.id}"
