@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': 'airline', #config('DB_NAME'),
         'USER': 'admin', #config('DB_USER'),
         'PASSWORD': 'zombieappco', #config('DB_PASSWORD'),
-        'HOST': 'the-milky-way-airlines.herokuapp.com', #config('DB_HOST'),
-        'PORT': '',
+        'HOST': '127.0.0.1', #config('DB_HOST'),
+        'PORT': '3306',
 
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
 
