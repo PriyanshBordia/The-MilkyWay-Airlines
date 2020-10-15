@@ -37,7 +37,7 @@ def flights(request):
 
     return render(request, "flights/flights.html", context = {"flights": flights})
 
-# update accordin to the
+
 def book(request):
     try:
         flight_id  = int(request.POST.get("flight_id"))
@@ -72,7 +72,7 @@ def book(request):
     except KeyError:
         return render(request, "flights/error.html", context={"message": "KeyError!!"})
 
-    sex = char(sex)
+    sex = sex[0]
 
     p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 
@@ -88,6 +88,6 @@ def book(request):
         p.save()
 
     else:
-        return render(request, "flights/error.html", context={"message": "Already Onboard!"})
+        return render(request, "flights/error.html", context={"message": "Already Onboard!", "id": id})
 
     return HttpResponseRedirect(reverse("flight", args=(flight_id, )))

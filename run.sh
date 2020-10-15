@@ -7,7 +7,7 @@ do
         open orders/views.py
         break
 
-    elif [[ $choice == sh ]]
+    elif [[ $choice == sl ]]
     then
         python3 manage.py shell_plus
         break
@@ -26,6 +26,5 @@ do
     then
         python3 manage.py migrate
         break
-
     fi
 done
