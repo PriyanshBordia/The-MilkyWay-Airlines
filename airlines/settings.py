@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY ')
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = [config('ALLOWED_HOSTS ')]
+ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'the-milky-way-airlines.urls'
+ROOT_URLCONF = 'airlines.urls'
 
 TEMPLATES = [
     {
@@ -140,7 +140,7 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = 'home'
 
 #logout redirection to homepage
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'home'
 
 #store the addresses of e-mails sent
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
