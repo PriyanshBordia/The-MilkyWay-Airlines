@@ -70,25 +70,16 @@ h6
     font-size: 20px !important;
 }
 
+.register-action-button
+{
+    max-width: $form-width;
+    text-decoration: none !important;
+}
+
 .login-action-button
 {
     width: $form-btn-size;
     text-decoration: none !important;
-}
-
-.form-home-container
-{
-    max-width: $form-width;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.form-home-head
-{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: $font-md;
 }
 
 .form-home-button
@@ -97,34 +88,52 @@ h6
     text-decoration: none !important;
 }
 
-/* password_reset_complete */
-.reset-password-action-container
-{
-    max-width: $form-width;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: $font-md;
-}
-
-.reset-password-action-head
-{
-    margin-left: auto;
-    margin-right: auto;
-    font-size: $font-md;
-}
-
 .reset-password-action-button
 {
     width: $form-btn-size;
     text-decoration: none !important;
 }
 
+.register-action-container
+{
+    max-width: $form-width;
+    margin: auto;
+    text-align: center;
+}
+
+.login-action-container
+{
+    max-width: $form-width;
+    margin: auto;
+    text-align: center;
+}
+
+.form-home-container
+{
+    max-width: $form-width;
+    margin: auto;
+    text-align: center;
+}
+
+.reset-password-action-container
+{
+    max-width: $form-width;
+    margin: auto;
+    text-align: center;
+}
+
+.login-action-head, .register-action-head, .form-home-head, .reset-password-action-head
+{
+    margin: auto;
+    font-size: $font-md;
+}
+
 // Error Message
 .error-message
 {
     max-width: $form-width;
-    text-align: center;
     margin: auto;
+    text-align: center;
     padding: 30px;
     font-size: $font-lg;
 }

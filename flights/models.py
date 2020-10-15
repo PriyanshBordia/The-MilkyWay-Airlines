@@ -29,31 +29,6 @@ class Flight(models.Model):
         return ((self.origin != self.destination) and (self.duration > 0) and (self.origin_date < self.destination_date))
 
 
-class Passenger(models.Model):
-    options = (('M', 'Male'), ('F', 'Female'), ('X', 'Not Prefered to say'),)
-
-    first = models.CharField(max_length=21, blank=False)
-    last = models.CharField(max_length=21, blank=False)
-
-    age = models.IntegerField(validators=[MinValueValidator(1)], blank=False, default=1)
-
-    sex = models.CharField(max_length=1, choices=options, blank=False, default='X')
-
-    email = models.EmailField()
-
-    ph_no = models.BigIntegerField(blank=False, default=00000000)
-
-    flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
-
-    def __str__(self):
-        return f"{self.first} {self.last}"
-
-    def is_valid_passenger(self):
-        return (self.age > 0 and len(self.first) > 0)
-
-    def _flight_boardings_(self):
-        return flights
-
 class Food(models.Model):
 
     price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
@@ -61,6 +36,7 @@ class Food(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
 
 class Ticket(models.Model):
 
@@ -76,3 +52,30 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f"{self.hospitality}{self.seat}{self.id}"
+
+
+class Passenger(models.Model):
+    options = (('M', 'Male'), ('F', 'Female'), ('X', 'Not Prefered to say'),)
+
+    first = models.CharField(max_length=21, blank=False)
+    last = models.CharField(max_length=21, blank=False)
+
+    age = models.IntegerField(validators=[MinValueValidator(1)], blank=False, default=1)
+
+    sex = models.CharField(max_length=1, choices=options, blank=False, default='X')
+
+    email = models.EmailField()
+
+    ph_no = models.BigIntegerField(blank=False, default=00000000)
+
+    flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
+    tickets = models.ManyToManyField(Ticket, related_name="journeys", blank=True)
+
+    def __str__(self):
+        return f"{self.first} {self.last}"
+
+    def is_valid_passenger(self):
+        return (self.age > 0 and len(self.first) > 0)
+
+    def _flight_boardings_(self):
+        return flights

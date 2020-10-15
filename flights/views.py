@@ -57,16 +57,33 @@ def book(request):
     except KeyError:
         return render(request, "flights/error.html", context={"message": "KeyError!!"})
 
-    p = Passenger.objects.filter(first=first, last=last)
+    try:
+        age = int(request.POST.get("age"))
+    except KeyError:
+        return render(request, "flights/error.html", context={"message": "KeyError!!"})
+
+    try:
+        email = str(request.POST.get("email"))
+    except KeyError:
+        return render(request, "flights/error.html", context={"message": "KeyError!!"})
+
+    try:
+        sex = str(request.POST.get("sex"))
+    except KeyError:
+        return render(request, "flights/error.html", context={"message": "KeyError!!"})
+
+    sex = char(sex)
+
+    p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 
     if not p:
-        p = Passenger(first=first, last=last)
+        p = Passenger(first=first, last=last, age=age, email=email, sex=sex)
         p.save()
         p.flights.add(flight)
         p.save()
 
     elif p not in flight.passengers.all():
-        p = Passenger.objects.get(first=first, last=last)
+        p = Passenger.objects.get(first=first, last=last, age=age, email=email, sex=sex)
         p.flights.add(flight)
         p.save()
 
