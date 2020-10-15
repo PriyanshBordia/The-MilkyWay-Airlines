@@ -1,1 +1,1 @@
-web: gunicorn the_milky_way_airlines.wsgi:application --log-file -
+web: gunicorn the-milky-way-airlines.wsgi:application --log-file -
