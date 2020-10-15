@@ -1,3 +1,47 @@
+body {
+  font-family: sans-serif cursive;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1 {
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  color: #bd8c7d;
+}
+
+h1:hover {
+  background-color: white;
+  color: #d1bfa7;
+}
+
+h2 {
+  color: #7dce94;
+}
+
+h6 {
+  color: #c2dde6;
+}
+
+.flights-scheduled {
+  font-size: 18;
+}
+
+.book-flight-button {
+  width: 400px;
+  text-decoration: none !important;
+}
+
+#book-flight {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
 .navbar-brand {
   font-size: 24px !important;
 }
@@ -6,20 +50,57 @@
   font-size: 20px !important;
 }
 
-.form-travel-head {
+.login-action-button {
   width: 2.5in;
+  text-decoration: none !important;
+}
+
+.form-home-container {
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.form-travel-container {
-  width: 2.5in;
+.form-home-head {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  font-size: 20;
 }
 
-.form-travel-button {
+.form-home-button {
   width: 2.5in;
+  text-decoration: none !important;
+}
+
+/* password_reset_complete */
+.reset-password-action-container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20;
+}
+
+.reset-password-action-head {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20;
+}
+
+.reset-password-action-button {
+  width: 2.5in;
+  text-decoration: none !important;
+}
+
+.error-message {
+  max-width: 700px;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+  font-size: 24;
+}
+
+.error-message a {
   text-decoration: none !important;
 }
 
@@ -44,6 +125,66 @@ footer {
 .button:hover {
   background-color: white;
   color: #7851a9;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none;
+  /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

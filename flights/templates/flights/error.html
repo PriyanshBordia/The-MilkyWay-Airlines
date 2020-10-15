@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
+{% extends "flights/base.html" %}
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% block title %}
+    Error!!
+{% endblock %}
 
-		<style>
-			.message
-			{
-				max-width: 700px;
-				text-align: center;
-				margin: auto;
-				padding: 40px;
-				font-size: 24px;
-			}
-			.message a
-			{
-				text-decoration: none !important;
-			}
-		</style>
+{% block head %}
+	<!--Icon-->
+	<link href = "static/icons/icons8-alert-80.png" rel = "icon">
+{% endblock %}
 
-		<!--Icon-->
-	    <link href = "static/icons/icons8-alert-80.png" rel = "icon">
-		<title> | Error!!</title>
-	</head>
-	<body>
-		<div class = "message">
-			<div class = "alert alert-danger" role = "alert">
-		 		{{ message }}
-		    </div>
-		 </div>
-	</body>
-</html>
+{% block body %}
+	<div class = "message">
+		<div class = "alert alert-danger" role = "alert">
+			{{ message }}
+		</div>
+	</div>
+{% endblock %}

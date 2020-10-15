@@ -6,11 +6,17 @@ from django.utils.datastructures import MultiValueDictKeyError
 from .models import  Airport, Flight, Passenger
 
 # Create your views here.
+
 def home(request):
-    return render(request, "flights/home.html", context={"flights": Flight.objects.all()})
+    return render(request, "flights/home.html")
+
+
+def travel(request):
+        return render(request, "flights/travel.html", context={"flights": Flight.objects.all()})
 
 
 def flight(request, flight_id):
+
     try:
         flight = Flight.objects.get(pk=flight_id)
     except Flight.DoesNotExist:
@@ -31,14 +37,13 @@ def flights(request):
 
     return render(request, "flights/flights.html", context = {"flights": flights})
 
-
+# update accordin to the
 def book(request):
     try:
         flight_id  = int(request.POST.get("flight_id"))
         flight = Flight.objects.get(pk=flight_id)
     except KeyError:
         return render(request, "flights/error.html", context={"message": "KeyError!!"})
-
     except Flight.DoesNotExist:
         return Http404("Flight Doesn't Exist!!")
 

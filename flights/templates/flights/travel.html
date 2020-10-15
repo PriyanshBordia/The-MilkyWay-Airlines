@@ -1,0 +1,55 @@
+{% extends "flights/base.html" %}
+
+{% block title %}
+    The MilkyWay Airlines
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div id="book-flight">
+        <h1> The MilkyWay Airlines &#9992;</h1>
+        <br>
+        <h6>Experiance insanity again.!</h6>
+        <hr>
+        <br>
+
+        <form id="form" class="form-group" action="{% url 'book' %}" method="post">
+
+            {% csrf_token %}
+            <div class="custom-select" style="width:400px;">
+                <select name="flight_id">
+                    {% for flight in flights %}
+                        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <h2>Passenger Details <img src="https://img.icons8.com/officel/16/000000/passenger-with-baggage.png"/></h2>
+            <br>
+            <input id="first-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="First Name" name="first">
+            <input id="last-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="Last Name" name="last">
+            <br>
+            <br>
+            <input id="age" type="number" class="mr-2" autocomplete="off" autofocus placeholder="Age" name="age">
+            <input id="e-mail" type="email" class="mr-2" autocomplete="off" autofocus placeholder="E-mail" name="email">
+            <br>
+            <br>
+            <input id="departure-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
+            <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="origin_date">
+            <br>
+            <br>
+            <input type="radio" id="male" name="sex" value="M">
+            <label for="male" class="mr-5" >Male</label>
+            <input type="radio" id="female" name="sex" value="F">
+            <label for="female" class="mr-5">Female</label>
+            <input type="radio" id="other" name="sex" value="X">
+            <label for="other">Other</label>
+            <br>
+            <button id="book" class = "book-flight-button btn btn-primary ml-2 mt-2 center">Book Flight.</button>
+        </form>
+    </div>
+{% endblock %}

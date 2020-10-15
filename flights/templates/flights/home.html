@@ -13,29 +13,26 @@
 
 {% block body %}
     {% if user.is_authenticated %}
-        <div class="container fluid-container my-container mt-4">
-            <form class="form-travel" action="index.html" method="post">
-                <div class="form-travel-head form-text h2 form-heading mt-2">
-                    Hi! :), <br>
-                    {{ user.username }} <br>
-                    Welcome Back.
+        <div class="container container-fluid text-center mt-4 pt-3">
+            <div class="form-home-container justify-content-center">
+                <div class="form-home-head h2 mt-2">
+                    Hi! {{ user.username }}, <br>
+                    Welcome Back :)
                 </div>
-                <div class="form-travel-container mt-3">
-                    <button type="submit" class="btn btn-outline-primary form-travel-button">Travel</button>
-                </div>
-            </form>
+                <a class="form-home-button btn btn-outline-primary btn-lg mt-3" href="{% url 'travel' %}" role="button">Travel</a
+            </div>
         </div>
 
     {% else %}
-    <div class="container fluid-container my-container mt-4">
-        <div class="form-text h2 form-heading mt-2">
-            Hello!, <br>
-            Log In to travel around the globe.
+        <div class="container container-fluid text-center mt-4 pt-3">
+            <div class="form-home-container justify-content-center">
+                <div class="form-home-head h2 mt-2 mr-auto ml-0">
+                    Welcome, <br>
+                    Log In to travel around the globe.
+                </div>
+                <a class="form-home-button btn btn-outline-primary mt-3" href="{% url 'login' %}" role="button">Log in</a>
+            </div>
         </div>
-        <div class="form-travel-container mt-2">
-            <button type="submit" class="btn btn-outline-primary form-travel-button"><a href="{% url 'login' %}">Log in</a></button>
-        </div>
-    </div>
     {% endif %}
 
 {% endblock %}
