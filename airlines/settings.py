@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY ')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['https://the-milky-way-airlines.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = [config('ALLOWED_HOSTS ')]
 
 
 # Application definition
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'airlines.urls'
+ROOT_URLCONF = 'the-milky-way-airlines.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'airlines.wsgi.application'
+WSGI_APPLICATION = 'the-milky-way-airlines.wsgi.application'
 
 
 # Database
@@ -140,7 +140,7 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = 'home'
 
 #logout redirection to homepage
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 
 #store the addresses of e-mails sent
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"

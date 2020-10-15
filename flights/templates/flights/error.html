@@ -15,6 +15,7 @@
 		<div class = "alert alert-danger" role = "alert">
 			{{ message }}
 		</div>
+        <a href="{% url 'flight/{{ id }}' %}"></a>
 	</div>
-    
+
 {% endblock %}
