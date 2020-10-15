@@ -1,9 +1,0 @@
-SECRET_KEY = thiskeyissosecretthatonlyabearcanfindit
-
-DEBUG = True
-ALLOWED_HOSTS = https://the-milky-way-airlines.herokuapp.com
-
-DB_NAME = airline
-DB_USER = admin
-DB_PASSWORD = zombieappco
-DB_HOST = localhost

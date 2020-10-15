@@ -6,17 +6,15 @@
 
 {% block head %}
 	<!--Icon-->
-	<link href = "static/icons/icons8-alert-80.png" rel = "icon">
+	<link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon">
 {% endblock %}
 
 {% block body %}
+
 	<div class = "message">
 		<div class = "alert alert-danger" role = "alert">
 			{{ message }}
 		</div>
 	</div>
+    
 {% endblock %}
-
-<!-- validator==2.0.6-->
-<!-- decouple==0.0.7 -->
-<!-- PyAudio==0.2.11 -->
