@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 DATABASES = {
     'default': {
     	'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
+        'NAME': 'airline', #config('DB_NAME'),
+        'USER': 'admin', #config('DB_USER'),
+        'PASSWORD': 'zombieappco', #config('DB_PASSWORD'),
+        'HOST': 'localhost', #config('DB_HOST'),
         'PORT': '',
 
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
