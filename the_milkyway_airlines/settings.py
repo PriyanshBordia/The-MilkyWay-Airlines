@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True)
+DEBUG = env('DEBUG', default=True)
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 DATABASES = {
     'default': {
     	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
 
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
