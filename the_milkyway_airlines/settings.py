@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
+SECRET_KEY = config('SECRET_KEY') #'*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True)
@@ -81,14 +81,12 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 
 DATABASES = {
     'default': {
-    	'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'airline', #config('DB_NAME'),
-        'USER': 'admin', #config('DB_USER'),
-        'PASSWORD': 'zombieappco', #config('DB_PASSWORD'),
-        'HOST': '', #config('DB_HOST'),
-        'PORT': '',
-
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
+    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
 
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
