@@ -148,3 +148,8 @@ LOGOUT_REDIRECT_URL = 'home'
 #store the addresses of e-mails sent
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
+…
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
