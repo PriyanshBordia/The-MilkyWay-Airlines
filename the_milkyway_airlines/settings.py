@@ -81,15 +81,15 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 
 DATABASES = {
     'default': {
-    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dckthd9q560le4', #env('DB_NAME'),
-        'USER': 'tgofmcjawkeclr', #env('DB_USER'),
-        'PASSWORD': '302e280e49f7a8d88ba1c202d3a41c870797a5d6d5d2ca6d2cedd13ad18afd25', #env('DB_PASSWORD'),
-        'HOST': 'ec2-54-237-155-151.compute-1.amazonaws.com', #env('DB_HOST'),
-        'PORT': 5432, #env('DB_PORT'),
+    	# 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'dckthd9q560le4', #env('DB_NAME'),
+        # 'USER': 'tgofmcjawkeclr', #env('DB_USER'),
+        # 'PASSWORD': '302e280e49f7a8d88ba1c202d3a41c870797a5d6d5d2ca6d2cedd13ad18afd25', #env('DB_PASSWORD'),
+        # 'HOST': 'ec2-54-237-155-151.compute-1.amazonaws.com', #env('DB_HOST'),
+        # 'PORT': 5432, #env('DB_PORT'),
 
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
