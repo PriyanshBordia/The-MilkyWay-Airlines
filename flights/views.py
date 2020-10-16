@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.utils.datastructures import MultiValueDictKeyError
 
-from .models import  Airport, Flight, Passenger
+from .models import  Airport, Flight, Passenger, Food, Travel
 
 # Create your views here.
 
@@ -92,6 +92,6 @@ def book(request):
         p.save()
 
     else:
-        return render(request, "flights/error.html", context={"message": "Already Onboard!", "id": id})
+        return render(request, "flights/error.html", context={"message": "Already Onboard!", "flight_id": flight_id})
 
     return HttpResponseRedirect(reverse("flight", args=(flight_id, )))
