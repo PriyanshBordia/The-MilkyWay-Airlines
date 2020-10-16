@@ -55,33 +55,66 @@ h6 {
   text-decoration: none !important;
 }
 
-.login-action-button, .form-home-button, .reset-password-action-button {
+.login-action-button {
   width: 2.5in;
   text-decoration: none !important;
 }
 
-.register-action-container, .login-action-container, .form-home-container, .reset-password-action-container {
+.form-home-button {
+  width: 2.5in;
+  text-decoration: none !important;
+}
+
+.reset-password-action-button {
+  width: 2.5in;
+  text-decoration: none !important;
+}
+
+.register-action-container {
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.login-action-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-home-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.reset-password-action-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 }
 
 .login-action-head, .register-action-head, .form-home-head, .reset-password-action-head {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  margin: auto;
   font-size: 20;
 }
 
 .error-message {
   max-width: 700px;
-  text-align: center;
   margin: auto;
+  text-align: center;
   padding: 30px;
+  font-size: 20;
+}
+
+.error-message-type {
+  max-width: 700px;
+  margin: auto;
   font-size: 24;
 }
 
-.error-message a {
+.error-message-a {
+  color: white;
   text-decoration: none !important;
 }
 

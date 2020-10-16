@@ -18,13 +18,13 @@
         <form id="form" class="form-group" action="{% url 'book' %}" method="post">
 
             {% csrf_token %}
-            <div class="custom-select" style="width:400px;">
+            <!-- <div class="custom-select" style="width:400px;"> -->
                 <select name="flight_id">
                     {% for flight in flights %}
                         <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                     {% endfor %}
                 </select>
-            </div>
+            <!-- </div> -->
             <br>
             <br>
 

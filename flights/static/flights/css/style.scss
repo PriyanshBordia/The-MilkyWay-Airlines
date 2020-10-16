@@ -135,11 +135,19 @@ h6
     margin: auto;
     text-align: center;
     padding: 30px;
-    font-size: $font-lg;
+    font-size: $font-md;
 }
 
-.error-message a
+.error-message-type
 {
+    max-width: $form-width;
+    margin: auto;
+    font-size: $font-lg
+}
+
+.error-message-a
+{
+    color: white;
     text-decoration: none !important;
 }
 
