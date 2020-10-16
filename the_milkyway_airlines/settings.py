@@ -25,10 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #env('DEBUG', default=True)
+DEBUG = True      #env('DEBUG', default=True)
 
-ALLOWED_HOSTS = ['https://the-milky-way-airlines.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
+ADMINS = []
 
 # Application definition
 
