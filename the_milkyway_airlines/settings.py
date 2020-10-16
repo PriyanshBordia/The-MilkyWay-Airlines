@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG', default=True)
+DEBUG = True #env('DEBUG', default=True)
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 DATABASES = {
     'default': {
     	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': 'dckthd9q560le4', #env('DB_NAME'),
+        'USER': 'tgofmcjawkeclr', #env('DB_USER'),
+        'PASSWORD': '302e280e49f7a8d88ba1c202d3a41c870797a5d6d5d2ca6d2cedd13ad18afd25', #env('DB_PASSWORD'),
+        'HOST': 'ec2-54-237-155-151.compute-1.amazonaws.com', #env('DB_HOST'),
+        'PORT': 5432, #env('DB_PORT'),
 
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
