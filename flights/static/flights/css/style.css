@@ -100,30 +100,34 @@ h6 {
   font-size: 20;
 }
 
-.error-message {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  padding: 30px;
-  font-size: 20;
-}
-
-.error-message-type {
-  max-width: 700px;
-  margin: auto;
-  font-size: 24;
-}
-
-.error-message-a {
-  color: white;
-  text-decoration: none !important;
-}
 
 .errorlist
 {
-    background-color: alert;
+    background-color: #d9534f;
 }
 
+/*Footer*/
+footer {
+  margin: 20px;
+  padding: 10px;
+  color: grey;
+  /* Gray */
+  text-decoration: none !important;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*Hower Over Effect*/
+.button {
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white;
+  color: #7851a9;
+}
 
 .custom-select {
   position: relative;

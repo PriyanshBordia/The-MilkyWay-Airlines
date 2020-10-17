@@ -28,7 +28,7 @@ DEBUG = True      #env('DEBUG', default=True)
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
-ADMINS = []
+# ADMINS = []
 
 # Application definition
 

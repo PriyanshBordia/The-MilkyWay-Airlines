@@ -19,6 +19,33 @@
         <link href = "{% static 'flights/css/style.css' %}" rel = "stylesheet">
 
         <style media="screen">
+            body {
+              font-family: sans-serif cursive;
+            }
+
+            a {
+              text-decoration: none !important;
+            }
+
+            h1 {
+              -webkit-transition-duration: 0.4s;
+              /* Safari */
+              transition-duration: 0.4s;
+              color: #bd8c7d;
+            }
+
+            h1:hover {
+              background-color: white;
+              color: #d1bfa7;
+            }
+
+            h2 {
+              color: #7dce94;
+            }
+
+            h6 {
+              color: #c2dde6;
+            }
             /*Footer*/
             footer {
               margin: 20px;
@@ -40,6 +67,16 @@
             .button:hover {
               background-color: white;
               color: #7851a9;
+            }
+
+            .navbar-brand
+            {
+               font-size: 24px !important;
+            }
+
+            .nav-item
+            {
+                font-size: 20px !important;
             }
         </style>
         {% block head %}
