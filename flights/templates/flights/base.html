@@ -18,6 +18,30 @@
 
         <link href = "{% static 'flights/css/style.css' %}" rel = "stylesheet">
 
+        <style media="screen">
+            /*Footer*/
+            footer {
+              margin: 20px;
+              padding: 10px;
+              color: grey;
+              /* Gray */
+              text-decoration: none !important;
+              text-align: center;
+              font-size: 20px;
+            }
+
+            /*Hower Over Effect*/
+            .button {
+              -webkit-transition-duration: 0.4s;
+              /* Safari */
+              transition-duration: 0.4s;
+            }
+
+            .button:hover {
+              background-color: white;
+              color: #7851a9;
+            }
+        </style>
         {% block head %}
         {% endblock %}
 
@@ -34,14 +58,14 @@
 		        <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link mr-3" href="{% url 'signup' %}">Register</a>
                     <!-- Example single danger button -->
-                    <div class="btn-group">
+                    <!-- <div class="btn-group">
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Your Profile</a>
                             <a class="dropdown-item" href = "{% url 'password_reset' %}">Reset Password</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                         </div>
-                    </div>
+                    </div> -->
 		        </div>
 	        </div>
     	</nav>
