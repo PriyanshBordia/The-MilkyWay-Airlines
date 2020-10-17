@@ -2,8 +2,9 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.urls import reverse
 from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib.auth import authenticate, login, logout
 
-from .models import  Airport, Flight, Passenger, Food, Travel
+from .models import  Airport, Flight, Passenger, Food, Ticket
 
 # Create your views here.
 

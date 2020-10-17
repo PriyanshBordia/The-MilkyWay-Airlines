@@ -32,18 +32,26 @@
 	        </button>
 	        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		        <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link mr-4" href="{% url 'password_reset' %}">Reset</a>
-                    <a class="nav-item nav-link mr-4" href="{% url 'logout' %}">Logout</a>
-                    <a class="nav-item nav-link mr-4" href="{% url 'signup' %}">Register</a>
-
+                    <a class="nav-item nav-link mr-3" href="{% url 'signup' %}">Register</a>
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Your Profile</a>
+                            <a class="dropdown-item" href = "{% url 'password_reset' %}">Reset Password</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </div>
 		        </div>
 	        </div>
     	</nav>
+
         <main>
             {% block body %} {% endblock %}
         </main>
 
         <hr>
+
         <footer class = "button">
             &copy; 2020 MilkyWay Airlines, Inc.
         </footer>
