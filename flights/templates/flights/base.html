@@ -13,74 +13,11 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        </script>
         {% load static %}
 
         <link href = "{% static 'flights/css/style.css' %}" rel = "stylesheet">
 
-        <style media="screen">
-            body {
-              font-family: sans-serif cursive;
-            }
-
-            a {
-              text-decoration: none !important;
-            }
-
-            h1 {
-              -webkit-transition-duration: 0.4s;
-              /* Safari */
-              transition-duration: 0.4s;
-              color: #bd8c7d;
-            }
-
-            h1:hover {
-              background-color: white;
-              color: #d1bfa7;
-            }
-
-            h2 {
-              color: #7dce94;
-            }
-
-            h6 {
-              color: #c2dde6;
-            }
-            /*Footer*/
-            footer {
-              margin: 20px;
-              padding: 10px;
-              color: grey;
-              /* Gray */
-              text-decoration: none !important;
-              text-align: center;
-              font-size: 20px;
-            }
-
-            /*Hower Over Effect*/
-            .button {
-              -webkit-transition-duration: 0.4s;
-              /* Safari */
-              transition-duration: 0.4s;
-            }
-
-            .button:hover {
-              background-color: white;
-              color: #7851a9;
-            }
-
-            .navbar-brand
-            {
-               font-size: 24px !important;
-            }
-
-            .nav-item
-            {
-                font-size: 20px !important;
-            }
-        </style>
-        {% block head %}
-        {% endblock %}
+        {% block head %} {% endblock %}
 
         <title> | {% block title %}{% endblock %}</title>
     </head>
@@ -93,16 +30,8 @@
 	        </button>
 	        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		        <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link mr-3" href="{% url 'logout' %}">Logout</a>
                     <a class="nav-item nav-link mr-3" href="{% url 'signup' %}">Register</a>
-                    <!-- Example single danger button -->
-                    <!-- <div class="btn-group">
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Your Profile</a>
-                            <a class="dropdown-item" href = "{% url 'password_reset' %}">Reset Password</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                        </div>
-                    </div> -->
 		        </div>
 	        </div>
     	</nav>

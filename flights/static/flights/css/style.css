@@ -2,6 +2,14 @@ body {
   font-family: sans-serif cursive;
 }
 
+.navbar-brand {
+  font-size: 24px !important;
+}
+
+.nav-item {
+  font-size: 20px !important;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -30,24 +38,16 @@ h6 {
   font-size: 18;
 }
 
-.book-flight-button {
-  width: 400px;
-  text-decoration: none !important;
-}
-
-#book-flight {
+.book-flight-container {
   max-width: 700px;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
 }
 
-.navbar-brand {
-  font-size: 24px !important;
-}
-
-.nav-item {
-  font-size: 20px !important;
+.book-flight-button {
+  width: 2.5in;
+  text-decoration: none !important;
 }
 
 .register-action-button {
@@ -71,10 +71,9 @@ h6 {
 }
 
 .register-action-container {
-  max-width: 900px;
-  margin-left: 80px;
-  margin-right: auto;
-  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 }
 
 .login-action-container {
@@ -100,10 +99,23 @@ h6 {
   font-size: 20;
 }
 
+.error-message {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  font-size: 20;
+}
 
-.errorlist
-{
-    background-color: #d9534f;
+.error-message-type {
+  max-width: 700px;
+  margin: auto;
+  font-size: 24;
+}
+
+.error-message-a {
+  color: white;
+  text-decoration: none !important;
 }
 
 /*Footer*/

@@ -57,19 +57,20 @@ h6
     font-size: $font-sm;
 }
 
-.book-flight-button
-{
-    width: 400px;
-    text-decoration: none !important;
-}
-
-#book-flight
+.book-flight-container
 {
     max-width: $form-width;
     margin: auto;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
+
+.book-flight-button
+{
+    width: $form-btn-size;
+    text-decoration: none !important;
+}
+
 
 .register-action-button
 {
@@ -151,7 +152,6 @@ h6
     color: white;
     text-decoration: none !important;
 }
-
 
 /*Footer*/
 footer

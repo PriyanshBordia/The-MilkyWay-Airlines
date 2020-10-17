@@ -40,7 +40,7 @@ class Food(models.Model):
 
 class Ticket(models.Model):
 
-    Modes = [('E', 'Economy-Class'), ('B', 'Bussiness-Class'), ('A', 'First-Class'),]
+    Modes = [('E', 'Economy Class'), ('B', 'Bussiness Class'), ('A', 'First Class'),]
     Types = [('A', 'Aisle'), ('M', 'Middle'), ('W', 'Window'), ]
 
     hospitality = models.CharField(max_length=1, choices=Modes)

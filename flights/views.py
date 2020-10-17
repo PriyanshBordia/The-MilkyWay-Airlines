@@ -13,7 +13,7 @@ def home(request):
 
 
 def travel(request):
-        return render(request, "flights/travel.html", context={"flights": Flight.objects.all()})
+        return render(request, "flights/travel.html", context={"flights": Flight.objects.all(), "foods": Food.objects.all()})
 
 
 def flight(request, flight_id):
