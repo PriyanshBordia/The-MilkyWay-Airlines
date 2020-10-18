@@ -57,6 +57,7 @@ powerline-status==2.7
 protobuf==3.13.0
 psycopg2-binary==2.8.6
 ptyprocess==0.6.0
+PyAudio==0.2.11
 pycparser==2.20
 PyGithub==1.47
 pyjsparser==2.7.1
@@ -86,6 +87,7 @@ termcolor==1.1.0
 toml==0.10.1
 tzlocal==2.1
 urllib3==1.25.8
+validator==2.0.6
 virtualenv==20.0.34
 Werkzeug==0.16.0
 whitenoise==5.0.1
