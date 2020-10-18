@@ -20,7 +20,7 @@
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        
+
         {% load static %}
 
         <link href = "{% static 'flights/css/style.css' %}" rel = "stylesheet">
@@ -48,7 +48,12 @@
             {% block body %} {% endblock %}
         </main>
 
-        <hr>
+        <hr class="mt-5">
+
+        <section class="comments">
+            <script src="https://utteranc.es/client.js" repo="PriyanshBordia/The-MilkyWay-Airlines" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async>
+            </script>
+        </section>
 
         <footer class = "button">
             &copy; 2020 MilkyWay Airlines, Inc.

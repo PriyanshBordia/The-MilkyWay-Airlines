@@ -2,6 +2,10 @@ body {
   font-family: sans-serif cursive;
 }
 
+#username {
+  color: #c2dde6;
+}
+
 .navbar-brand {
   font-size: 24px !important;
 }
@@ -34,6 +38,36 @@ h6 {
   color: #c2dde6;
 }
 
+#first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+#flights-select-menue {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#hospitality-select-menue {
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#food-select-menue {
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .flights-scheduled {
   font-size: 18;
 }
@@ -46,7 +80,7 @@ h6 {
 }
 
 .book-flight-button {
-  width: 2.5in;
+  width: 4in;
   text-decoration: none !important;
 }
 
@@ -139,66 +173,6 @@ footer {
 .button:hover {
   background-color: white;
   color: #7851a9;
-}
-
-.custom-select {
-  position: relative;
-  font-family: Arial;
-}
-
-.custom-select select {
-  display: none;
-  /*hide original SELECT element: */
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/* style the items (options), including the selected item: */
-.select-items div, .select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

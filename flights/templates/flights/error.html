@@ -35,11 +35,11 @@
         <div class="alert alert-danger error-message-type">
             {{ type }}
         </div>
-        <div class = "alert alert-warning" role = "alert">
+        <div class = "alert alert-warning mt-2" role = "alert">
 			{{ message }}
 		</div>
         <div class="error-message-a mt-3 ml-auto mr-auto mb-2">
-            <a class="btn btn-outline-primary btn-lg mt-3" href="{% url 'travel' %}" role="button">Go. Back</a>
+            <a class="btn btn-outline-danger btn-lg mt-3" href="{% url 'travel' %}" role="button">Go. Back</a>
         </div>
 	</div>
 {% endblock %}
