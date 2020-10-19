@@ -59,7 +59,7 @@ def book(request):
     except ValueError:
         return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
     except TypeError:
-        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",)
+        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
 
     try:
         last = str(request.POST.get("last"))
@@ -68,7 +68,7 @@ def book(request):
     except ValueError:
         return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
     except TypeError:
-        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",)
+        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
 
     try:
         age = int(request.POST.get("age"))
@@ -77,16 +77,16 @@ def book(request):
     except ValueError:
         return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
     except TypeError:
-        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",)
+        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
 
     try:
         email = str(request.POST.get("email"))
     except KeyError:
-        return render(request, "flights/error.html", context={"message": "Enter a e-mail address!!", "type": "KeyError!!")
+        return render(request, "flights/error.html", context={"message": "Enter a e-mail address!!", "type": "KeyError!!"})
     except ValueError:
         return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
     except TypeError:
-        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",)
+        return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
 
     try:
         sex = str(request.POST.get("sex"))
@@ -118,7 +118,7 @@ def user(request, p_id):
     try:
         user_details = Passenger.objects.get(pk=p_id)
     except Passenger.DoesNotExist:
-        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "Value DoesNotExist.!!", )
+        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
     return render(request, "flights/user.html", context = {"user_details"})
 
