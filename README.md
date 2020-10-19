@@ -4,16 +4,16 @@
 
 You can book tickets [here](https://the-milky-way-airlines.herokuapp.com)
 
-####Travel
+####Registeration Page
 
-[!Register](./screenshots/travel.png)
+[!Register](./screenshots/register.png)
 
-####Login
+####Login Page
+[!Login](./screenshots/login.png)
 
-####Travel
-
+####Travel Page
 [!Travel](./screenshots/travel.png)
 
-####Travel
+####Booking Page
 
-[!Travel](./screenshots/travel.png)
+[!Book](./screenshots/book.png)
