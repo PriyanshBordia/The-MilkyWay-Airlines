@@ -170,26 +170,23 @@ h6
 }
 
 // Error Message
-.error-message
-{
-    max-width: $form-width;
-    margin: auto;
-    text-align: center;
-    padding: 30px;
-    font-size: $font-md;
+.error-message {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  font-size: 20;
 }
 
-.error-message-type
-{
-    max-width: $form-width;
-    margin: auto;
-    font-size: $font-lg
+.error-message-type {
+  max-width: 700px;
+  margin: auto;
+  font-size: 24;
 }
 
-.error-message-a
-{
-    color: white;
-    text-decoration: none !important;
+.error-message-a {
+  color: white;
+  text-decoration: none !important;
 }
 
 /*Footer*/
