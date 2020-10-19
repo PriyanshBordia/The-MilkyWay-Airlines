@@ -2,18 +2,28 @@
 
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
-You can book tickets [here](https://the-milky-way-airlines.herokuapp.com)
+You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
 
-####Registeration Page
+#### Registeration Page:
 
-[!Register](./screenshots/register.png)
+![Register](./screenshots/register.png)
 
-####Login Page
-[!Login](./screenshots/login.png)
+#### Login Page:
 
-####Travel Page
-[!Travel](./screenshots/travel.png)
+![Login](./screenshots/login.png)
 
-####Booking Page
+#### Travel Page:
 
-[!Book](./screenshots/book.png)
+![Travel](./screenshots/travel.png)
+
+#### Booking Page:
+
+![Book](./screenshots/book.png)
+
+#### Flights Details:
+
+![Flight](./screenshots/flight.png)
+
+#### Flights Page:
+
+![Flights](./screenshots/flights.png)
