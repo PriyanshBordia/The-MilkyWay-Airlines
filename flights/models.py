@@ -31,7 +31,7 @@ class Flight(models.Model):
 
 class Food(models.Model):
 
-    price = models.FloatField(validators=[MinValueValidator(1)], blank=False, default=1)
+    price = models.DecimalField(decimal_places=2, blank=False, null=False, default=1)
     name = models.CharField(max_length=64)
 
     def __str__(self):
