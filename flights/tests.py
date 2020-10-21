@@ -1,7 +1,6 @@
-from django.db.models import MAX
 from django.test import TestCase
 
-from .models import Airport, Flight, Passenger, Food, Travel
+from .models import Airport, Flight, Passenger, Food, Ticket
 
 # Create your tests here.
 
