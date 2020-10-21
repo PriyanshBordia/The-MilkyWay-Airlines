@@ -6,26 +6,26 @@ You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
 
 > LightWeight Django App 
 
-#### `Registeration Page:`
+### `Registeration Page`:
 
 ![Register](./screenshots/register.png)
 
-#### Login Page:
+### `Login Page`:
 
 ![Login](./screenshots/login.png)
 
-#### Travel Page:
+### `Travel Page`:
 
 ![Travel](./screenshots/travel.png)
 
-#### Booking Page:
+### `Booking Page`:
 
 ![Book](./screenshots/book.png)
 
-#### Flights Details:
+### `Flights Details`:
 
 ![Flight](./screenshots/flight.png)
 
-#### Flights Page:
+### `Flights Page`:
 
 ![Flights](./screenshots/flights.png)
