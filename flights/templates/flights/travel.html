@@ -22,13 +22,12 @@
             <form class="form-group" action="{% url 'book' %}" method="post">
 
                 {% csrf_token %}
-                <!-- <div class="custom-select" style="width:400px;"> -->
-                    <select id="flights-select-menue" name="flight_id">
-                        {% for flight in flights %}
-                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                        {% endfor %}
-                    </select>
-                <!-- </div> -->
+
+                <select id="flights-select-menue" class="mr-auto ml-auto" name="flight_id">
+                    {% for flight in flights %}
+                        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                    {% endfor %}
+                </select>
 
                 <br>
                 <br>

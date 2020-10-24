@@ -3,10 +3,6 @@
 {% extends 'flights/base.html' %}
 {% load humanize %}
 
-<!-- {% block title %}
-    The MilkyWay Airlines
-{% endblock %} -->
-
 {% block head %}
     <!-- <link rel="stylesheet" href="/"> -->
 {% endblock %}
@@ -15,7 +11,7 @@
     {% if user.is_authenticated %}
         <div class="container container-fluid text-center mt-4 pt-3">
             <div class="form-home-container justify-content-center">
-                <div class="form-home-head h2 mt-2">
+                <div class="home-head h2 mt-2">
                     Hi! {{ user.username }}, <br>
                     Welcome Back :)
                 </div>
@@ -26,7 +22,7 @@
     {% else %}
         <div class="container container-fluid text-center mt-4 pt-3">
             <div class="form-home-container justify-content-center">
-                <div class="form-home-head h2 mt-2 mr-auto ml-0">
+                <div class="home-head h2 mt-2 mr-auto ml-0">
                     Welcome, <br>
                     Log In to travel around the globe.
                 </div>
