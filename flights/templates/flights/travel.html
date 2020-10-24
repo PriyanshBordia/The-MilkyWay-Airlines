@@ -23,7 +23,7 @@
 
                 {% csrf_token %}
 
-                <select id="flights-select-menue" class="mr-auto ml-auto" name="flight_id">
+                <select id="flights-select-menue" name="flight_id">
                     {% for flight in flights %}
                         <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                     {% endfor %}
