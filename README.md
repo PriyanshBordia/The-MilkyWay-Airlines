@@ -1,6 +1,7 @@
 # The-MilkyWay-Airlines
 
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
+[![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
