@@ -1,4 +1,6 @@
-utterance comment section 
+- DJANGO=3.0.7
+- DB=postgresql
+- SH=bash
 
 <!-- Example single danger button -->
 <!-- <div class="btn-group">
