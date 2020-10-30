@@ -1,8 +1,10 @@
 language: python
 
 env:
-    -DJANGO=3.0.7 DB=postgresql
-
+    - DJANGO=3.0.7
+    - DB=postgres
+    - SH=bash
+    
 install:
     - pip3 install -r requirements.txt
 
