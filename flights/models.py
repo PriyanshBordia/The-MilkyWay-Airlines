@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class Airport(models.Model):
-    
+
     code = models.CharField(max_length=3, blank=False, null=False)
     city = models.CharField(max_length=64, blank=False, null=False)
     country = models.CharField(max_length=64, blank=False, null=False)
@@ -65,7 +65,7 @@ class Passenger(models.Model):
     sex = models.CharField(max_length=1, choices=options, blank=False, null=False, default='X')
 
     email = models.EmailField(blank=False, null=False, default='user@mail.co')
-    ph_no = models.BigIntegerField(blank=False, null=False)
+    ph_no = models.BigIntegerField(blank=True, null=False)
 
     flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
     tickets = models.ManyToManyField(Ticket, related_name="journeys", blank=True)
