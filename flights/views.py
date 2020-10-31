@@ -98,13 +98,13 @@ def book(request):
     p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 
     if not p:
-        p = Passenger(first=first, last=last, age=age, email=email, pn_no="0000000", sex=sex)
+        p = Passenger(first=first, last=last, age=age, email=email, pn_no=0000000, sex=sex)
         p.save()
         p.flights.add(flight)
         p.save()
 
     elif p not in flight.passengers.all():
-        p = Passenger.objects.get(first=first, last=last, age=age, email=email, pn_no="0000000", sex=sex)
+        p = Passenger.objects.get(first=first, last=last, age=age, email=email, pn_no=0000000, sex=sex)
         p.flights.add(flight)
         p.save()
 
