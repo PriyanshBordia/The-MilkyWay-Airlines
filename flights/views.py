@@ -98,13 +98,13 @@ def book(request):
     p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 
     if not p:
-        p = Passenger(first=first, last=last, age=age, email=email, pn_no=0000000, sex=sex)
+        p = Passenger(first=first, last=last, age=age, email=email, pn_no="0000000", sex=sex)
         p.save()
         p.flights.add(flight)
         p.save()
 
     elif p not in flight.passengers.all():
-        p = Passenger.objects.get(first=first, last=last, age=age, email=email, pn_no=0000000, sex=sex)
+        p = Passenger.objects.get(first=first, last=last, age=age, email=email, pn_no="0000000", sex=sex)
         p.flights.add(flight)
         p.save()
 
@@ -123,11 +123,11 @@ def user(request, p_id):
     return render(request, "flights/user.html", context = {"user_details"})
 
 
-def reset(request, p_id):
-    send_mail(
-    'Password Reset Link',
-    'Hello.!, there below is the link where you can reset your password.',
-    '19ucs257@lnmiit.ac.in',
-    ['to@example.com'],
-    fail_silently=False,
-)
+# def reset(request, p_id):
+#     send_mail(
+#     'Password Reset Link',
+#     'Hello.!, there below is the link where you can reset your password.',
+#     '19ucs257@lnmiit.ac.in',
+#     ['to@example.com'],
+#     fail_silently=False,
+# )
