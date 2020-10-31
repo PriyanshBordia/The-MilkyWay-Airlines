@@ -13,7 +13,6 @@ cd The-MilkyWay-Airlines
 pip freeze > requirements.txt
 sh run.sh 1
 ```
-> LightWeight Django App 
 
 ### `Registeration Page`:
 
