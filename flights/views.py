@@ -123,11 +123,12 @@ def user(request, p_id):
     return render(request, "flights/user.html", context = {"user_details"})
 
 
-# def reset(request, p_id):
-#     send_mail(
-#     'Password Reset Link',
-#     'Hello.!, there below is the link where you can reset your password.',
-#     '19ucs257@lnmiit.ac.in',
-#     ['to@example.com'],
 #     fail_silently=False,
+def reset(request, p_id):
+    send_mail(
+    'Password Reset Link',
+    'Hello.!, there below is the link where you can reset your password.',
+    '19ucs257@lnmiit.ac.in',
+    ['to@example.com'],
+    fail_silently=False,
 # )
