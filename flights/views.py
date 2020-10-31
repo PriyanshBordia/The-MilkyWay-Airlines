@@ -123,7 +123,6 @@ def user(request, p_id):
     return render(request, "flights/user.html", context = {"user_details"})
 
 
-#     fail_silently=False,
 def reset(request, p_id):
     send_mail(
     'Password Reset Link',
