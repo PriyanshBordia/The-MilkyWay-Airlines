@@ -6,6 +6,7 @@ from django.utils.http import base36_to_int, int_to_base36
 
 
 class PasswordResetTokenGenerator:
+    """
     Strategy object used to generate and check tokens for the password
     reset mechanism.
     """
