@@ -1,0 +1,40 @@
+<!-- templates/flights/passengers.html -->
+
+{% extends "flights/base.html" %}
+
+{% block title %}
+    MilkyWay Airlines Passengers Details
+{% endblock %}
+
+{% block head %}
+    <style media="screen">
+        .passengers
+        {
+            max-width: 600px;
+            margin: 20px;
+            padding: 30px;
+        }
+    </style>
+    <!--Icon-->
+	<!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
+{% endblock %}
+
+{% block body %}
+    <div class="passengers">
+        <h1>Passengers</h1>
+        <hr>
+
+        <table>
+            {% for passenger in passengers %}
+            <tr>
+                <td>{{ passenger.first }}</td>
+                <td>{{ passenger.last }}</td>
+                <td>{{ passenger.sex }}</td>
+                <td>{{ passenger.age }}</td>
+                <td>{{ passenger.last }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+    </div>
+{% endblock %}

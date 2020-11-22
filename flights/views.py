@@ -23,7 +23,7 @@ def flight(request, flight_id):
     try:
         flight = Flight.objects.get(pk=flight_id)
     except Flight.DoesNotExist:
-        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!"})
+        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "DoesNotExist.!!"})
 
     context = {
         "flight": flight,
@@ -35,10 +35,20 @@ def flight(request, flight_id):
 def flights(request):
     try:
         flights = Flight.objects.all()
-    except Flight.DoesNotExist:
-        return render(request, "flights/error.html", context={"message": "Flight Does Not Exist!!", "type": "DoesNotExist.!!"})
+    except:
+        return render(request, "flights/success.html", context={"message": "NO Flights!!", "type": "Empty Set.!!"})
 
     return render(request, "flights/flights.html", context = {"flights": flights})
+
+
+def passengers(request):
+
+    passengers = Passenger.objects.all()
+
+    if (len(passengers) == 0):
+        return render(request, "flights/success.html", context={"message": "NO Passengers!!", "type": "Empty Set.!!"})
+
+    return render(request, "flights/passengers.html", context = {"passengers": passengers})
 
 
 def book(request):
@@ -118,16 +128,22 @@ def user(request, p_id):
     try:
         user_details = Passenger.objects.get(pk=p_id)
     except Passenger.DoesNotExist:
-        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+        return render(request, "flights/error.html", context = {"message": "PAssenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
     return render(request, "flights/user.html", context = {"user_details"})
 
 
-def reset(request, p_id):
+def reset(request):
+
+    return render(request, "registration/password_reset_form.html", context = {})
+
+
+def resetLink(request):
+
     send_mail(
     'Password Reset Link',
     'Hello.!, there below is the link where you can reset your password.',
     '19ucs257@lnmiit.ac.in',
     ['to@example.com'],
     fail_silently=False,
- )
+)

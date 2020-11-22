@@ -1,0 +1,27 @@
+<!-- templates/flights/success.html -->
+
+{% extends "flights/base.html" %}
+
+<!-- {% block title %}
+    | Success :-)
+{% endblock %}
+
+
+{% block head %}
+    <!--Icon-->
+    <!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
+<!-- {% endblock %} -->
+
+{% block body %}
+    <div class = "success-message mt-4 ml-auto mr-auto mb-2">
+        <div class="alert alert-success success-message-type">
+            {{ type }}
+        </div>
+        <div class = "alert alert-warning mt-2" role = "alert">
+            {{ message }}
+        </div>
+        <div class="success-message-a mt-3 ml-auto mr-auto mb-2">
+            <a class="btn btn-outline-success btn-lg mt-3" href="{% url 'travel' %}" role="button">Go. Back</a>
+        </div>
+    </div>
+{% endblock %}
