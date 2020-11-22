@@ -4,16 +4,19 @@
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
 [![Documentation Status](https://readthedocs.org/projects/the-milkyway-airlines/badge/?version=latest)](https://the-milkyway-airlines.readthedocs.io/en/latest/?badge=latest)
 
+
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
+
 
 You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
 
-To run app on local machine:
+
+#### To run app on local machine:
 ```
-git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
-cd The-MilkyWay-Airlines
-pip freeze > requirements.txt
-sh run.sh 1
+$ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
+$ cd The-MilkyWay-Airlines
+$ pip freeze > requirements.txt
+$ sh run.sh 1
 ```
 
 ### `Registeration Page`:
