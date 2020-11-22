@@ -40,7 +40,7 @@
                 <td>{{ passenger.sex }}</td>
                 <td>{{ passenger.age }}</td>
                 <td>{{ passenger.ph }}</td>
-                <a class="btn btn-outline-danger btn-lg" href="{% url 'user' {{ passenger.id }} %}" role="button">Check</a>
+                <a class="btn btn-outline-danger btn-lg" href="{% url 'user' passenger.id %}" role="button">Check</a>
             </tr>
             {% endfor %}
         </table>
