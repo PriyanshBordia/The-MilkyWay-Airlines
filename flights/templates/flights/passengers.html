@@ -25,13 +25,22 @@
         <hr>
 
         <table>
+            <tr>
+                <th colspan="2">First Name</th>
+                <th colspan="2">Last Name</th>
+                <th colspan="1">Gender</th>
+                <th colspan="1">Age</th>
+                <th colspan="2">Contact Number</th>
+                <th colspan="2">Journey Details</th>
+            </tr>
             {% for passenger in passengers %}
             <tr>
                 <td>{{ passenger.first }}</td>
                 <td>{{ passenger.last }}</td>
                 <td>{{ passenger.sex }}</td>
                 <td>{{ passenger.age }}</td>
-                <td>{{ passenger.last }}</td>
+                <td>{{ passenger.ph }}</td>
+                <a class="btn btn-outline-danger btn-lg" href="{% url 'user' {{ passenger.id }} %}" role="button">Check</a>
             </tr>
             {% endfor %}
         </table>
