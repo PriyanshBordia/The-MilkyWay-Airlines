@@ -3,7 +3,7 @@
 {% extends "flights/base.html" %}
 
 <!-- {% block title %} -->
-    <!-- MilkyWay Airlines User {{ user.id }} -->
+    <!-- MilkyWay Airlines User {{ passenger.id }} -->
 <!-- {% endblock %} -->
 
 <!-- {% block head %} -->
@@ -12,15 +12,17 @@
 <!-- {% endblock %} -->
 
 {% block body %}
-
-    <h2> User Details </h2>
-    First Name : {{ user_details.first }} Last Name : {{ user_details.last }}
-    Age : {{ user_details.age }} Gender : {{ user_details.sex }}
-    <h3>Travel Details</h3>
-    <ul>
-        {% for flight in {{ user_details.flights }} %}
-            <li>{{ flight }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container container-fluid">
+        <h2> User Details </h2>
+        First Name : {{ user_details.first }}
+        Last Name : {{ user_details.last }}
+        Age : {{ user_details.age }} Gender : {{ user_details.sex }}
+        <h3>Travel Details</h3>
+        <ul>
+            {% for flight in user_details.flights %}
+                <li>{{ flight }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}

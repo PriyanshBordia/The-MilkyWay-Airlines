@@ -2,6 +2,9 @@
 - DB=postgresql
 - SH=bash
 
+<!-- <a class="nav-item nav-link mr-3" href="{% url 'user' id %}">User</a> -->
+
+
 <!-- Example single danger button -->
 <!-- <div class="btn-group">
     <div class="dropdown-menu">

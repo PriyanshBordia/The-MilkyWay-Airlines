@@ -9,7 +9,7 @@ urlpatterns = [
     path("flights", views.flights, name="flights"),
     path("passengers", views.passengers, name="passengers"),
     path("book", views.book, name="book"),
-    path("user", views.user, name="user"),
+    path("user/<int:user_id>", views.user, name="user"),
     path("reset", views.reset, name="reset"),
     path("resetLink", views.resetLink, name="resetLink"),
 ]

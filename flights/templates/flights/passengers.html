@@ -14,6 +14,65 @@
             margin: 20px;
             padding: 30px;
         }
+        table {
+          border-collapse: separate;
+          border-spacing: 0;
+          color: #4a4a4d;
+          font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        th, td {
+          padding: 10px 15px;
+          vertical-align: middle;
+        }
+
+        thead {
+          background: #395870;
+          background: linear-gradient(#49708f, #293f50);
+          color: #fff;
+          font-size: 11px;
+          text-transform: uppercase;
+        }
+
+        th:first-child {
+          border-top-left-radius: 5px;
+          text-align: left;
+        }
+        th:last-child {
+          border-top-right-radius: 5px;
+        }
+
+        tbody tr:nth-child(even) {
+          background: #f0f0f2;
+        }
+        td {
+          border-bottom: 1px solid #cecfd5;
+          border-right: 1px solid #cecfd5;
+        }
+
+        td:first-child {
+          border-left: 1px solid #cecfd5;
+        }
+
+        .first {
+          color: #395870;
+        }
+
+        .last {
+          color: #7c7c80;
+          font-size: 12px;
+        }
+        .age, .sex{
+          text-align: center;
+        }
+        .ph{
+          text-align: right;
+        }
+
+        .journey {
+          display: block;
+        }
+
     </style>
     <!--Icon-->
 	<!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
@@ -25,24 +84,30 @@
         <hr>
 
         <table>
-            <tr>
-                <th colspan="2">First Name</th>
-                <th colspan="2">Last Name</th>
-                <th colspan="1">Gender</th>
-                <th colspan="1">Age</th>
-                <th colspan="2">Contact Number</th>
-                <th colspan="2">Journey Details</th>
-            </tr>
-            {% for passenger in passengers %}
-            <tr>
-                <td>{{ passenger.first }}</td>
-                <td>{{ passenger.last }}</td>
-                <td>{{ passenger.sex }}</td>
-                <td>{{ passenger.age }}</td>
-                <td>{{ passenger.ph }}</td>
-                <a class="btn btn-outline-danger btn-lg" href="{% url 'user' passenger.id %}" role="button">Check</a>
-            </tr>
-            {% endfor %}
+            <thead>
+                <tr>
+                    <th  scope="col" colspan="1">Id</th>
+                    <th  scope="col" colspan="2">First Name</th>
+                    <th  scope="col" colspan="2">Last Name</th>
+                    <th  scope="col" colspan="1">Gender</th>
+                    <th  scope="col" colspan="1">Age</th>
+                    <th  scope="col" colspan="4">Contact Number</th>
+                    <th  scope="col" colspan="4">Journey Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for passenger in passengers %}
+                    <tr>
+                        <td class="id" colspan="1">{{ passenger.id }}</td>
+                        <td class="first" colspan="2">{{ passenger.first }}</td>
+                        <td class="last" colspan="3">{{ passenger.last }}</td>
+                        <td class="sex" colspan="1">{{ passenger.sex }}</td>
+                        <td class="age" colspan="1">{{ passenger.age }}</td>
+                        <td class="ph" colspan="4">{{ passenger.ph }}</td>
+                        <td class="journey" colspan="4"><a class="btn btn-outline-danger btn-sm ml-2 mr-2 mt-2 mb-2" href="{% url 'user' passenger.id %}" role="button">Check</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
         <hr>
     </div>

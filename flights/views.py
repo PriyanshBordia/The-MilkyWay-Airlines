@@ -36,14 +36,19 @@ def flights(request):
     try:
         flights = Flight.objects.all()
     except:
+        return render(request, "flights/error.html", context={"message": "Flights Does not exists!!", "type": "Does Not exists.!!"})
+
+    if (len(flights) == 0):
         return render(request, "flights/success.html", context={"message": "NO Flights!!", "type": "Empty Set.!!"})
 
     return render(request, "flights/flights.html", context = {"flights": flights})
 
 
 def passengers(request):
-
-    passengers = Passenger.objects.all()
+    try:
+        passengers = Passenger.objects.all()
+    except:
+        return render(request, "flights/error.html", context={"message": "Passengers Do not exists!!", "type": "Does Not exists..!!"})
 
     if (len(passengers) == 0):
         return render(request, "flights/success.html", context={"message": "NO Passengers!!", "type": "Empty Set.!!"})
@@ -124,9 +129,10 @@ def book(request):
     return HttpResponseRedirect(reverse("flight", args=(flight_id, )))
 
 
-def user(request, p_id):
+def user(request, user_id):
+
     try:
-        user_details = Passenger.objects.get(pk=p_id)
+        user_details = Passenger.objects.get(pk=user_id)
     except Passenger.DoesNotExist:
         return render(request, "flights/error.html", context = {"message": "PAssenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
