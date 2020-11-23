@@ -110,16 +110,27 @@ def book(request):
 
     sex = sex[0]
 
+    try:
+        origin_date = str(request.POST.get("origin_date"))
+    except KeyError:
+        return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
+
+    try:
+        origin_date = str(request.POST.get("destination_date"))
+    except KeyError:
+        return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
+
     p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
+    f = Flight.objects.filter()
 
     if not p:
-        p = Passenger(first=first, last=last, age=age, email=email, ph_no=0000000, sex=sex)
+        p = Passenger(first=first, last=last, age=age, email=email, ph_no=ph_no, sex=sex)
         p.save()
         p.flights.add(flight)
         p.save()
 
     elif p not in flight.passengers.all():
-        p = Passenger.objects.get(first=first, last=last, age=age, email=email, ph_no=0000000, sex=sex)
+        p = Passenger.objects.get(first=first, last=last, age=age, email=email, ph_no=ph_no, sex=sex)
         p.flights.add(flight)
         p.save()
 
@@ -150,6 +161,6 @@ def resetLink(request):
     'Password Reset Link',
     'Hello.!, there below is the link where you can reset your password.',
     '19ucs257@lnmiit.ac.in',
-    ['to@example.com'],
+    '19uec117@lnmiit.ac.in',
     fail_silently=False,
 )

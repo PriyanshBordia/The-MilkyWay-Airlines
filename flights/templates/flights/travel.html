@@ -43,7 +43,7 @@
                 <br>
                 <br>
                 <input id="departure-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
-                <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="origin_date">
+                <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
                 <br>
                 <br>
 
@@ -64,9 +64,9 @@
                 <br>
 
                 <select id = "hospitality-select-menue" name="hospitality">
-                        <option class="dropdown-item">First Class</option>
-                        <option class="dropdown-item">Bussiness Class</option>
-                        <option class="dropdown-item">Economy Class</option>
+                    <option class="dropdown-item">First Class</option>
+                    <option class="dropdown-item">Bussiness Class</option>
+                    <option class="dropdown-item">Economy Class</option>
                 </select>
                 <select  id = "food-select-menue" name="foods">
                     {% for food in foods %}

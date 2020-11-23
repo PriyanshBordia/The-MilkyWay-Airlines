@@ -44,6 +44,8 @@ class Ticket(models.Model):
     Modes = [('E', 'Economy Class'), ('B', 'Bussiness Class'), ('A', 'First Class'),]
     Types = [('A', 'Aisle'), ('M', 'Middle'), ('W', 'Window'), ]
 
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE, related_name="flight")
+
     hospitality = models.CharField(max_length=1, choices=Modes, blank=False, null=False)
     seat = models.CharField(max_length=1, choices=Types, blank=False, null=False, default='M')
 
