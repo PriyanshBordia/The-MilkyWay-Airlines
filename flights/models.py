@@ -26,7 +26,7 @@ class Flight(models.Model):
 
     duration = models.IntegerField(validators=[MinValueValidator(1)], blank=False, null=False, default=1)
 
-    capacity = models.IntegerField(validators=[MinValueValidator(1)], blank=False, null=False, default=1)
+    capacity = models.IntegerField(validators=[MinValueValidator(1)], blank=True, null=True, default=1)
 
     def __str__(self):
         return f"{self.origin} to {self.destination}, in {self.duration} mins."
