@@ -23,12 +23,13 @@
 
                 {% csrf_token %}
 
-                <select id="flights-select-menue" name="flight_id">
-                    {% for flight in flights %}
-                        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                    {% endfor %}
-                </select>
-
+                <div class="dropdown-menue">
+                    <select id="flights-select-menue" name="flight_id">
+                        {% for flight in flights %}
+                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <br>
                 <br>
 

@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+import datetime
 
 # Create your models here.
 class Airport(models.Model):
@@ -21,8 +22,8 @@ class Flight(models.Model):
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
 
-    origin_date = models.DateTimeField(blank=False, null=False)
-    destination_date = models.DateTimeField(blank=False, null=False)
+    origin_date = models.DateTimeField(blank=False, null=False, default=timezone.now)
+    destination_date = models.DateTimeField(blank=False, null=False, default=timezone.now)
 
     duration = models.IntegerField(validators=[MinValueValidator(1)], blank=False, null=False, default=1)
 
