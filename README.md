@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
 [![Documentation Status](https://readthedocs.org/projects/the-milkyway-airlines/badge/?version=latest)](https://the-milkyway-airlines.readthedocs.io/en/latest/?badge=latest)
-
+![Github](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/workflows/.github/workflows/main.yml/badge.svg?branch=main)
 
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
