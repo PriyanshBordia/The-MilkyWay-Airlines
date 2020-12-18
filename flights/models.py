@@ -4,6 +4,7 @@ from django.utils import timezone
 import datetime
 
 # Create your models here.
+
 class Airport(models.Model):
 
     code = models.CharField(max_length=3, blank=False, null=False)

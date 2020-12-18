@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
 import os
 from pathlib import Path
@@ -30,10 +35,12 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*a0xs14@4&l8deidtexxh2a$=zm^!p&)1g(goq&c4r8bu216l&'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True      #env('DEBUG', default=True)
+DEBUG = env('DEBUG', default=True)
+
+WHITENOISE_AUTOREFRESH = True
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
@@ -89,18 +96,17 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
+# 'ENGINE': 'django.db.backends.sqlite3',
+# 'NAME': os.path.join('BASE_DIR', 'db.sqlite3'),
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join('BASE_DIR', 'db.sqlite3'),
     	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dckthd9q560le4', #env('DB_NAME'),
-        'USER': 'tgofmcjawkeclr', #env('DB_USER'),
-        'PASSWORD': '302e280e49f7a8d88ba1c202d3a41c870797a5d6d5d2ca6d2cedd13ad18afd25', #env('DB_PASSWORD'),
-        'HOST': 'ec2-54-237-155-151.compute-1.amazonaws.com', #env('DB_HOST'),
-        'PORT': 5432, #env('DB_PORT'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
@@ -194,9 +200,6 @@ LOGIN_REDIRECT_URL = 'home'
 #logout redirection to homepage
 LOGOUT_REDIRECT_URL = 'home'
 
-#store the addresses of e-mails sent
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # # Configure Django App for Heroku.
 # import django_heroku

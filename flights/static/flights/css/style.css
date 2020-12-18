@@ -2,10 +2,6 @@ body {
   font-family: sans-serif cursive;
 }
 
-#username {
-  color: #c2dde6;
-}
-
 .navbar-brand {
   font-size: 24px !important;
 }
@@ -35,6 +31,14 @@ h2, .home-head {
 }
 
 h6 {
+  color: #c2dde6;
+}
+
+ul {
+  background-color: #AA0000;
+}
+
+#username {
   color: #c2dde6;
 }
 
@@ -129,6 +133,7 @@ h6 {
   font-size: 20;
 }
 
+/* Error Message */
 .error-message, .success-message {
   max-width: 700px;
   margin: auto;
@@ -148,68 +153,18 @@ h6 {
   text-decoration: none !important;
 }
 
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  color: #4a4a4d;
-  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*Social Media handles*/
+#social-handles {
+  padding: 10px;
+  max-width: 700px;
+  margin: auto;
+  color: gray;
+  float: right;
 }
 
-th, td {
-  padding: 10px 15px;
-  vertical-align: middle;
-}
-
-thead {
-  background: #395870;
-  background: linear-gradient(#49708f, #293f50);
-  color: #fff;
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-th:first-child {
-  border-top-left-radius: 5px;
-  text-align: left;
-}
-
-th:last-child {
-  border-top-right-radius: 5px;
-}
-
-tbody tr:nth-child(even) {
-  background: #f0f0f2;
-}
-
-td {
-  border-bottom: 1px solid #cecfd5;
-  border-right: 1px solid #cecfd5;
-}
-
-td:first-child {
-  border-left: 1px solid #cecfd5;
-}
-
-.first {
-  color: #395870;
-  display: block;
-}
-
-.last {
-  color: #7c7c80;
-  font-size: 12px;
-}
-
-.age, .sex {
-  text-align: center;
-}
-
-.ph {
-  text-align: right;
-}
-
-.journey {
-  display: block;
+#social-handles a:hover {
+  color: #447EA6;
+  text-decoration: none !important;
 }
 
 /*Footer*/
