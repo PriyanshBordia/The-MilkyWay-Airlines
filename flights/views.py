@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 
 from .models import  Airport, Flight, Passenger, Food, Ticket
-
+from .forms import ImageForm
 # Create your views here.
 
 def home(request):
@@ -164,3 +164,10 @@ def resetLink(request):
     '19uec117@lnmiit.ac.in',
     fail_silently=False,
 )
+
+def imgUpload(request):
+     """Process images uploaded by users"""
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()

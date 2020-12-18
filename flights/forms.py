@@ -1,13 +1,23 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth import get_user_model
-User = get_user_model()
 
+from .models import Image
+
+
+class ImageForm(forms.ModelForm):
+    """Form for the image model"""
+    class Meta:
+        model = Image
+        fields = ('title', 'image')
+
+
+User = get_user_model()
 
 class UserPasswordResetForm(SetPasswordForm):
     """Change password form."""
     new_password1 = forms.CharField(label='Password',
-        help_text="<ul class='errorlist text-muted'><li>Your password can 't be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can 't be a commonly used password.</li> <li>Your password can 't be entirely numeric.<li></ul>",
+        help_text="<div class='alert-warning mt-2 mb-2'><ul class='errorlist text-muted'><li>Your password can 't be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can 't be a commonly used password.</li><li>Your password can 't be entirely numeric.<li></ul></div>",
         max_length=100,
         required=True,
         widget=forms.PasswordInput(
@@ -92,7 +102,7 @@ class UserSignUpForm(UserCreationForm):
         ))
 
     password1 = forms.CharField(label='Password',
-        help_text="<ul class='errorlist text-muted'><li>Your password can 't be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can 't be a commonly used password.</li> <li>Your password can 't be entirely numeric.<li></ul>",
+        help_text="<div><ul class='errorlist text-muted mt-2 mb-2'><li>Your password can 't be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can 't be a commonly used password.</li> <li>Your password can 't be entirely numeric.<li></ul></div>",
         max_length=100,
         required=True,
         widget=forms.PasswordInput(

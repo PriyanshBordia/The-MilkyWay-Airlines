@@ -23,13 +23,11 @@
 
                 {% csrf_token %}
 
-                <div class="dropdown-menue">
-                    <select id="flights-select-menue" name="flight_id">
-                        {% for flight in flights %}
-                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+                <select id = "food-select-menue" class = "custom-select custom-select-sm dropdown" name="flight_id" title = "Origin'" &#8651; '"'Destination">
+                    {% for flight in flights %}
+                        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                    {% endfor %}
+                </select>
                 <br>
                 <br>
 
@@ -64,19 +62,31 @@
                 <label for="window">Window</label>
                 <br>
 
-                <select id = "hospitality-select-menue" name="hospitality">
+                <select id = "hospitality-select-menue" class = "custom-select dropdown" name="hospitality">
                     <option class="dropdown-item">First Class</option>
                     <option class="dropdown-item">Bussiness Class</option>
                     <option class="dropdown-item">Economy Class</option>
                 </select>
-                <select  id = "food-select-menue" name="foods">
+                <select  id = "food-select-menue" class = "browser-default custom-select dropdown" name="foods">
                     {% for food in foods %}
                         <option value="{{ food.id }}">{{ food.name }}</option>
                     {% endfor %}
                 </select>
+                <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                        <div class="custom-select__trigger"><span>Food</span>
+                            <div class="arrow"></div>
+                        </div>
+                        {% for food in foods %}
+                            <div class="custom-options">
+                                <span class="custom-option" value="{{ food.id }}">{{ food.name }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
                 <br>
 
-                <button class = "book-flight-button btn btn-outline-success mt-5">Book Flight.</button>
+                <button class = "book-flight-button btn btn-outline-success mt-5">Book Flight.<i class="bi bi-arrow-bar-up"></i></button>
             </form>
         <div>
     </div>
