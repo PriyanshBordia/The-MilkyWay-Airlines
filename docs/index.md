@@ -7,6 +7,7 @@ You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
 
 
 #### To run app on local machine:
+
 ```
 $ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
 $ cd The-MilkyWay-Airlines

@@ -46,11 +46,11 @@
                 <br>
                 <br>
 
-                <input type="radio" id="male" class="ml-auto" name="sex" value="M" default=True>
+                <input type="radio" id="male" class="ml-auto" name="sex" value="M" default=True required>
                 <label for="male" class="mr-4">Male</label>
-                <input type="radio" id="female" class="ml-4" name="sex" value="F">
+                <input type="radio" id="female" class="ml-4" name="sex" value="F" required>
                 <label for="female" class="mr-4">Female</label>
-                <input type="radio" id="other" class="ml-4" name="sex" value="X">
+                <input type="radio" id="other" class="ml-4" name="sex" value="X" required>
                 <label for="other">Other</label>
                 <br>
 
@@ -67,11 +67,16 @@
                     <option class="dropdown-item">Bussiness Class</option>
                     <option class="dropdown-item">Economy Class</option>
                 </select>
-                <select  id = "food-select-menue" name="foods">
-                    {% for food in foods %}
-                        <option value="{{ food.id }}">{{ food.name }}</option>
-                    {% endfor %}
-                </select>
+
+                <div class="grid-x grid-padding-x">
+                    <div class="large-8 cell">
+                        <select  id = "food-select-menue" name="foods">
+                            {% for food in foods %}
+                                <option value="{{ food.id }}">{{ food.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
 
                 <br>
 
