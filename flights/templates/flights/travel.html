@@ -31,18 +31,18 @@
                 <br>
                 <br>
 
-                <h2>Passenger Details <img src="https://img.icons8.com/officel/16/000000/passenger-with-baggage.png"/></h2>
+                <h2>Passenger Details <i class = "fab fa-luggage fa-3x"</h2>
                 <br>
-                <input id="first-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="First Name" name="first">
-                <input id="last-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="Last Name" name="last">
-                <br>
-                <br>
-                <input id="age" type="number" class="mr-2" autocomplete="off" autofocus placeholder="Age" name="age">
-                <input id="e-mail" type="email" class="mr-2" autocomplete="off" autofocus placeholder="E-mail" name="email">
+                <input id="first-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="First Name" name="first" required>
+                <input id="last-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
                 <br>
                 <br>
-                <input id="departure-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
-                <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
+                <input id="age" type="number" class="mr-2" autocomplete="off" autofocus placeholder="Age" name="age" required>
+                <input id="e-mail" type="email" class="mr-2" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
+                <br>
+                <br>
+                <input id="departure-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Departure" name="origin_date" required>
+                <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="destination_date" required>
                 <br>
                 <br>
 
@@ -62,28 +62,17 @@
                 <label for="window">Window</label>
                 <br>
 
-                <select id = "hospitality-select-menue" class = "custom-select dropdown" name="hospitality">
+                <select id = "hospitality-select-menue" name="hospitality">
                     <option class="dropdown-item">First Class</option>
                     <option class="dropdown-item">Bussiness Class</option>
                     <option class="dropdown-item">Economy Class</option>
                 </select>
-                <select  id = "food-select-menue" class = "browser-default custom-select dropdown" name="foods">
+                <select  id = "food-select-menue" name="foods">
                     {% for food in foods %}
                         <option value="{{ food.id }}">{{ food.name }}</option>
                     {% endfor %}
                 </select>
-                <div class="custom-select-wrapper">
-                    <div class="custom-select">
-                        <div class="custom-select__trigger"><span>Food</span>
-                            <div class="arrow"></div>
-                        </div>
-                        {% for food in foods %}
-                            <div class="custom-options">
-                                <span class="custom-option" value="{{ food.id }}">{{ food.name }}</span>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
+
                 <br>
 
                 <button class = "book-flight-button btn btn-outline-success mt-5">Book Flight.<i class="bi bi-arrow-bar-up"></i></button>

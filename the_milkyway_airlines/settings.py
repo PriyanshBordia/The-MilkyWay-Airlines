@@ -38,7 +38,9 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG', default=False)
+DEBUG = env('DEBUG', default=True)
+
+WHITENOISE_AUTOREFRESH = True
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
@@ -198,15 +200,6 @@ LOGIN_REDIRECT_URL = 'home'
 #logout redirection to homepage
 LOGOUT_REDIRECT_URL = 'home'
 
-# Base url to serve media files
-MEDIA_URL = '/media/'
-
-# Path where media is stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-#store the addresses of e-mails sent
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # # Configure Django App for Heroku.
 # import django_heroku

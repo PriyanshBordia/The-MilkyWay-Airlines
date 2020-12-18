@@ -5,14 +5,6 @@ import datetime
 
 # Create your models here.
 
-class Image(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='media/images', blank=True)
-
-    def __str__(self):
-        return self.title
-
-
 class Airport(models.Model):
 
     code = models.CharField(max_length=3, blank=False, null=False)
