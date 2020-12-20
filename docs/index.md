@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+# The-MilkyWay-Airlines
 
-You can use the [editor on GitHub](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+[![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
+[![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
+[![Documentation Status](https://readthedocs.org/projects/the-milkyway-airlines/badge/?version=latest)](https://the-milkyway-airlines.readthedocs.io/en/latest/?badge=latest)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#### To run app on local machine:
+```
+$ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
+$ cd The-MilkyWay-Airlines
+$ pip freeze > requirements.txt
+$ sh run.sh 1
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### `Registeration Page`:
 
-### Jekyll Themes
+![Register](../screenshots/register.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### `Login Page`:
 
-### Support or Contact
+![Login](../screenshots/login.png)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### `Travel Page`:
+
+![Travel](../screenshots/travel.png)
+
+### `Booking Page`:
+
+![Book](../screenshots/book.png)
+
+### `Flights Details`:
+
+![Flight](../screenshots/flight.png)
+
+### `Flights Page`:
+
+![Flights](../screenshots/flights.png)
