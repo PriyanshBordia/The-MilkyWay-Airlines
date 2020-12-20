@@ -1,4 +1,4 @@
-# [The-MilkyWay-Airlines](https://priyanshbordia.github.io/The-MilkyWay-Airlines/)
+# [The MilkyWay Airlines](https://priyanshbordia.github.io/The-MilkyWay-Airlines)
 
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
