@@ -20,24 +20,24 @@ $ sh run.sh 1
 
 ### `Registeration Page`:
 
-![Register](/screenshots/register.png)
+![Register](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/register.png)
 
 ### `Login Page`:
 
-![Login](/screenshots/login.png)
+![Login](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/login.png)
 
 ### `Travel Page`:
 
-![Travel](/screenshots/travel.png)
+![Travel](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/travel.png)
 
 ### `Booking Page`:
 
-![Book](/screenshots/book.png)
+![Book](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/book.png)
 
 ### `Flights Details`:
 
-![Flight](/screenshots/flight.png)
+![Flight](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/flight.png)
 
 ### `Flights Page`:
 
-![Flights](/screenshots/flights.png)
+![Flights](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/blob/main/screenshots/flights.png)
