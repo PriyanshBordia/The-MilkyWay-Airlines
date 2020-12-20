@@ -3,7 +3,7 @@ language: python
 python:
     - "3.8"
 env:
-    - SECRET_KEY="this*is*a*secretkey"
+    - SECRET_KEY='b\xf5/\x95\xae}AA\x19\x84\r\x08-v\x08?\x8e\xb7\xdb\xd2\r\x15E\xa21'
 
 install:
     - pip3 install -r requirements.txt
