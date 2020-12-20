@@ -26,6 +26,8 @@
                 <select id = "food-select-menue" name="flight_id" title = "Origin -> Destination">
                     {% for flight in flights %}
                         <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                    {% empty %}
+                        <div class="alert alert-warning" role="alert">No Flight.!</div>
                     {% endfor %}
                 </select>
                 <br>
@@ -64,14 +66,17 @@
 
                 <select id = "hospitality-select-menue" name="hospitality">
                     <option value="" disabled selected=true style="color: gray;">Hospitality</option>
-                    <option value="">First Class</option>
-                    <option value="">Bussiness Class</option>
-                    <option value="">Economy Class</option>
+                    <option value="F">First Class</option>
+                    <option value="B">Bussiness Class</option>
+                    <option value="E">Economy Class</option>
                 </select>
+
                 <select  id = "food-select-menue" name="foods">
                     <option value="" disabled selected=true style="color: gray;">Cuisines</option>
                     {% for food in foods %}
                         <option value="{{ food.id }}">{{ food.name }}</option>
+                    {% empty %}
+                        <div class="alert alert-info" role="alert">No Food.!</div>
                     {% endfor %}
                 </select>
 

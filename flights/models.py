@@ -113,7 +113,7 @@ class Passenger(models.Model):
 
 class Bridge(models.Model):
 
-    user = models.ForeignKey(AuthenticationForm, on_delete=models.CASCADE, related_name="user")
+    # user = models.ForeignKey(auth, on_delete=models.CASCADE, related_name="user")
     passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=True)
 
 
