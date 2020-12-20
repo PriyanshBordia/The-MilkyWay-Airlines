@@ -2,14 +2,14 @@
 
 {% extends "flights/base.html" %}
 
-{% block title %}
+<!-- {% block title %}
     The MilkyWay Airlines
 {% endblock %}
 
 {% block head %}
-    <!--Icon-->
+    <!-- Icon -->
     <!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
-{% endblock %}
+{% endblock %} -->
 
 {% block body %}
     <div class="container container-fluid text-center mt-3 mr-auto ml-auto">
@@ -23,7 +23,7 @@
 
                 {% csrf_token %}
 
-                <select id = "food-select-menue" class = "custom-select custom-select-sm dropdown" name="flight_id" title = "Origin'" &#8651; '"'Destination">
+                <select id = "food-select-menue" name="flight_id" title = "Origin -> Destination">
                     {% for flight in flights %}
                         <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                     {% endfor %}
@@ -31,7 +31,7 @@
                 <br>
                 <br>
 
-                <h2>Passenger Details <i class = "fab fa-luggage fa-3x"</h2>
+                <h2>Passenger Details <img src="https://img.icons8.com/clouds/100/000000/passenger-with-baggage.png" /></h2>
                 <br>
                 <input id="first-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="First Name" name="first" required>
                 <input id="last-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
@@ -63,11 +63,13 @@
                 <br>
 
                 <select id = "hospitality-select-menue" name="hospitality">
-                    <option class="dropdown-item">First Class</option>
-                    <option class="dropdown-item">Bussiness Class</option>
-                    <option class="dropdown-item">Economy Class</option>
+                    <option value="" disabled selected=true style="color: gray;">Hospitality</option>
+                    <option value="">First Class</option>
+                    <option value="">Bussiness Class</option>
+                    <option value="">Economy Class</option>
                 </select>
                 <select  id = "food-select-menue" name="foods">
+                    <option value="" disabled selected=true style="color: gray;">Cuisines</option>
                     {% for food in foods %}
                         <option value="{{ food.id }}">{{ food.name }}</option>
                     {% endfor %}
@@ -75,7 +77,11 @@
 
                 <br>
 
-                <button class = "book-flight-button btn btn-outline-success mt-5">Book Flight.<i class="bi bi-arrow-bar-up"></i></button>
+                <button class="book-flight-button btn btn-outline-warning mt-5" type="reset">Reset</button>
+
+                <br>
+
+                <button class = "book-flight-button btn btn-outline-success mt-5" type="submit">Book Flight.</button>
             </form>
         <div>
     </div>

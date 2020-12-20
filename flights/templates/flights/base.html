@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Font Icons -->
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/3288abfe00.js" crossorigin="anonymous"></script>
 
         <!-- CSS -->
@@ -19,25 +18,15 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-
         {% load static %}
 
         <link href = "{% static 'flights/css/style.css' %}" rel = "stylesheet">
 
         {% block head %} {% endblock %}
 
-        <!--Icon-->
-    	<link href = "{% static  'flights/icons/icons8-traveler-80.png" rel = "icon">
-
+        <!-- Icon -->
+        <link rel = "icon" href="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />
         <title> | MilkyWay Airlines </title>
-        <!-- {% block title %}{% endblock %} -->
     </head>
     <body>
         <!--TODO: Add NavBar with: App Name, LogIn, LogOut, Register, etc-->
@@ -66,11 +55,8 @@
             </script>
         </section>
 
-
-        <footer class = "button">
-            &copy; 2020 MilkyWay Airlines, Inc.
-        </footer>
-        <div id = "social-handles">
+        <hr>
+        <div id = "social-handles" class="justify-content">
             <a href="https://github.com/PriyanshBordia" class="ml-3" target="_blank" title="PriyanshBordia"><i class = "fab fa-github fa"></i></a>
             <a href="mailto::priyanshbordia2@gmail.com" class="ml-3" target="_blank" title="priyanshbordia2"><i class = "fab fa-envelope fa"></i></a>
             <a href="https://www.linkedin.com/in/priyansh-b-81bb8218b/" class="ml-3" target="_blank" title="Priyansh B."><i class = "fab fa-linkedin fa"></i></a>
@@ -79,9 +65,14 @@
             <a href="#" class="ml-3" target="_blank" title = "GitBucket"><i class = "fab fa-bitbucket fa"></i></a>
             <a href="#" class="ml-3" target="_blank" title=""><i class = "fab fa-gitlab fa"></i></a>
             <a href="https://zombie-cul2164.slack.com" class="ml-3" target="_blank" title=""><i class = "fab fa-slack fa"></i></a>
-            <!-- <a href="#" class="ml-3" target="_blank" title=""><i class = "fab fa-discord fa"></i></a> -->
             <a href="#" class="ml-3" target="_blank" title=""><i class = "fab fa-telegram fa"></i></a>
             <a href="https://www.youtube.com/channel/UCwBlonvBFFd4UGvnnVKVncQ?view_as=subscriber" class="ml-3" target="_blank" title="Priyansh Bordia"><i class = "fab fa-youtube fa-"></i></a>
         </div>
+
+        <hr>
+        <footer class="button">
+            &copy; 2020 MilkyWay Airlines, Inc.
+        </footer>
+        
     </body>
 </html>
