@@ -1,0 +1,22 @@
+<!-- templates/flights/passenger.html -->
+
+{% extends "flights/base.html" %}
+
+{% block title %}
+    Passenger P{{ p_id }}MA
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="passenger">
+
+
+        {% for flight in %}
+
+        {% empty %}
+            <div class="alert alert-danger" role="alert">No Journey.</div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -26,7 +26,7 @@
 
         <!-- Icon -->
         <link rel = "icon" href="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />
-        <title> | MilkyWay Airlines </title>
+        <title> | MilkyWay Airlines {% block title %} {% endblock %}</title>
     </head>
     <body>
         <!--TODO: Add NavBar with: App Name, LogIn, LogOut, Register, etc-->
@@ -55,8 +55,9 @@
             </script>
         </section>
 
-        <hr>
-        <div id = "social-handles" class="justify-content">
+        <hr style="max-width:700px;">
+
+        <div id = "social-handles" class="justify-content-center">
             <a href="https://github.com/PriyanshBordia" class="ml-3" target="_blank" title="PriyanshBordia"><i class = "fab fa-github fa"></i></a>
             <a href="mailto::priyanshbordia2@gmail.com" class="ml-3" target="_blank" title="priyanshbordia2"><i class = "fab fa-envelope fa"></i></a>
             <a href="https://www.linkedin.com/in/priyansh-b-81bb8218b/" class="ml-3" target="_blank" title="Priyansh B."><i class = "fab fa-linkedin fa"></i></a>
@@ -69,7 +70,8 @@
             <a href="https://www.youtube.com/channel/UCwBlonvBFFd4UGvnnVKVncQ?view_as=subscriber" class="ml-3" target="_blank" title="Priyansh Bordia"><i class = "fab fa-youtube fa-"></i></a>
         </div>
 
-        <hr>
+        <hr style="max-width:700px;">
+
         <footer class="button">
             &copy; 2020 MilkyWay Airlines, Inc.
         </footer>

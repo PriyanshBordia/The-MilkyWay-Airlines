@@ -18,44 +18,6 @@ def travel(request):
         return render(request, "flights/travel.html", context={"flights": Flight.objects.all(), "foods": Food.objects.all()})
 
 
-def flight(request, flight_id):
-
-    try:
-        flight = Flight.objects.get(pk=flight_id)
-    except Flight.DoesNotExist:
-        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "DoesNotExist.!!"})
-
-    context = {
-        "flight": flight,
-        "passengers": flight.passengers.all(),
-    }
-    return render(request, "flights/flight.html", context)
-
-
-def flights(request):
-    try:
-        flights = Flight.objects.all()
-    except:
-        return render(request, "flights/error.html", context={"message": "Flights Does not exists!!", "type": "Does Not exists.!!"})
-
-    if (len(flights) == 0):
-        return render(request, "flights/success.html", context={"message": "NO Flights!!", "type": "Empty Set.!!"})
-
-    return render(request, "flights/flights.html", context = {"flights": flights})
-
-
-def passengers(request):
-    try:
-        passengers = Passenger.objects.all()
-    except:
-        return render(request, "flights/error.html", context={"message": "Passengers Do not exists!!", "type": "Does Not exists..!!"})
-
-    if (len(passengers) == 0):
-        return render(request, "flights/success.html", context={"message": "NO Passengers!!", "type": "Empty Set.!!"})
-
-    return render(request, "flights/passengers.html", context = {"passengers": passengers})
-
-
 def book(request):
 
     try:
@@ -121,7 +83,7 @@ def book(request):
         return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
 
     ph_no="000000000"
-    
+
     p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
     f = Flight.objects.filter()
 
@@ -142,8 +104,56 @@ def book(request):
     return HttpResponseRedirect(reverse("flight", args=(flight_id, )))
 
 
-def user(request, user_id):
+def flight(request, flight_id):
 
+    try:
+        flight = Flight.objects.get(pk=flight_id)
+    except Flight.DoesNotExist:
+        return render(request, "flights/error.html", context = {"message": "Flight Doesn't Exist!", "type": "DoesNotExist.!!"})
+
+    context = {
+        "flight": flight,
+        "passengers": flight.passengers.all(),
+    }
+    return render(request, "flights/flight.html", context)
+
+
+def flights(request):
+    try:
+        flights = Flight.objects.all()
+    except:
+        return render(request, "flights/error.html", context={"message": "Flights Does not exists!!", "type": "Does Not exists.!!"})
+
+    if (len(flights) == 0):
+        return render(request, "flights/success.html", context={"message": "NO Flights!!", "type": "Empty Set.!!"})
+
+    return render(request, "flights/flights.html", context = {"flights": flights})
+
+
+def passenger(request, p_id):
+   try:
+        passenger = Passenger.objects.get(pk=p_id)
+    except Passenger.DoesNotExist:
+        return render(request, "flights/error.html", context = {"message": "PAssenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+
+    return render(request, "flights/passenger.html", context = {"passenger": passenger})
+
+
+def passengers(request):
+    try:
+        passengers = Passenger.objects.all()
+    except:
+        return render(request, "flights/error.html", context={"message": "Passengers Do not exists!!", "type": "Does Not exists..!!"})
+
+    if (len(passengers) == 0):
+        return render(request, "flights/success.html", context={"message": "NO Passengers!!", "type": "Empty Set.!!"})
+
+    return render(request, "flights/passengers.html", context = {"passengers": passengers})
+
+
+def user(request):
+    user_id = request.user.id
+    
     try:
         user_details = Passenger.objects.get(pk=user_id)
     except Passenger.DoesNotExist:
@@ -152,13 +162,16 @@ def user(request, user_id):
     return render(request, "flights/user.html", context = {"user_details"})
 
 
-def reset(request):
+def users(request):
+    pass
 
+
+# 
+def reset(request):
     return render(request, "registration/password_reset_form.html", context = {})
 
-
+# Send E-mail Link
 def resetLink(request):
-
     send_mail(
     'Password Reset Link',
     'Hello.!, there below is the link where you can reset your password.',
