@@ -1,7 +1,7 @@
 language: python
 
 python:
-    - "3.9"
+    - "3.8"
 env:
     - SECRET_KEY='bxf5\{\(\{\ghjvmn\}\<\>\vyghvjh143376870x9xaeAA19x8x08fbx8exb7xdbxd2rx15Exa21'
 
