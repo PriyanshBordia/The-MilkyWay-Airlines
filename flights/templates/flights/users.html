@@ -1,0 +1,56 @@
+<!-- templates/flights/users.html -->
+
+{% extends "flights/base.html" %}
+
+{% block title %}
+    USERS
+{% endblock %}
+
+{% block head %}
+    <style>
+        .users {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+    <!-- Icon -->
+    <!-- <link href="{% static  'flights/icons/icons8-alert-80.png" rel="icon"> -->
+{% endblock %}
+
+{% block body %}
+<div class="users">
+    <br><br>
+    <span><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
+    <span><img src="https://img.icons8.com/bubbles/200/000000/user-female.png" /></span>
+    <hr>
+    <h2> Users </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>UIDMA</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Details</th>
+            <tr>
+        </thead>
+
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td><a class="btn btn-outline-warning btn-lg mt-2 mb-2 ml-2 mr-2" href="{% url 'userid' user.id %}" target="_blank" role="button">Show</a></td>
+            </tr>
+            {% empty %}
+            <div class="alert alert-success" role="alert">No Flight Onboard.</div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
