@@ -36,7 +36,7 @@
             {% for flight in flights %}
                 <li><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
             {% empty %}
-                <div class="alert alert-danger" role="alert">No Flighs.</div>
+                <div class="alert alert-danger" role="alert">No Fligths.</div>
             {% endfor %}
         </ul>
         <hr>

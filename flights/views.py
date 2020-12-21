@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 from django.core.mail import send_mail
 
-from .models import  Airport, Flight, Passenger, Food, Ticket, Bridge, Cancel
+from .models import  Airport, Flight, Passenger, Food, Ticket, Cancel
 
 
 # Create your views here.
@@ -178,11 +178,11 @@ def user(request):
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
 	try:
-		bridge = Bridge.objects.filter(user_id=user_id)
-	except bridge.DoesNotExist:
+		relatives = Passenger.objects.filter(user_id=user_id)
+	except relatives.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
-	return render(request, "flights/user.html", context = {"user_details": user_details, }) #"relatives": bridge.passengers.all()})
+	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
 
 def users(request):
@@ -205,14 +205,12 @@ def userid(request, user_id):
 	except user_details.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
-	# try:
-	# 	bridge = Bridge.objects.filter(user_id=user_id)
-	# except bridge.DoesNotExist:
-	# 	return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+	try:
+		relatives = Passenger.objects.filter(user_id=user_id)
+	except relatives.DoesNotExist:
+		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 	
-	# relatives = bridge.passengers.all()
-
-	return render(request, "flights/user.html", context = {"user_details": user_details, })
+	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
 # def logout
 # def login

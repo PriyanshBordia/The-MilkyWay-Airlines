@@ -101,6 +101,8 @@ class Passenger(models.Model):
     flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
     tickets = models.ManyToManyField(Ticket, related_name="journeys", blank=True)
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default=1)
+
     def __str__(self):
         return f"{self.first} {self.last}  {self.sex} {self.age}"
 
@@ -112,13 +114,12 @@ class Passenger(models.Model):
         # managed = False
 
 
-class Bridge(models.Model):
+# class Bridge(models.Model):
 
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default="0")
-    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=False)
+#     passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=False)
 
-    def __str__(self):
-        return f"{self.user_id}"
+#     def __str__(self):
+#         return f"{self.user_id}"
 
 
 class Cancel(models.Model):

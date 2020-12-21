@@ -3,7 +3,7 @@
 {% extends "flights/base.html" %}
 
 {% block title %}
-    Passenger P{{ p_id }}MA
+    Passenger UPIDMA{{ p_id }}
 {% endblock %}
 
 {% block head %}
@@ -11,10 +11,11 @@
         .passenger
         {
             max-width: 700px;
-            margin: 20px 20px 20px 20px;
-        }
+            margin: auto;
+            text-align: center;
+        }         
         li {
-            font-size: 20px;
+            font-size: 24px;
         }
     </style>
 {% endblock %}
@@ -22,7 +23,13 @@
 {% block body %}
     <div class="passenger">
 
-        <h1>Passenger P{{ passenger.id }}MA</h1>
+        {% if passenger.sex == 'M' %}
+            <span><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
+        {% else %}
+            <span><img src="https://img.icons8.com/bubbles/200/000000/user-female.png" /></span>
+        {% endif %}
+        <h1>Passenger UPIDMA{{ passenger.id }}</h1>
+        <hr>
         <br>
         <table>
             <thead>

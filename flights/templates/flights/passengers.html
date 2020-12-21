@@ -10,9 +10,9 @@
     <style media="screen">
         .passengers
         {
-            /* max-width: 600px; */
-            margin: 20px;
-            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
         }
     </style>
     <!--Icon-->
@@ -21,8 +21,12 @@
 
 {% block body %}
     <div class="passengers">
-        <h1>Passengers</h1>
-        <br>
+        <span style="float: left;"><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
+        <span style="float: right;"><img src="https://img.icons8.com/bubbles/200/000000/user-female.png" /></span>
+        <h1 class="mt-4">Passengers</h1>
+        
+        <br><br><br><br><br><br>
+        <hr>
         <table>
             <thead>
                 <tr>
@@ -44,7 +48,7 @@
                         <td>{{ passenger.sex }}</td>
                         <td>{{ passenger.age }}</td>
                         <td>{{ passenger.ph }}</td>
-                        <td class="journey"><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'userid' passenger.id %}" role="button">Check</a></td>
+                        <td class="journey"><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'passenger' passenger.id %}" role="button">Check</a></td>
                     </tr>
                   {% empty %}
                     <div class="alert alert-warning" role="alert">No Passenegers.</div>

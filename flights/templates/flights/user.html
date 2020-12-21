@@ -3,7 +3,7 @@
 {% extends "flights/base.html" %}
 
 {% block title %}
-    UUIDMA{{ user.id }}
+    UUIDMA{{ user_details.id }}
 {% endblock %}
 
 {% block head %}
@@ -60,6 +60,7 @@
                         <th>UPIDMA</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>E - mail</th>
                         <th>Details</th>
                     <tr>
                 </thead>
@@ -69,6 +70,7 @@
                             <td>{{ relative.id }}</td>
                             <td>{{ relative.first }}</td>
                             <td>{{ relative.last }}</td>
+                            <td>{{ relative.email }}</td>
                             <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url 'passenger' relative.id %}" role="button">Show</a></td>
                         </tr>
                     {% endfor %}
