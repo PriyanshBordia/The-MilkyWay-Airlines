@@ -11,6 +11,10 @@
         .passenger
         {
             max-width: 700px;
+            margin: 20px 20px 20px 20px;
+        }
+        li {
+            font-size: 20px;
         }
     </style>
 {% endblock %}
@@ -19,7 +23,7 @@
     <div class="passenger">
 
         <h1>Passenger P{{ passenger.id }}MA</h1>
-
+        <br>
         <table>
             <thead>
                 <tr>
@@ -43,9 +47,10 @@
                 </tr>
             </tbody>
         </table>
+        <br>
         <ul>
-            {% for flight in passenger.flights %}
-                <li>{{ flight }}</li>
+            {% for flight in flights %}
+                <li><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
             {% empty %}
                 <div class="alert alert-danger" role="alert">No Journey.</div>
             {% endfor %}

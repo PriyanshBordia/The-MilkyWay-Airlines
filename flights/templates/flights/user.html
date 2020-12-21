@@ -3,19 +3,27 @@
 {% extends "flights/base.html" %}
 
 {% block title %}
-    USER MA{{ passenger.id }}U
+    MA{{ passenger.id }}U
 {% endblock %}
 
 {% block head %}
     <style>
         .user
         {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
         }
 
-        h2 {
+        h2, h3, h4 {
             text-align: center;
+        }
+
+        h3 {
+            color: cadetblue;
+        }
+
+        h4 {
+            font-weight: lighter;
         }
     </style>
     <!-- Icon -->
@@ -25,21 +33,26 @@
 {% block body %}
     <div class="user">
         <br><br>
-        <img src="https://img.icons8.com/bubbles/500/000000/user-male.png" />
-        <hr>
-        <h2> User Details </h2>
         <div>
-            <span>First Name : {{ user_details.first }}</span>
-            <span>Last Name : {{ user_details.last }}</span>
+            <span style="float: left;"><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
+            <span style="float: right;"><img src="https://img.icons8.com/bubbles/200/000000/user-female.png" /></span>
         </div>
-         
+        
+        <!-- <hr> -->
+        <h2> User Details </h2>
+        <br>
         <div>
-            <span>E-mail: {{ user_details.email }}</span>
-            <span>Contact: {{ user_details.ph_no }}</span>
+            <h4><strong>First Name : </strong>{{ user_details.first }}</h4>
+            <h4><strong>Last Name : </strong>{{ user_details.last }}</h4> 
+            <h4><strong>E-mail : </strong> {{ user_details.email }}</h4> 
+            <h4><strong>Contact : </strong>{{ user_details.ph_no }}</h4>
         </div>
 
+        <br>
+        <hr>
         <h3>Passengers Details</h3>
-        <table>
+        <br>
+        <table class="center">
             <thead>
                 <tr>
                     <th>UPIDMA</th>
@@ -49,18 +62,18 @@
                 <tr>
             </thead>
 
-            <tbody>
-                {% for flight in user_details.flights %}
+            <!-- <tbody>
+                {% for relative in relatives %}
                     <tr>
-                        <td>{{ passenger.id }}</td>
-                        <td>{{ passenger.first }}</td>
-                        <td>{{ passenger.last }}</td>
-                        <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url 'passenger' passenger.id %}" role="button">Show</a></td>
+                        <td>{{ relative.id }}</td>
+                        <td>{{ relative.first }}</td>
+                        <td>{{ relative.last }}</td>
+                        <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url 'passenger' relative.id %}" role="button">Show</a></td>
                     </tr>
                 {% empty %}
                     <div class="alert alert-success" role="alert">No Flight Onboard.</div>
                 {% endfor %}
-            </tbody>
+            </tbody> -->
         </table>
     </div>
 

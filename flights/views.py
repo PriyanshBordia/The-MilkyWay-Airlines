@@ -152,7 +152,9 @@ def passenger(request, p_id):
 	except Passenger.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "Passenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
-	return render(request, "flights/passenger.html", context = {"passenger": passenger})
+	flights = passenger.flights.all()
+
+	return render(request, "flights/passenger.html", context = {"passenger": passenger, "flights": flights})
 
 
 def passengers(request):
@@ -179,10 +181,8 @@ def user(request):
 		bridge = Bridge.objects.filter(user_id=user_id)
 	except bridge.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
-	
-	relatives = bridge.passengers.all()
 
-	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
+	return render(request, "flights/user.html", context = {"user_details": user_details, }) #"relatives": bridge.passengers.all()})
 
 
 def users(request):
