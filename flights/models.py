@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
 import datetime
@@ -95,7 +96,7 @@ class Passenger(models.Model):
     sex = models.CharField(max_length=1, choices=options, blank=False, null=False, default='X')
 
     email = models.EmailField(blank=False, null=False, default='hard@mail.co')
-    ph_no = models.BigIntegerField(blank=True, null=True)
+    ph_no = models.BigIntegerField(blank=True, null=False, default=0000000)
 
     flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
     tickets = models.ManyToManyField(Ticket, related_name="journeys", blank=True)
@@ -113,13 +114,16 @@ class Passenger(models.Model):
 
 class Bridge(models.Model):
 
-    # user = models.ForeignKey(auth, on_delete=models.CASCADE, related_name="user")
-    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default="0")
+    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=False)
+
+    def __str__(self):
+        return f"{self.user_id}"
 
 
 class Cancel(models.Model):
 
-    ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation")
+    ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation", blank=False)
 
     def __str__(self):
         return f"{self.ticketID}"

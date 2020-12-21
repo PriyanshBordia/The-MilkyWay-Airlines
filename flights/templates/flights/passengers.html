@@ -22,7 +22,7 @@
 {% block body %}
     <div class="passengers">
         <h1>Passengers</h1>
-
+        <br>
         <table>
             <thead>
                 <tr>
@@ -44,7 +44,7 @@
                         <td>{{ passenger.sex }}</td>
                         <td>{{ passenger.age }}</td>
                         <td>{{ passenger.ph }}</td>
-                        <td class="journey"><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'user' passenger.id %}" role="button">Check</a></td>
+                        <td class="journey"><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'userid' passenger.id %}" role="button">Check</a></td>
                     </tr>
                   {% empty %}
                     <div class="alert alert-warning" role="alert">No Passenegers.</div>
@@ -53,3 +53,4 @@
         </table>
     </div>
 {% endblock %}
+

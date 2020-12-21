@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 
 from .models import Airport, Flight, Passenger, Food, Ticket
 
@@ -16,6 +16,8 @@ class ModelsTestCase(TestCase):
         Flight.objects.create(origin=a1, destination=a2, duration=100)
         Flight.objects.create(origin=a1, destination=a1, duration=200)
         Flight.objects.create(origin=a1, destination=a2, duration=-100)
+
+        Passenger.objects.create
 
     def test_departures_count(self):
         a = Airport.objects.get(code="AAA")
@@ -42,33 +44,33 @@ class ModelsTestCase(TestCase):
         f = Flight.objects.get(origin=a1, destination=a2, duration=-100)
         self.assertFalse(f.is_valid_flight())
 
-    # def test_index(self):
-    #     c = Client()
-    #
-    #     response = c.get("/")
-    #     self.assertEqual(response.status_code, 200)
-    #
-    # def test_valid_flights_page(self):
-    #     c = Client()
-    #
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTrue(response.context["flights"].count() < 10)
-    #
-    # def test_valid_flight_page(self):
-    #     a1 = Airport.objects.get(code="AAA")
-    #     f = Flight.objects.get(origin=a1, destination=a1)
-    #
-    #     c = Client()
-    #     response = c.get(f"/{f.id}")
-    #     self.assertEqual(response.status_code, 200)
-    #
-    # def test_valid_flight_page_passenger(self):
-    #     f = Flight.objects.get(pk=1)
-    #     p = Passenger.objects.create(first="Alice", last="Adams")
-    #
-    #     f.passengers.add(p)
-    #
-    #     c = Client()
-    #     response = c.get(f"/{f.id}")
-    #     self.assertEqual(request.status_code, 200)
-    #     self.assertEqual(request.context["passengers"].count(), 1)
+    def test_index(self):
+        c = Client()
+    
+        response = c.get("/")
+        self.assertEqual(response.status_code, 200)
+    
+    def test_valid_flights_page(self):
+        c = Client()
+    
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["flights"].count() < 10)
+    
+    def test_valid_flight_page(self):
+        a1 = Airport.objects.get(code="AAA")
+        f = Flight.objects.get(origin=a1, destination=a1)
+    
+        c = Client()
+        response = c.get(f"flight/{f.id}")
+        self.assertEqual(response.status_code, 200)
+    
+    def test_valid_flight_page_passenger(self):
+        f = Flight.objects.get(pk=1)
+        p = Passenger.objects.create(first="Alice", last="Adams")
+    
+        f.passengers.add(p)
+    
+        c = Client()
+        response = c.get(f"flight/{f.id}")
+        self.assertEqual(request.status_code, 200)
+        self.assertEqual(request.context["passengers"].count(), 1)

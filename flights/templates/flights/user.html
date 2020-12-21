@@ -2,56 +2,81 @@
 
 {% extends "flights/base.html" %}
 
-<!-- {% block title %} -->
-    <!-- MilkyWay Airlines User {{ passenger.id }} -->
-<!-- {% endblock %} -->
+{% block title %}
+    UUIDMA{{ user.id }}
+{% endblock %}
 
-<!-- {% block head %} -->
-    <!--Icon-->
+{% block head %}
+    <style>
+        .user
+        {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2, h3, h4 {
+            text-align: center;
+        }
+
+        h3 {
+            color: cadetblue;
+        }
+
+        h4 {
+            font-weight: lighter;
+        }
+    </style>
+    <!-- Icon -->
     <!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
-<!-- {% endblock %} -->
+{% endblock %}
 
 {% block body %}
-    <div class="container container-fluid">
-        <h2> User Details </h2>
-        First Name : {{ user_details.first }}
-        Last Name : {{ user_details.last }}
-        Age : {{ user_details.age }} Gender : {{ user_details.sex }}
+    <div class="user">
+        <br><br>
+        <div>
+            <span style="float: left;"><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
+            <span style="float: right;"><img src="https://img.icons8.com/bubbles/200/000000/user-female.png" /></span>
+        </div>
+        
+        <!-- <hr> -->
+        <span><h2>User Details </h2></span><span><h3>UUIDMA{{ user_details.id }}</h3></span>
+        <br>
+        <div>
+            <h4><strong>First Name : </strong>{{ user_details.first_name }}</h4>
+            <h4><strong>Last Name : </strong>{{ user_details.last_name }}</h4> 
+            <h4><strong>E-mail : </strong> {{ user_details.email }}</h4> 
+            <h4><strong>Contact : </strong>{{ user_details.ph_no }}</h4>
+        </div>
 
-        <h3>Travel Details</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>UIDMA</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>E-mail</th>
-                <tr>
-            </thead>
+        <br>
+        <hr>
+        <h3>Passengers Details</h3>
+        <br>
 
-            <tbody>
-                {% for flight in user_details.flights %}
+        {% if relatives %}
+            <table class="center">
+                <thead>
                     <tr>
-                        <td>{{ flight.id }}</td>
-                        <td>{{ flight.origin }}</td>
-                        <td>{{ flight.destination }}</td>
-                        <td>{{ flight.duration }}</td>
-                        <td>{{ passenger.sex }}</td>
-                        <td>{{ passenger.email }}</td>
-                    </tr>
-                {% empty %}
-                    <div class="alert alert-success" role="alert">No Flight Onboard.</div>
-                {% endfor %}
-            </tbody>
-        </table>
-
-        <ul>
-
-                <li>{{ flight }}</li>
-            {% endfor %}
-        </ul>
+                        <th>UPIDMA</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Details</th>
+                    <tr>
+                </thead>
+                <tbody>
+                    {% for relative in relatives %}
+                        <tr>
+                            <td>{{ relative.id }}</td>
+                            <td>{{ relative.first }}</td>
+                            <td>{{ relative.last }}</td>
+                            <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url 'passenger' relative.id %}" role="button">Show</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="alert alert-success" role="alert">No Passengers Onboard.</div>
+        {% endif %}
     </div>
 
 {% endblock %}

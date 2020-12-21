@@ -2,6 +2,59 @@
 - DB=postgresql
 - SH=bash
 
+
+<!-- {% block body %}
+<div class="user">
+    <br><br>
+    <img src="https://img.icons8.com/bubbles/500/000000/user-male.png" />
+    <hr>
+    <h2> User Details </h2>
+    <div>
+        <span>First Name : {{ user_details.first }}</span>
+        <span>Last Name : {{ user_details.last }}</span>
+    </div>
+
+    <div>
+        <span>Age : {{ user_details.age }}</span>
+        <span>Gender : {{ user_details.sex }}</span>
+    </div>
+
+    <div>
+        <span>E-mail: {{ user_details.email }}</span>
+        <span>Contact: {{ user_details.ph_no }}</span>
+    </div>
+    <h3>Travel Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>UFIDMA</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Duration</th>
+                <th>Gender</th>
+                <th>E-mail</th>
+            <tr>
+        </thead>
+
+        <tbody>
+            {% for flight in user_details.flights %}
+            <tr>
+                <td>{{ flight.id }}</td>
+                <td>{{ flight.origin }}</td>
+                <td>{{ flight.destination }}</td>
+                <td>{{ flight.duration }}</td>
+            </tr>
+            {% empty %}
+            <div class="alert alert-success" role="alert">No Flight Onboard.</div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %} -->
+
+
+
 <!-- <a class="nav-item nav-link mr-3" href="{% url 'user' id %}">User</a> -->
 
 

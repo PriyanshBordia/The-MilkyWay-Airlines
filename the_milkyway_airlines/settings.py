@@ -44,7 +44,7 @@ WHITENOISE_AUTOREFRESH = True
 
 ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com', '127.0.0.1']
 
-# ADMINS = []
+ADMINS = [('priyansh', 'priyanshbordia3@gmail.com')]
 
 # Application definition
 
@@ -107,6 +107,15 @@ DATABASES = {
         'PASSWORD': env('DB_PASSWORD'),
         'HOST': env('DB_HOST'),
         'PORT': env('DB_PORT'),
+    },
+
+    'local': {
+    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'airlines',
+        'USER': 'priyansh',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
