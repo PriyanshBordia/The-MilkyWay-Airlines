@@ -3,10 +3,12 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
 from django.core.mail import send_mail
 
-from .models import  Airport, Flight, Passenger, Food, Ticket
+from .models import  Airport, Flight, Passenger, Food, Ticket, Bridge, Cancel
+
 
 # Create your views here.
 
@@ -144,11 +146,11 @@ def flights(request):
 
 
 def passenger(request, p_id):
-    
+	
 	try:
 		passenger = Passenger.objects.get(pk=p_id)
 	except Passenger.DoesNotExist:
-		return render(request, "flights/error.html", context = {"message": "PAssenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+		return render(request, "flights/error.html", context = {"message": "Passenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
 	return render(request, "flights/passenger.html", context = {"passenger": passenger})
 
@@ -166,18 +168,33 @@ def passengers(request):
 
 
 def user(request):
+		
 	user_id = request.user.id
-	
 	try:
-		user_details = Passenger.objects.get(pk=user_id)
-	except Passenger.DoesNotExist:
-		return render(request, "flights/error.html", context = {"message": "PAssenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+		user_details = User.objects.get(pk=user_id)
+	except user_details.DoesNotExist:
+		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
-	return render(request, "flights/user.html", context = {"user_details"})
+	try:
+		bridge = Bridge.objects.filter(user_id=user_id)
+	except bridge.DoesNotExist:
+		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+	
+	relatives = bridge.passengers
+	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
 
 def users(request):
-	pass
+	
+	try:
+		users = User.objects.all()
+	except:
+		return render(request, "flights/error.html", context = {"message": "Users Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+	
+	if (len(users) == 0):
+		return render(request, "flights/error.html", context = {"message": "NO Users!", "type": "Empty Set.!!", })
+
+	return render(request, "flights/users.html", context = {"users": users})
 
 
 # 

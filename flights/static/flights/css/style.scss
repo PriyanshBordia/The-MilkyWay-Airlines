@@ -32,17 +32,17 @@ a
 
 h1
 {
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
     color : #428bca;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-h1:hover
+h1:hover, h2:hover
 {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     background-color: white;
-    color: #d1bfa7;
-
+    color: #7dce94;
+    font-weight: lighter;
 }
 
 h2, .home-head
@@ -50,9 +50,16 @@ h2, .home-head
     color: #ff0000;
 }
 
-h6
+h5
 {
     color: #c2dde6;
+    font-weight: lighter;
+}
+
+h5:hover
+{
+    color: #3bc9f8;
+    font-weight: bolder;
 }
 
 #username

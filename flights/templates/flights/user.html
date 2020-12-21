@@ -2,56 +2,66 @@
 
 {% extends "flights/base.html" %}
 
-<!-- {% block title %} -->
-    <!-- MilkyWay Airlines User {{ passenger.id }} -->
-<!-- {% endblock %} -->
+{% block title %} -->
+    MA{{ passenger.id }}U
+{% endblock %}
 
-<!-- {% block head %} -->
-    <!--Icon-->
-    <!-- <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon"> -->
-<!-- {% endblock %} -->
+{% block head %}
+    <style>
+        .user
+        {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <!-- Icon -->
+    <link href = "{% static  'flights/icons/icons8-alert-80.png" rel = "icon">
+{% endblock %}
 
 {% block body %}
-    <div class="container container-fluid">
+    <div class="user">
+        <br><br>
+        <img src="https://img.icons8.com/bubbles/500/000000/user-male.png" />
+        <hr>
         <h2> User Details </h2>
-        First Name : {{ user_details.first }}
-        Last Name : {{ user_details.last }}
-        Age : {{ user_details.age }} Gender : {{ user_details.sex }}
+        <div>
+            <span>First Name : {{ user_details.first }}</span>
+            <span>Last Name : {{ user_details.last }}</span>
+        </div>
+         
+        <div>
+            <span>E-mail: {{ user_details.email }}</span>
+            <span>Contact: {{ user_details.ph_no }}</span>
+        </div>
 
-        <h3>Travel Details</h3>
+        <h3>Passengers Details</h3>
         <table>
             <thead>
                 <tr>
-                    <th>UIDMA</th>
+                    <th>UPIDMA</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>E-mail</th>
+                    <th>Details</th>
                 <tr>
             </thead>
 
             <tbody>
                 {% for flight in user_details.flights %}
                     <tr>
-                        <td>{{ flight.id }}</td>
-                        <td>{{ flight.origin }}</td>
-                        <td>{{ flight.destination }}</td>
-                        <td>{{ flight.duration }}</td>
-                        <td>{{ passenger.sex }}</td>
-                        <td>{{ passenger.email }}</td>
+                        <td>{{ passenger.id }}</td>
+                        <td>{{ passenger.first }}</td>
+                        <td>{{ passenger.last }}</td>
+                        <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url passenger {{ passenger.id }} %}" role="button">Show</a></td>
                     </tr>
                 {% empty %}
                     <div class="alert alert-success" role="alert">No Flight Onboard.</div>
                 {% endfor %}
             </tbody>
         </table>
-
-        <ul>
-
-                <li>{{ flight }}</li>
-            {% endfor %}
-        </ul>
     </div>
 
 {% endblock %}
