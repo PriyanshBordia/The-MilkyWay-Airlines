@@ -1,9 +1,9 @@
 language: python
 
 python:
-    - "3.8"
+    - "3.9"
 env:
-    - SECRET_KEY='bxf5{({ghjvmn}<>vyghvjh143376870x9xaeAA19x8x08fbx8exb7xdbxd2rx15Exa21'
+    - SECRET_KEY='bxf5\{\(\{\ghjvmn\}\<\>\vyghvjh143376870x9xaeAA19x8x08fbx8exb7xdbxd2rx15Exa21'
 
 install:
     - pip3 install -r requirements.txt
