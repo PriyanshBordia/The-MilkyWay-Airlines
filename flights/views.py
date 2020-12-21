@@ -198,23 +198,24 @@ def users(request):
 	return render(request, "flights/users.html", context = {"users": users})
 
 
-def userid(request, user_id):
-		
+def userid(request, user_id):	
+	
 	try:
 		user_details = User.objects.get(pk=user_id)
 	except user_details.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
-	try:
-		bridge = Bridge.objects.filter(user_id=user_id)
-	except bridge.DoesNotExist:
-		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+	# try:
+	# 	bridge = Bridge.objects.filter(user_id=user_id)
+	# except bridge.DoesNotExist:
+	# 	return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 	
-	relatives = bridge.passengers.all()
+	# relatives = bridge.passengers.all()
 
-	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
+	return render(request, "flights/user.html", context = {"user_details": user_details, })
 
-
+# def logout
+# def login
 # 
 def reset(request):
 	return render(request, "registration/password_reset_form.html", context = {})

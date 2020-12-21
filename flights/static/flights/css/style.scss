@@ -22,7 +22,7 @@ body
 
 .navbar-brand
 {
-   font-size: 24px !important;
+   font-size: 30px !important;
 }
 
 .nav-item
@@ -52,7 +52,8 @@ h1:hover, h2:hover
 
 h2, .home-head
 {
-    color: #ff0000;
+    color: #ff0000e1;
+    font-weight: 400;
 }
 
 h5
@@ -69,7 +70,7 @@ h5:hover
 
 #username
 {
-    color: #eeff07;
+    color: #00e1ffda;
 }
 
 #first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date

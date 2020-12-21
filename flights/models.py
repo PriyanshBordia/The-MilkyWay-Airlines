@@ -115,7 +115,7 @@ class Passenger(models.Model):
 class Bridge(models.Model):
 
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default="0")
-    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=True)
+    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=False)
 
     def __str__(self):
         return f"{self.user_id}"
@@ -123,7 +123,7 @@ class Bridge(models.Model):
 
 class Cancel(models.Model):
 
-    ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation")
+    ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation", blank=False)
 
     def __str__(self):
         return f"{self.ticketID}"

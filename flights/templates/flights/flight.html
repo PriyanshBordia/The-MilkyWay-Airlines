@@ -28,43 +28,37 @@
         </ul>
         <hr>
         <h1><img src="https://img.icons8.com/officel/40/000000/passenger.png" />&nbsp;Passengers</h1>
-        <!-- <ul>
-            {% for passenger in passengers %}
-                <li>{{ passenger }}</li>
-            
-            {% endfor %}
-        </ul>
-        <hr> -->
 
-        <table>
-            <thead>
-                <tr>
-                    <th>UIDMA</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>E-mail</th>
-                <tr>
-            </thead>
-            
-            <tbody>
-                {% for passenger in passengers %}
+        {% if passengers %}
+            <table>
+                <thead>
                     <tr>
-                        <td>{{ passenger.id }}</td>
-                        <td>{{ passenger.first }}</td>
-                        <td>{{ passenger.last }}</td>
-                        <td>{{ passenger.age }}</td>
-                        <td>{{ passenger.sex }}</td>
-                        <td>{{ passenger.email }}</td>
-                    </tr>
-                {% empty %}
-                    <div class="alert alert-success" role="alert">No Passenegers Onboard.</div>
-                {% endfor %}
-            </tbody>
-        </table>
+                        <th>UIDMA</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>E-mail</th>
+                    <tr>
+                </thead>
+                
+                <tbody>
+                    {% for passenger in passengers %}
+                        <tr>
+                            <td>{{ passenger.id }}</td>
+                            <td>{{ passenger.first }}</td>
+                            <td>{{ passenger.last }}</td>
+                            <td>{{ passenger.age }}</td>
+                            <td>{{ passenger.sex }}</td>
+                            <td>{{ passenger.email }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="alert alert-success" role="alert">No Passenegers Onboard.</div>
+        {% endif %}
 
-        <a href="{% url 'travel' %}" class="form-control register-action-button btn btn-outline-info mt-5 mb-3" role="button">Book Another Ticket</a>
-
+        <a href="{% url 'travel' %}" class="form-control register-action-button btn btn-outline-info mt-3 mb-3 ml-3 mr-3" role="button">Book Another Ticket</a>
     </div>
 {% endblock %}
