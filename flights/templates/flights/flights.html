@@ -1,16 +1,27 @@
 {% extends "flights/base.html" %}
 
 {% block title %}
-    MilkyWay Airlines Flights Details
+    Flights
 {% endblock %}
 
 {% block head %}
     <style media="screen">
         .flights
         {
-            max-width: 600px;
+            max-width: 700px;
             margin: 20px;
             padding: 30px;
+        }
+
+        .flights a
+        {
+            font-size: 20px;
+            margin: 20px;
+            color: darkred;
+        }
+        .flights a:hover
+        {
+            color: blueviolet;
         }
     </style>
     <!--Icon-->
@@ -24,6 +35,8 @@
         <ul>
             {% for flight in flights %}
                 <li><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
+            {% empty %}
+                <div class="alert alert-danger" role="alert">No Flighs.</div>
             {% endfor %}
         </ul>
         <hr>

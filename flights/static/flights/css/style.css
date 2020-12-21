@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif cursive;
+  border-bottom: 2px solid black;
 }
 
 .navbar-brand {
@@ -18,7 +19,8 @@ h1 {
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
-  color: #bd8c7d;
+  color: #428bca;
+  margin-bottom: 20px;
 }
 
 h1:hover {
@@ -151,7 +153,7 @@ h6 {
 
 table, tr, th, td {
   margin: 10px 10px 10px 10px;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   text-align: center;
   border: 2px solid #bd8c7d;
 }
@@ -162,11 +164,20 @@ th {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+tbody tr:nth-child(even) {
+  background: #f0f0f0;
+}
+
 td {
-  color: cadetblue;
+  color: #395870;
   font-size: 1.5;
   font-weight: 1.5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alert {
+  text-align: center;
+  font-size: 24px;
 }
 
 /*Social Media handles*/

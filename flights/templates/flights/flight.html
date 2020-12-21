@@ -4,27 +4,22 @@
 {% load static %}
 
 {% block title %}
-    MilkyWay Airlines Flight {{ flight.id }}
+    Flight MA{{ flight.id }}
 {% endblock %}
 
 {% block head %}
     <style media="screen">
-        .flight-body
+        .flight
         {
             margin: 20px;
             padding: 20px;
             max-width: 800px;
         }
-        h1
-        {
-            color : #428bca;
-            margin-bottom: 20px;
-        }
     </style>
 {% endblock %}
 
 {% block body %}
-    <div class="flight-body">
+    <div class="flight">
         <h1><img src="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />&nbsp;Flight {{ flight.id }}MA</h1>
         <ul>
             <li><strong>Origin: </strong>{{ flight.origin }}</li>

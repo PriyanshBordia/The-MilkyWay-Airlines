@@ -16,6 +16,10 @@ class Airport(models.Model):
 
     def is_valid_airport(self):
         return (len(self.code) > 0 and len(self.city) > 0 and len(self.country) > 0)
+    
+    # class Meta:
+    #     db_table = 'Airport'
+    #     managed = False
 
 
 class Flight(models.Model):
@@ -36,6 +40,9 @@ class Flight(models.Model):
     def is_valid_flight(self):
         return ((self.origin != self.destination) and (self.duration > 0) and (self.origin_date < self.destination_date))
 
+    # class Meta:
+    #     db_table = 'Flight'
+    #     managed = False
 
 class Food(models.Model):
 
@@ -47,6 +54,10 @@ class Food(models.Model):
 
     def is_valid_food(self):
         return (self.price > 0 and len(self.name) > 0)
+    
+    # class Meta:
+        # db_table = 'Food'
+        # managed = False
 
 
 class Ticket(models.Model):
@@ -67,6 +78,10 @@ class Ticket(models.Model):
 
     def __str__(self):
         return f"{self.hospitality}{self.seat}{self.id}"
+    
+    # class Meta:
+        # db_table = 'Ticket'
+        # managed = False
 
 
 class Passenger(models.Model):
@@ -90,6 +105,17 @@ class Passenger(models.Model):
 
     def is_valid_passenger(self):
         return (self.age > 0 and len(self.first) > 0)
+    
+    # class Meta:
+        # db_table = 'Passenger'
+        # managed = False
+
+
+class Bridge(models.Model):
+
+    # user = models.ForeignKey(auth, on_delete=models.CASCADE, related_name="user")
+    passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=True)
+
 
 class Cancel(models.Model):
 
