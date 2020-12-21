@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Airport, Flight, Passenger, Food, Ticket, Bridge, Cancel
+from .models import Airport, Flight, Passenger, Food, Ticket, Cancel
 
 class PassengerInline(admin.StackedInline):
     model = Passenger.flights.through
@@ -19,6 +19,5 @@ admin.site.register(Flight, FlightAdmin)
 admin.site.register(Passenger)
 admin.site.register(Food)
 admin.site.register(Ticket)
-admin.site.register(Bridge)
 admin.site.register(Cancel)
 
