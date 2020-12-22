@@ -6,6 +6,11 @@
     Register
 {% endblock %}
 
+{% block head %}
+    <style>
+    </style>
+{% endblock %}
+
 {% block body %}
 
     <div class="container container-fluid text-center  mt-4 ml-auto mr-auto">
@@ -13,8 +18,8 @@
 
             <h2 class="register-action-head mt-4">You register and will be a part of our family.</h2>
 
-            <form method="post">
-                <div class="form-group mt-3 mb-2 pt-3">
+            <form method="post" class="form-group">
+                <div class="mt-3 mb-2 pt-3">
 
                     {% csrf_token %}
 

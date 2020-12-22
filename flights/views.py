@@ -5,8 +5,6 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
-from django.core.mail import send_mail
-
 from .models import  Airport, Flight, Passenger, Food, Ticket, Cancel
 
 
@@ -212,18 +210,24 @@ def userid(request, user_id):
 	
 	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
+
 # def logout
 # def login
-# 
-def reset(request):
-	return render(request, "registration/password_reset_form.html", context = {})
+# reset
+
 
 # Send E-mail Link
-def resetLink(request):
-	send_mail(
-	'Password Reset Link',
-	'Hello.!, there below is the link where you can reset your password.',
-	'19ucs257@lnmiit.ac.in',
-	'19uec117@lnmiit.ac.in',
-	fail_silently=False,
-)
+# def resetLink(request):
+
+# 	try:
+# 		to = str(request.POST.get('email'))
+# 	except KeyError:
+# 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
+
+# 	sendmail(
+# 	'Password Reset Link MWay Airlines',
+# 	'Hello.!, there below is the link where you can reset your password.',
+# 	'19ucs257@lnmiit.ac.in',
+# 	to,
+# 	fail_silently=False,
+# )

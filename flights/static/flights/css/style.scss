@@ -1,5 +1,6 @@
 $form-width: 700px;
 $form-btn-size-sm: 2.5in;
+$form-btn-size-md: 3in;
 $form-btn-size-lg: 3.5in;
 $font-lg: 24;
 $font-md: 20;
@@ -68,9 +69,27 @@ h5:hover
     font-weight: bolder;
 }
 
+label 
+{
+    color: seagreen;
+    font-size: 24px;
+}
+
+.helptext, li
+{
+    display: block;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    color: red;
+    background-color: rgba(255, 238, 0, 0.466);
+    font-size: 22px;
+    font-weight: lighter;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 #username
 {
-    color: #00e1ffda;
+    color: seagreen;
 }
 
 #first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date
@@ -130,7 +149,7 @@ h5:hover
 
 .login-action-button
 {
-    width: $form-btn-size-sm;
+    width: $form-btn-size-md;
     text-decoration: none !important;
 }
 
@@ -178,6 +197,13 @@ h5:hover
 {
     margin: auto;
     font-size: $font-md;
+}
+
+.reset-password-action-text
+{
+    margin: auto;
+    font-size: 22px;
+    color: #bd8c7d;
 }
 
 /* Error Message */

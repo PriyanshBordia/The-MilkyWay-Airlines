@@ -13,6 +13,6 @@ urlpatterns = [
     path("user", views.user, name="user"),
     path("users", views.users, name="users"),
     path("userid/<int:user_id>", views.userid, name="userid"),
-    path("reset", views.reset, name="reset"),
-    path("resetLink", views.resetLink, name="resetLink"),
+    # path("reset", views.reset, name="reset"),
+    # path("resetLink", views.resetLink, name="resetLink"),
 ]
