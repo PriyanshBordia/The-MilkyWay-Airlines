@@ -49,6 +49,21 @@ h5:hover {
   font-weight: bolder;
 }
 
+label {
+  color: seagreen;
+  font-size: 24px;
+}
+
+.helptext, li {
+  display: block;
+  margin: 10px 10px 10px 10px;
+  color: red;
+  background-color: rgba(255, 238, 0, 0.466);
+  font-size: 22px;
+  font-weight: lighter;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 #username {
   color: #00e1ffda;
 }
@@ -101,7 +116,7 @@ h5:hover {
 }
 
 .login-action-button {
-  width: 2.5in;
+  width: 3in;
   text-decoration: none !important;
 }
 
@@ -142,6 +157,12 @@ h5:hover {
 .login-action-head, .register-action-head, .form-home-head, .reset-password-action-head {
   margin: auto;
   font-size: 20;
+}
+
+.reset-password-action-text {
+  margin: auto;
+  font-size: 22px;
+  color: #bd8c7d;
 }
 
 /* Error Message */
