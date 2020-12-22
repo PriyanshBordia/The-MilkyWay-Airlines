@@ -1,8 +1,7 @@
-# The-MilkyWay-Airlines
+# [The MilkyWay Airlines](https://github.com/PriyanshBordia/The-MilkyWay-Airlines)
 
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
-[![Documentation Status](https://readthedocs.org/projects/the-milkyway-airlines/badge/?version=latest)](https://the-milkyway-airlines.readthedocs.io/en/latest/?badge=latest)
 
 
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
@@ -21,24 +20,24 @@ $ sh run.sh 1
 
 ### `Registeration Page`:
 
-![Register](../screenshots/register.png)
+![Register](https://priyanshbordia.github.io/screenshots/register.png)
 
 ### `Login Page`:
 
-![Login](../screenshots/login.png)
+![Login](https://priyanshbordia.github.io/screenshots/login.png)
 
 ### `Travel Page`:
 
-![Travel](../screenshots/travel.png)
+![Travel](https://priyanshbordia.github.io/screenshots/travel.png)
 
 ### `Booking Page`:
 
-![Book](../screenshots/book.png)
+![Book](https://priyanshbordia.github.io/screenshots/book.png)
 
 ### `Flights Details`:
 
-![Flight](../screenshots/flight.png)
+![Flight](https://priyanshbordia.github.io/screenshots/flight.png)
 
 ### `Flights Page`:
 
-![Flights](../screenshots/flights.png)
+![Flights](https://priyanshbordia.github.io/screenshots/flights.png)
