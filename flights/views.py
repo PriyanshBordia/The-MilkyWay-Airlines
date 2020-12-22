@@ -95,7 +95,7 @@ def book(request):
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
 
-	ph_no="000000000"
+	ph_no= "9378214503" + str(flight_id * 10 % request.user.id)
 
 	p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 	f = Flight.objects.filter()
