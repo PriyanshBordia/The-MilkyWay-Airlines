@@ -79,6 +79,7 @@ label
 {
     display: block;
     margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     color: red;
     background-color: rgba(255, 238, 0, 0.466);
     font-size: 22px;
@@ -88,7 +89,7 @@ label
 
 #username
 {
-    color: #00e1ffda;
+    color: seagreen;
 }
 
 #first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date
