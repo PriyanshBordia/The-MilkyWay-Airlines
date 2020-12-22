@@ -82,20 +82,21 @@ def book(request):
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
 
-	
+
 	try:
 		hospitality = str(request.POST.get("hospitality"))
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
 
 	hospitality = hospitality[0]
-	
+
 	try:
 		food = int(request.POST.get("foods"))
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
 
-	ph_no= "9378214503" + str(flight_id * 10 % request.user.id)
+	ph_no= str(9378214503 + flight_id * 10 % request.user.id)
+
 
 	p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
 	f = Flight.objects.filter()
@@ -144,7 +145,7 @@ def flights(request):
 
 
 def passenger(request, p_id):
-	
+
 	try:
 		passenger = Passenger.objects.get(pk=p_id)
 	except Passenger.DoesNotExist:
@@ -168,7 +169,7 @@ def passengers(request):
 
 
 def user(request):
-		
+
 	user_id = request.user.id
 	try:
 		user_details = User.objects.get(pk=user_id)
@@ -184,20 +185,20 @@ def user(request):
 
 
 def users(request):
-	
+
 	try:
 		users = User.objects.all()
 	except:
 		return render(request, "flights/error.html", context = {"message": "Users Doesn't Exist!", "type": "Value DoesNotExist.!!", })
-	
+
 	if (len(users) == 0):
 		return render(request, "flights/error.html", context = {"message": "NO Users!", "type": "Empty Set.!!", })
 
 	return render(request, "flights/users.html", context = {"users": users})
 
 
-def userid(request, user_id):	
-	
+def userid(request, user_id):
+
 	try:
 		user_details = User.objects.get(pk=user_id)
 	except user_details.DoesNotExist:
@@ -207,7 +208,7 @@ def userid(request, user_id):
 		relatives = Passenger.objects.filter(user_id=user_id)
 	except relatives.DoesNotExist:
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
-	
+
 	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
 
