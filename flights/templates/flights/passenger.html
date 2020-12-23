@@ -55,7 +55,6 @@
             </tbody>
         </table>
         
-<<<<<<< Updated upstream
         <!-- <br> -->
         <!-- {% if non_flights %}
             <form class="form-group"  action="{% url 'bookid' passenger.id %}" method="POST">
@@ -77,29 +76,7 @@
         {% endif %} -->
 
         <br>
-=======
-        <br>
-        {% if non_flights %}
-            <form class="form-group"  action="{% url 'bookid' passenger.id %}" method="POST">
-                
-                {% csrf_token %}
 
-                <select id="flight-select-menue" name="flight_id" title="Origin -> Destination">
-                    {% for flight in non_flights %}
-                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                    {% empty %}
-                        <div class="alert alert-warning" role="alert">No Flight.!</div>
-                    {% endfor %}
-                </select>
-                <br>
-                <button class="book-flight-button btn btn-outline-success mt-5" type="submit">Book Flight.</button>
-            </form>
-        {% else %}
-            <div class="alert alert-success" role="alert"> No flight to Book </div>
-        {% endif %}
-
-        <br>
->>>>>>> Stashed changes
         <hr>
         <h2>Journey</h2>
         <ul>
