@@ -23,7 +23,7 @@
 
                 {% csrf_token %}
 
-                <select id = "food-select-menue" name="flight_id" title = "Origin -> Destination">
+                <select id = "flight-select-menue" name="flight_id" title = "Origin -> Destination">
                     {% for flight in flights %}
                         <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                     {% empty %}

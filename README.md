@@ -29,7 +29,8 @@ $ sh run.sh 1
 
 ### `Travel Page`:
 
-![Travel](./screenshots/travel.png)
+![Travel](./screenshots/travel1.png)
+![Travel](./screenshots/travel2.png)
 
 ### `Booking Page`:
 
@@ -42,3 +43,19 @@ $ sh run.sh 1
 ### `Flights Page`:
 
 ![Flights](./screenshots/flights.png)
+
+### `Users Details`:
+
+![User](./screenshots/user.png)
+
+### `Users Page`:
+
+![Users](./screenshots/users.png)
+
+### `Passengers Details`:
+
+![Flight](./screenshots/passenger.png)
+
+### `Passengers Page`:
+
+![Flights](./screenshots/passengers.png)
