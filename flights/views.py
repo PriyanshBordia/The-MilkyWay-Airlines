@@ -117,6 +117,9 @@ def book(request):
 	return HttpResponseRedirect(reverse("flight", args=(flight_id, )))
 
 
+def bookid(request, p_id):
+	pass
+
 def flight(request, flight_id):
 
 	try:
@@ -151,8 +154,9 @@ def passenger(request, p_id):
 		return render(request, "flights/error.html", context = {"message": "Passenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
 	flights = passenger.flights.all()
+	non_flights = Flight.objects.exclude(flights=flights).all()
 
-	return render(request, "flights/passenger.html", context = {"passenger": passenger, "flights": flights})
+	return render(request, "flights/passenger.html", context = {"passenger": passenger, "flights": flights, "non_flights": non_flights})
 
 
 def passengers(request):
@@ -211,23 +215,18 @@ def userid(request, user_id):
 	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
 
 
-# def logout
-# def login
-# reset
-
-
 # Send E-mail Link
-# def resetLink(request):
+def resetLink(request):
 
-# 	try:
-# 		to = str(request.POST.get('email'))
-# 	except KeyError:
-# 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
+	try:
+		to = str(request.POST.get('email'))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
 
-# 	sendmail(
-# 	'Password Reset Link MWay Airlines',
-# 	'Hello.!, there below is the link where you can reset your password.',
-# 	'19ucs257@lnmiit.ac.in',
-# 	to,
-# 	fail_silently=False,
-# )
+	sendmail(
+	'Password Reset Link MWay Airlines',
+	'Hello.!, there below is the link where you can reset your password.',
+	'19ucs257@lnmiit.ac.in',
+	to,
+	fail_silently=False,
+)
