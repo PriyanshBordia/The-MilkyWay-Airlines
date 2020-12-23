@@ -27,14 +27,15 @@ $ sh run.sh 1
 
 ![Login](./screenshots/login.png)
 
+### `Booking Page`:
+
+![Book](./screenshots/book.png)
+
 ### `Travel Page`:
 
 ![Travel](./screenshots/travel1.png)
 ![Travel](./screenshots/travel2.png)
 
-### `Booking Page`:
-
-![Book](./screenshots/book.png)
 
 ### `Flights Details`:
 
