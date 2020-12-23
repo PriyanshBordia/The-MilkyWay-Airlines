@@ -64,9 +64,12 @@ label {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.helptext:hover, li:hover {
+.helptext:hover, li:hover, li a:hover {
   color: #0e4355;
   background-color: white;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
 }
 
 li {
