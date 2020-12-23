@@ -57,8 +57,8 @@ label {
 .helptext, li {
   display: block;
   margin: 10px 10px 10px 10px;
-  color: red;
-  background-color: #3bc9f8;
+  color: rgba(238, 255, 0, 0.692);
+  background-color: #0e4355;
   font-size: 22px;
   font-weight: lighter;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
