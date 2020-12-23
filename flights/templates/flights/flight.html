@@ -1,7 +1,6 @@
 <!-- templates/flights/flight.html -->
-{% extends "flights/base.html" %}
 
-{% load static %}
+{% extends "flights/base.html" %}
 
 {% block title %}
     Flight MA{{ flight.id }}
@@ -26,6 +25,9 @@
             <li><strong>Origin: </strong>{{ flight.origin }}</li>
             <li><strong>Destination: </strong> {{ flight.destination }}</li>
             <li><strong>Duration: </strong> {{ flight.duration }}</li>
+            <li><strong>Capacity: </strong> {{ flight.capacity }}</li>
+            <li><strong>Departure: </strong> {{ flight.origin_date }}</li>
+            <li><strong>Arrival: </strong> {{ flight.destination_date }}</li>
         </ul>
         <hr>
         <h1><img src="https://img.icons8.com/officel/40/000000/passenger.png" />&nbsp;Passengers</h1>

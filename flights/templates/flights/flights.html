@@ -1,3 +1,5 @@
+<!-- templates/flights/flights.html -->
+
 {% extends "flights/base.html" %}
 
 {% block title %}
@@ -8,9 +10,22 @@
     <style media="screen">
         .flights
         {
-            max-width: 700px;
-            margin: 20px;
-            padding: 30px;
+            max-width: 800px;
+            margin: 20px 20px 20px 20px;
+            padding: 20px 20px 20px 20px;
+        }
+
+        li:hover
+        {
+            color: #0e4355;
+            background-color: rgb(255, 255, 255); 
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+        a:hover
+        {
+            color: #0e4355;
+            background-color: whitesmoke;
         }
     </style>
     <!--Icon-->
@@ -19,7 +34,7 @@
 
 {% block body %}
     <div class="flights">
-        <h1>Flights</h1>
+        <h1><img src="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />&nbsp;Flights</h1>
         <hr>
         <ul>
             {% for flight in flights %}
