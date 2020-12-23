@@ -54,14 +54,19 @@ label {
   font-size: 24px;
 }
 
-.helptext, li {
+.helptext, li, li a {
   display: block;
   margin: 10px 10px 10px 10px;
-  color: rgba(238, 255, 0, 0.692);
+  color: white;
   background-color: #0e4355;
   font-size: 22px;
   font-weight: lighter;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.helptext:hover, li:hover {
+  color: #0e4355;
+  background-color: white;
 }
 
 li {

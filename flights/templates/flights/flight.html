@@ -21,6 +21,7 @@
 {% block body %}
     <div class="flight">
         <h1><img src="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />&nbsp;Flight {{ flight.id }}MA</h1>
+        <br>
         <ul>
             <li><strong>Origin: </strong>{{ flight.origin }}</li>
             <li><strong>Destination: </strong> {{ flight.destination }}</li>
@@ -28,7 +29,7 @@
         </ul>
         <hr>
         <h1><img src="https://img.icons8.com/officel/40/000000/passenger.png" />&nbsp;Passengers</h1>
-
+        <br>
         {% if passengers %}
             <table>
                 <thead>

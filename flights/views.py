@@ -155,9 +155,9 @@ def passenger(request, p_id):
 		return render(request, "flights/error.html", context = {"message": "Passenger Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
 	flights = passenger.flights.all()
-	non_flights = Flight.objects.exclude(flights=flights).all()
+	# non_flights = Flight.objects.exclude(flights=flights).all()
 
-	return render(request, "flights/passenger.html", context = {"passenger": passenger, "flights": flights, "non_flights": non_flights})
+	return render(request, "flights/passenger.html", context = {"passenger": passenger, "flights": flights}) #"non_flights": non_flights})
 
 
 def passengers(request):
