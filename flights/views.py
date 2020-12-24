@@ -95,7 +95,7 @@ def book(request):
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
 
-	ph_no= (9378214503 + flight_id * 10 % request.user.id)
+	ph_no = (9378214503 + flight_id * 10 % request.user.id)
 
 
 	p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
@@ -202,6 +202,58 @@ def users(request):
 
 
 def userid(request, user_id):
+
+	try:
+		user_details = User.objects.get(pk=user_id)
+	except user_details.DoesNotExist:
+		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+
+	try:
+		relatives = Passenger.objects.filter(user_id=user_id)
+	except relatives.DoesNotExist:
+		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
+
+	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
+
+
+#Update Details
+def update(request):
+
+	user_id = request.user.id
+
+	try:
+		first = str(request.POST.get("first"))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message":  "Enter a First Name!!", "type": "Key Error!!"})
+	except ValueError:
+		return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
+	except TypeError:
+		return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
+
+	try:
+		last = str(request.POST.get("last"))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message":  "Enter a Last Name!!", "type": "Key Error!!"})
+	except ValueError:
+		return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
+	except TypeError:
+		return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
+
+	try:
+		email = str(request.POST.get("email"))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message": "Enter a e-mail address!!", "type": "KeyError!!"})
+	except ValueError:
+		return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
+	except TypeError:
+		return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
+
+	user = User.objects.get(pk=user_id)
+
+	user.first_name = first
+	user.last_name = last
+	user.email = email
+	user.save()
 
 	try:
 		user_details = User.objects.get(pk=user_id)

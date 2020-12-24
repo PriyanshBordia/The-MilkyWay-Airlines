@@ -10,7 +10,7 @@
     <style>
         #user
         {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             text-align: center;
         }
@@ -30,25 +30,32 @@
         <!-- <hr> -->
         <span><h2>User Details </h2></span><span><h3>UUIDMA{{ user_details.id }}</h3></span>
         <br>
-        <div class="conatainer container-fluid">
-            <div class="justify-content-center">
-                <form action="{% url 'home' %}" method="post">
-                    <div class="form-group form-text h4">
-                        <span>First Name : </span>
-                        <span><input class="form-control" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" value="{{ user_details.first_name }}"></span>
-                    </div>
-                    <div class="form-group form-text h4">
-                        <span>Last Name : </span>
-                        <span><input class="form-control" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" value="{{ user_details.last_name }}"></span>
-                    </div>
-                    <div class="form-group form-text h4">
-                        <span>E-mail : </span>
-                        <span><input class="form-control" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" value="{{ user_details.first_name }}"></span>
-                    </div>
-                    <button class="btn btn-outline-primary" type="submit" name="button">Update Details</button>
-                </form>
+
+        {% if user_details.id == request.user.id %}
+            <div class="conatainer container-fluid">
+                <div class="justify-content-center">
+                    <form class="form-group" action="{% url 'update' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="form-group form-text h4">
+                            <input class="form-control col-md-4 ml-auto mr-auto" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" value="{{ user_details.first_name }}"></span>
+                        </div>
+                        <div class="form-group form-text h4">
+                            <span><input class="form-control col-md-4 ml-auto mr-auto" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" value="{{ user_details.last_name }}"></span>
+                        </div>
+                        <div class="form-group form-text h4">
+                            <input class="form-control col-md-4 ml-auto mr-auto" type="email" autocomplete="off" autofocus placeholder="E-mail" aria-describedby="emailHelp" name="email" value="{{ user_details.email }}">
+                        </div>
+                        <button class="btn btn-outline-primary mt-4" type="submit" name="button">Update Details</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <h4><strong>First Name : </strong>{{ user_details.first_name }}</h4>
+            <h4><strong>Last Name : </strong>{{ user_details.last_name }}</h4>
+            <h4><strong>E-mail : </strong> {{ user_details.email }}</h4>
+        {% endif %}
 
         <br>
         <hr>
