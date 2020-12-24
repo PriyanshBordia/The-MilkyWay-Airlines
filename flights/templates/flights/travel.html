@@ -25,7 +25,11 @@
 
                 <!-- <div > -->
                     <select class="form-control" name="flight_id">
+<<<<<<< Updated upstream
                         <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
+=======
+                        <option value="" disabled selected>Select a Flight (Origin -> Destination)</option>
+>>>>>>> Stashed changes
                         {% for flight in flights %}
                             <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                         {% empty %}
