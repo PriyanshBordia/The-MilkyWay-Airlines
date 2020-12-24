@@ -25,7 +25,7 @@
 
                 <!-- <div > -->
                     <select class="form-control" name="flight_id">
-                        <option value="" disabled selected>Select a Flight (Origin -> Destination)</option>
+                        <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
                         {% for flight in flights %}
                             <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
                         {% empty %}
