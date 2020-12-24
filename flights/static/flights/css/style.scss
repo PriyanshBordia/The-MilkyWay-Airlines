@@ -1,4 +1,4 @@
-$form-width: 700px;
+$form-width: 600px;
 $form-btn-size-sm: 2.5in;
 $form-btn-size-md: 3in;
 $form-btn-size-lg: 3.5in;
@@ -40,21 +40,31 @@ h1
 {
     color : #428bca;
     margin-bottom: 10px;
+    font-weight: lighter;
 }
 
-h1:hover, h2:hover
+h1:hover
 {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     background-color: white;
     color: #7dce94;
-    font-weight: lighter;
 }
 
-h2, .home-head
+h2, .home-head, .h2
 {
     color: #ff0000e1;
     font-weight: 400;
+}
+
+h3
+{
+    color: cadetblue;
+}
+
+h4
+{
+    font-weight: lighter;
 }
 
 h5
@@ -63,12 +73,7 @@ h5
     font-weight: lighter;
 }
 
-h5:hover
-{
-    color: #3bc9f8;
-    font-weight: bolder;
-}
-
+// lists
 label
 {
     color: seagreen;
@@ -104,45 +109,21 @@ li
     color: seagreen;
 }
 
-#first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date
-{
-    border-radius: 20px;
-    padding: 10px;
-    margin: 5px;
-}
-
-#flights-select-menue
-{
-    border-radius: 12px;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    text-decoration: none !important;
-}
-
-#hospitality-select-menue, #food-select-menue
-{
-    border-radius: 12px;
-    padding: 10px;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.flights-scheduled
-{
-    font-size: $font-sm;
-}
 
 .book-flight-container
 {
     max-width: $form-width;
     margin: auto;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
 }
+
+.login-action-head, .register-action-head, .form-home-head, .reset-password-action-head
+{
+    margin: auto;
+    font-size: $font-md;
+}
+
 
 .book-flight-button
 {
@@ -151,7 +132,6 @@ li
     margin-right: auto;
     text-decoration: none !important;
 }
-
 
 .register-action-button
 {
@@ -165,50 +145,17 @@ li
     text-decoration: none !important;
 }
 
-.form-home-button
+.form-home-button, .reset-password-action-button
 {
     width: $form-btn-size-sm;
     text-decoration: none !important;
 }
 
-.reset-password-action-button
-{
-    width: $form-btn-size-sm;
-    text-decoration: none !important;
-}
-
-.register-action-container
+.register-action-container, .login-action-container, .form-home-container, .reset-password-action-container
 {
     max-width: $form-width;
     margin: auto;
     text-align: center;
-}
-
-.login-action-container
-{
-    max-width: $form-width;
-    margin: auto;
-    text-align: center;
-}
-
-.form-home-container
-{
-    max-width: $form-width;
-    margin: auto;
-    text-align: center;
-}
-
-.reset-password-action-container
-{
-    max-width: $form-width;
-    margin: auto;
-    text-align: center;
-}
-
-.login-action-head, .register-action-head, .form-home-head, .reset-password-action-head
-{
-    margin: auto;
-    font-size: $font-md;
 }
 
 .reset-password-action-text
@@ -216,6 +163,12 @@ li
     margin: auto;
     font-size: 22px;
     color: #bd8c7d;
+}
+
+.alert
+{
+    text-align: center;
+    font-size: 24px;
 }
 
 /* Error Message */
@@ -238,6 +191,7 @@ li
   text-decoration: none !important;
 }
 
+// table
 table, tr, th, td
 {
     margin: 20px 10px 10px 10px;
@@ -267,11 +221,6 @@ td
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.alert
-{
-    text-align: center;
-    font-size: 24px;
-}
 /*Social Media handles*/
 #social-handles
 {

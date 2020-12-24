@@ -8,22 +8,11 @@
 
 {% block head %}
     <style>
-        .user
+        #user
         {
             max-width: 800px;
             margin: auto;
-        }
-
-        h2, h3, h4 {
             text-align: center;
-        }
-
-        h3 {
-            color: cadetblue;
-        }
-
-        h4 {
-            font-weight: lighter;
         }
     </style>
     <!-- Icon -->
@@ -31,7 +20,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="user">
+    <div id="user">
         <br><br>
         <div>
             <span style="float: left;"><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
@@ -41,10 +30,24 @@
         <!-- <hr> -->
         <span><h2>User Details </h2></span><span><h3>UUIDMA{{ user_details.id }}</h3></span>
         <br>
-        <div>
-            <h4><strong>First Name : </strong>{{ user_details.first_name }}</h4>
-            <h4><strong>Last Name : </strong>{{ user_details.last_name }}</h4>
-            <h4><strong>E-mail : </strong> {{ user_details.email }}</h4>
+        <div class="conatainer container-fluid">
+            <div class="justify-content-center">
+                <form action="{% url 'home' %}" method="post">
+                    <div class="form-group form-text h4">
+                        <span>First Name : </span>
+                        <span><input class="form-control" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" value="{{ user_details.first_name }}"></span>
+                    </div>
+                    <div class="form-group form-text h4">
+                        <span>Last Name : </span>
+                        <span><input class="form-control" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" value="{{ user_details.last_name }}"></span>
+                    </div>
+                    <div class="form-group form-text h4">
+                        <span>E-mail : </span>
+                        <span><input class="form-control" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" value="{{ user_details.first_name }}"></span>
+                    </div>
+                    <button class="btn btn-outline-primary" type="submit" name="button">Update Details</button>
+                </form>
+            </div>
         </div>
 
         <br>
