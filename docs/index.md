@@ -1,14 +1,16 @@
-# [The MilkyWay Airlines](https://github.com/PriyanshBordia/The-MilkyWay-Airlines)
+# [The MilkyWay Airlines](https://priyanshbordia.github.io/The-MilkyWay-Airlines)
 
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
+[![Documentation Status](https://readthedocs.org/projects/the-milkyway-airlines/badge/?version=latest)](https://the-milkyway-airlines.readthedocs.io/en/latest/?badge=latest)
 
 
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
 
-You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
-
+> You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).<br>
+> Find the site [here](https://the-milkway-airlines.business.site/?m=true).<br>
+> If any suggestions please create a new issue using feature template.
 
 #### To run app on local machine:
 ```
@@ -20,24 +22,42 @@ $ sh run.sh 1
 
 ### `Registeration Page`:
 
-![Register](https://priyanshbordia.github.io/screenshots/register.png)
+![Register](./screenshots/register.png)
 
 ### `Login Page`:
 
-![Login](https://priyanshbordia.github.io/screenshots/login.png)
-
-### `Travel Page`:
-
-![Travel](https://priyanshbordia.github.io/screenshots/travel.png)
+![Login](./screenshots/login.png)
 
 ### `Booking Page`:
 
-![Book](https://priyanshbordia.github.io/screenshots/book.png)
+![Book](./screenshots/book.png)
+
+### `Travel Page`:
+
+![Travel](./screenshots/travel1.png)
+![Travel](./screenshots/travel2.png)
+
 
 ### `Flights Details`:
 
-![Flight](https://priyanshbordia.github.io/screenshots/flight.png)
+![Flight](./screenshots/flight.png)
 
 ### `Flights Page`:
 
-![Flights](https://priyanshbordia.github.io/screenshots/flights.png)
+![Flights](./screenshots/flights.png)
+
+### `Users Details`:
+
+![User](./screenshots/user.png)
+
+### `Users Page`:
+
+![Users](./screenshots/users.png)
+
+### `Passengers Details`:
+
+![Flight](./screenshots/passenger.png)
+
+### `Passengers Page`:
+
+![Flights](./screenshots/passengers.png)
