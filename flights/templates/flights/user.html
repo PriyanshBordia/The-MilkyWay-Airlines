@@ -8,22 +8,12 @@
 
 {% block head %}
     <style>
-        .user
+        #user
         {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
-        }
-
-        h2, h3, h4 {
             text-align: center;
-        }
-
-        h3 {
-            color: cadetblue;
-        }
-
-        h4 {
-            font-weight: lighter;
+            align-items: center;
         }
     </style>
     <!-- Icon -->
@@ -31,7 +21,7 @@
 {% endblock %}
 
 {% block body %}
-    <div class="user">
+    <div id="user">
         <br><br>
         <div>
             <span style="float: left;"><img src="https://img.icons8.com/bubbles/200/000000/user-male.png" /></span>
@@ -41,11 +31,32 @@
         <!-- <hr> -->
         <span><h2>User Details </h2></span><span><h3>UUIDMA{{ user_details.id }}</h3></span>
         <br>
-        <div>
+
+        {% if user_details.id == request.user.id %}
+            <div class="conatainer container-fluid">
+                <div class="justify-content-center">
+                    <form class="form-group" action="{% url 'update' %}" method="post">
+
+                        {% csrf_token %}
+
+                        <div class="form-group form-text h4">
+                            <input class="form-control col-md-4 ml-auto mr-auto" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" value="{{ user_details.first_name }}"></span>
+                        </div>
+                        <div class="form-group form-text h4">
+                            <span><input class="form-control col-md-4 ml-auto mr-auto" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" value="{{ user_details.last_name }}"></span>
+                        </div>
+                        <div class="form-group form-text h4">
+                            <input class="form-control col-md-4 ml-auto mr-auto" type="email" autocomplete="off" autofocus placeholder="E-mail" aria-describedby="emailHelp" name="email" value="{{ user_details.email }}">
+                        </div>
+                        <button class="btn btn-outline-primary mt-4" type="submit" name="button">Update Details</button>
+                    </form>
+                </div>
+            </div>
+        {% else %}
             <h4><strong>First Name : </strong>{{ user_details.first_name }}</h4>
             <h4><strong>Last Name : </strong>{{ user_details.last_name }}</h4>
             <h4><strong>E-mail : </strong> {{ user_details.email }}</h4>
-        </div>
+        {% endif %}
 
         <br>
         <hr>
@@ -59,7 +70,6 @@
                         <th>UPIDMA</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>E - mail</th>
                         <th>Details</th>
                     <tr>
                 </thead>
@@ -69,7 +79,6 @@
                             <td>{{ relative.id }}</td>
                             <td>{{ relative.first }}</td>
                             <td>{{ relative.last }}</td>
-                            <td>{{ relative.email }}</td>
                             <td><a class="btn btn-outline-warning mt-2 mb-2 ml-2 mr-2" href="{% url 'passenger' relative.id %}" role="button">Show</a></td>
                         </tr>
                     {% endfor %}

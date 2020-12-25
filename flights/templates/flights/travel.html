@@ -23,62 +23,78 @@
 
                 {% csrf_token %}
 
-                <select id = "flight-select-menue" name="flight_id" title = "Origin -> Destination">
-                    {% for flight in flights %}
-                        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                    {% empty %}
-                        <div class="alert alert-warning" role="alert">No Flight.!</div>
-                    {% endfor %}
-                </select>
+                <!-- <div > -->
+                    <select class="form-control" name="flight_id" required>
+                        <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
+
+                        {% for flight in flights %}
+                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                        {% empty %}
+                            <div class="alert alert-warning" role="alert">No Flight.!</div>
+                        {% endfor %}
+                    </select>
+                <!-- </div> -->
+
                 <br>
                 <br>
 
-                <h2>Passenger Details <img src="https://img.icons8.com/clouds/100/000000/passenger-with-baggage.png" /></h2>
+                <div class="form-text h2">Passenger Details <img src="https://img.icons8.com/clouds/100/000000/passenger-with-baggage.png" /></div>
                 <br>
-                <input id="first-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="First Name" name="first" required>
-                <input id="last-name" type="text" class="mr-2" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
+                <div class="row justify-content-center">
+                    <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" required>
+                    <span class="mr-5"></span>
+                    <span class="ml-5"></span>
+                    <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <input class="form-control col-md-5 mb-3" type="number" autocomplete="off" autofocus placeholder="Age" name="age" min = "1" required>
+                    <span class="mr-5"></span>
+                    <span class="ml-5"></span>
+                    <input class="form-control col-md-5 mb-3" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date" min="" id="minDate">
+                    <span class="mr-5"></span>
+                    <span class="ml-5"></span>
+                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date" min="" id="minDate">
+                </div>
                 <br>
                 <br>
-                <input id="age" type="number" class="mr-2" autocomplete="off" autofocus placeholder="Age" name="age" required>
-                <input id="e-mail" type="email" class="mr-2" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
-                <br>
-                <br>
-                <input id="departure-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
-                <input id="arrival-date" type="date" class="mr-2" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
-                <br>
+                <div class="row">
+                    <label for="male" class="mr-4 ml-auto"><input id="male" class="mr-4" type="radio" name="sex" value="M"> Male</label>
+                    <label for="female" class="mr-4 ml-4"><input id="female" class="mr-4"  type="radio" name="sex" value="F"> Female</label>
+                    <label for="other" class="mr-auto ml-4"><input id="other" class="mr-4" type="radio" name="sex" value="X"> Other</label>
+                </div>
+
                 <br>
 
-                <input type="radio" id="male" class="ml-auto" name="sex" value="M" default=True>
-                <label for="male" class="mr-4">Male</label>
-                <input type="radio" id="female" class="ml-4" name="sex" value="F">
-                <label for="female" class="mr-4">Female</label>
-                <input type="radio" id="other" class="ml-4" name="sex" value="X">
-                <label for="other">Other</label>
+                <div class="row">
+                    <label for="aisle" class="mr-4 ml-auto"><input id="aisle" class="mr-4" type="radio" name="seat" value="A"> Aisle </label>
+                    <label for="middle" class="mr-4 ml-4"><input id="midle" class="mr-4" type="radio" name="seat" value="M"> Middle </label>
+                    <label for="window" class="mr-auto ml-4"><input id="window" class="mr-4" type="radio"  name="seat" value="W"> Window</label>
+                </div>
+
                 <br>
 
-                <input type="radio" id="aisle" class="ml-auto" name="seat" value="A">
-                <label for="aisle" class="mr-4"> Aisle </label>
-                <input type="radio" id="midle" class="ml-4" name="seat" value="M">
-                <label for="middle" class="mr-4"> Middle </label>
-                <input type="radio" id="window" class="ml-4" name="seat" value="W">
-                <label for="window">Window</label>
-                <br>
+                <div class="row">
+                    <select class="form-control mb-4 mt-2" name="hospitality" required>
+                        <option value="" disabled selected>Hospitality</option>
+                        <option value="FC">First Class</option>
+                        <option value="BC">Business Class</option>
+                        <option value="EC">Economy Class</option>
+                    </select>
 
-                <select id = "hospitality-select-menue" name="hospitality">
-                    <option value="" disabled selected=true style="color: gray;">Hospitality</option>
-                    <option value="FC">First Class</option>
-                    <option value="BC">Bussiness Class</option>
-                    <option value="EC">Economy Class</option>
-                </select>
-
-                <select  id = "food-select-menue" name="foods">
-                    <option value="" disabled selected=true style="color: gray;">Cuisines</option>
-                    {% for food in foods %}
-                        <option value="{{ food.id }}">{{ food.name }}</option>
-                    {% empty %}
-                        <div class="alert alert-info" role="alert">No Food.!</div>
-                    {% endfor %}
-                </select>
+                    <select class="form-control mt-4" name="foods">
+                        <option value="" disabled selected>Cuisines</option>
+                        {% for food in foods %}
+                            <option value="{{ food.id }}">{{ food.name }}</option>
+                        {% empty %}
+                            <div class="alert alert-info" role="alert">No Food.!</div>
+                        {% endfor %}
+                    </select>
+                </div>
 
                 <br>
 
@@ -90,4 +106,32 @@
             </form>
         <div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var today = new Date();
+            var month = today.getMonth() + 1;
+            var day = today.getDate();
+            var year = today.getFullYear();
+
+            var hrs = today.getHours() + 1;
+            var mins = today.getMinutes();
+
+            var minTime = (hrs % 12) + ':' + mins;
+
+            alert(minTime);
+
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var minDate = day + '/' + month + '/' + year;
+
+            alert(minDate);
+
+            document.getElementById('minDate').setAttribute("max", minDate);
+            document.getElementById('minDate').setAttribute("default", minDate);
+        });
+    </script>
 {% endblock %}

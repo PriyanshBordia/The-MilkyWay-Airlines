@@ -23,20 +23,29 @@ a {
 h1 {
   color: #428bca;
   margin-bottom: 10px;
+  font-weight: lighter;
 }
 
-h1:hover, h2:hover {
+h1:hover {
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
   background-color: white;
   color: #7dce94;
-  font-weight: lighter;
 }
 
-h2, .home-head {
+h2, .home-head, .h2 {
   color: #ff0000e1;
   font-weight: 400;
+}
+
+h3 {
+  color: cadetblue;
+}
+
+h4 {
+  color: #8d82ee;
+  font-weight: lighter;
 }
 
 h5 {
@@ -44,67 +53,44 @@ h5 {
   font-weight: lighter;
 }
 
-h5:hover {
-  color: #3bc9f8;
-  font-weight: bolder;
-}
-
 label {
   color: seagreen;
   font-size: 24px;
 }
 
-.helptext, li {
+.helptext, li, li a {
   display: block;
-  margin: 10px 10px 10px 10px;
-  color: red;
-  background-color: rgba(255, 238, 0, 0.466);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  color: #0e4355;
+  background-color: white;
   font-size: 22px;
   font-weight: lighter;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-li {
-  padding: 12px;
+.helptext:hover, li:hover, li a:hover {
+  background-color: whitesmoke;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
 }
 
 #username {
   color: seagreen;
 }
 
-#first-name, #last-name, #age, #e-mail, #departure-date, #arrival-date {
-  border-radius: 20px;
-  padding: 10px;
-  margin: 5px;
-}
-
-#flights-select-menue {
-  border-radius: 12px;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  text-decoration: none !important;
-}
-
-#hospitality-select-menue, #food-select-menue {
-  border-radius: 12px;
-  padding: 10px;
-  margin-right: 50px;
-  margin-left: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.flights-scheduled {
-  font-size: 18;
-}
-
 .book-flight-container {
   max-width: 700px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
+}
+
+.login-action-head, .register-action-head, .form-home-head, .reset-password-action-head {
+  margin: auto;
+  font-size: 20;
 }
 
 .book-flight-button {
@@ -115,7 +101,7 @@ li {
 }
 
 .register-action-button {
-  max-width: 700px;
+  max-width: 5in;
   text-decoration: none !important;
 }
 
@@ -124,49 +110,29 @@ li {
   text-decoration: none !important;
 }
 
-.form-home-button {
+.form-home-button, .reset-password-action-button {
   width: 2.5in;
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: none !important;
 }
 
-.reset-password-action-button {
-  width: 2.5in;
-  text-decoration: none !important;
-}
-
-.register-action-container {
+.register-action-container, .login-action-container, .form-home-container, .reset-password-action-container {
   max-width: 700px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-}
-
-.login-action-container {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-
-.form-home-container {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-
-.reset-password-action-container {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-
-.login-action-head, .register-action-head, .form-home-head, .reset-password-action-head {
-  margin: auto;
-  font-size: 20;
 }
 
 .reset-password-action-text {
   margin: auto;
   font-size: 22px;
   color: #bd8c7d;
+}
+
+.alert {
+  text-align: center;
+  font-size: 24px;
 }
 
 /* Error Message */
@@ -189,11 +155,18 @@ li {
   text-decoration: none !important;
 }
 
+@media only screen and (max-device-width: 768px) {
+  table, tr, th, td {
+    max-width: 95%;
+  }
+}
 table, tr, th, td {
-  margin: 20px 10px 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 10px 10px 10px;
   text-align: center;
   border: 2px solid #bd8c7d;
+  overflow: scroll;
 }
 
 th {
@@ -213,17 +186,13 @@ td {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.alert {
-  text-align: center;
-  font-size: 24px;
-}
-
 /*Social Media handles*/
 #social-handles {
   max-width: 700px;
   margin: auto;
   padding: 5px;
   text-align: center;
+  background-color: whitesmoke;
 }
 
 #social-handles a {

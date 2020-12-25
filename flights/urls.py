@@ -14,5 +14,6 @@ urlpatterns = [
     path("user", views.user, name="user"),
     path("users", views.users, name="users"),
     path("userid/<int:user_id>", views.userid, name="userid"),
+    path("update", views.update, name="update"),
     path("resetLink", views.resetLink, name="resetLink"),
 ]

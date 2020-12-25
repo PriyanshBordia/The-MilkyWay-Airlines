@@ -1,4 +1,4 @@
-# The-MilkyWay-Airlines
+# [The MilkyWay Airlines](https://priyanshbordia.github.io/The-MilkyWay-Airlines)
 
 [![Build Status](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines.svg?branch=main)](https://travis-ci.com/PriyanshBordia/The-MilkyWay-Airlines)
 [![Issues](http://img.shields.io/github/issues/PriyanshBordia/The-MilkyWay-Airlines.svg)](https://github.com/PriyanshBordia/The-MilkyWay-Airlines/issues)
@@ -27,13 +27,15 @@ $ sh run.sh 1
 
 ![Login](./screenshots/login.png)
 
-### `Travel Page`:
-
-![Travel](./screenshots/travel.png)
-
 ### `Booking Page`:
 
 ![Book](./screenshots/book.png)
+
+### `Travel Page`:
+
+![Travel](./screenshots/travel1.png)
+![Travel](./screenshots/travel2.png)
+
 
 ### `Flights Details`:
 
@@ -42,3 +44,19 @@ $ sh run.sh 1
 ### `Flights Page`:
 
 ![Flights](./screenshots/flights.png)
+
+### `Users Details`:
+
+![User](./screenshots/user.png)
+
+### `Users Page`:
+
+![Users](./screenshots/users.png)
+
+### `Passengers Details`:
+
+![Flight](./screenshots/passenger.png)
+
+### `Passengers Page`:
+
+![Flights](./screenshots/passengers.png)
