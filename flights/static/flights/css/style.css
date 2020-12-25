@@ -119,7 +119,7 @@ li {
   text-decoration: none !important;
 }
 
-.login-action-button {
+.login-action-button, .book-action-button, .password-change-btn {
   width: 3in;
   text-decoration: none !important;
 }
