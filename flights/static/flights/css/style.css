@@ -82,7 +82,7 @@ label {
 }
 
 .book-flight-container {
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
   padding: 20px;
   text-align: center;
@@ -101,7 +101,7 @@ label {
 }
 
 .register-action-button {
-  max-width: 600px;
+  max-width: 5in;
   text-decoration: none !important;
 }
 
@@ -112,12 +112,15 @@ label {
 
 .form-home-button, .reset-password-action-button {
   width: 2.5in;
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: none !important;
 }
 
 .register-action-container, .login-action-container, .form-home-container, .reset-password-action-container {
-  max-width: 600px;
-  margin: auto;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -152,7 +155,7 @@ label {
   text-decoration: none !important;
 }
 
-@media only screen and (max-device-width: 576px) {
+@media only screen and (max-device-width: 768px) {
   table, tr, th, td {
     max-width: 95%;
   }
@@ -189,6 +192,7 @@ td {
   margin: auto;
   padding: 5px;
   text-align: center;
+  background-color: whitesmoke;
 }
 
 #social-handles a {

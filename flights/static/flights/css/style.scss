@@ -1,7 +1,8 @@
-$form-width: 600px;
+$form-width: 700px;
 $form-btn-size-sm: 2.5in;
 $form-btn-size-md: 3in;
 $form-btn-size-lg: 3.5in;
+$form-btn-size-xl: 5in;
 $font-lg: 24;
 $font-md: 20;
 $font-sm: 18;
@@ -132,7 +133,7 @@ label
 
 .register-action-button
 {
-    max-width: $form-width;
+    max-width: $form-btn-size-xl;
     text-decoration: none !important;
 }
 
@@ -145,13 +146,16 @@ label
 .form-home-button, .reset-password-action-button
 {
     width: $form-btn-size-sm;
+    margin-left: auto;
+    margin-right: auto;
     text-decoration: none !important;
 }
 
 .register-action-container, .login-action-container, .form-home-container, .reset-password-action-container
 {
     max-width: $form-width;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 
@@ -188,7 +192,7 @@ label
   text-decoration: none !important;
 }
 
-@media only screen and (max-device-width: $sm)
+@media only screen and (max-device-width: $lg)
 {
     table, tr, th, td
     {
@@ -235,6 +239,7 @@ td
     margin: auto;
     padding: 5px;
     text-align: center;
+    background-color: whitesmoke;
 }
 
 #social-handles a

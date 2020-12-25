@@ -27,6 +27,7 @@
         
         <br><br><br><br><br><br>
         <hr>
+        <br>
         <table>
             <thead>
                 <tr>
@@ -35,7 +36,6 @@
                     <th>Last Name</th>
                     <th>Gender</th>
                     <th>Age</th>
-                    <th>Contact Number</th>
                     <th>Journey Details</th>
                 </tr>
             </thead>
@@ -47,7 +47,6 @@
                         <td>{{ passenger.last }}</td>
                         <td>{{ passenger.sex }}</td>
                         <td>{{ passenger.age }}</td>
-                        <td>{{ passenger.ph_no }}</td>
                         <td class="journey"><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'passenger' passenger.id %}" role="button">Check</a></td>
                     </tr>
                   {% empty %}
