@@ -213,12 +213,13 @@ LOGOUT_REDIRECT_URL = 'home'
 #store the addresses of e-mails sent
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'priyanshbordia3@gmail.com'
-EMAIL_HOST_PASSWORD = 'oizswiyjzsgauwtb'
+EMAIL_HOST_USER = 'the.milkyway.airlines@gmail.com'
+EMAIL_HOST_PASSWORD = 'fcykzkpmplwdgpgn'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'The MilkyWay Airlines Team <noreply@milkyway.io>'
 
+# EMAIL_BACKEND = "django.core.mail.backends..EmailBackend"
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # # Configure Django App for Heroku.
