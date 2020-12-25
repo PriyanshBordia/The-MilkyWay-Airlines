@@ -1,10 +1,18 @@
 ``The MilkyWay Airline``
 ==========================
 
+.. contents:: Overview
+   :depth: 2
+
 .. toctree::
    :hidden:
    :maxdepth: 3
    :caption: Contents:
+
+============
+Introduction
+============
+
 
 .. Indices and tables
 .. ==================
@@ -15,6 +23,7 @@
 .. * :ref:`search`
 
 TODO
+-----
 
 Installation
 ************
