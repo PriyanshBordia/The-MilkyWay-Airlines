@@ -44,7 +44,7 @@ h3 {
 }
 
 h4 {
-  color: violet;
+  color: #8d82ee;
   font-weight: lighter;
 }
 
@@ -152,13 +152,18 @@ label {
   text-decoration: none !important;
 }
 
+@media only screen and (max-device-width: 576px) {
+  table, tr, th, td {
+    max-width: 95%;
+  }
+}
 table, tr, th, td {
-  width: 95%;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 10px 10px 10px;
   text-align: center;
   border: 2px solid #bd8c7d;
+  overflow: scroll;
 }
 
 th {

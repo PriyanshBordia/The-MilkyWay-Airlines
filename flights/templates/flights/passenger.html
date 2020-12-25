@@ -79,9 +79,11 @@
 
         <hr>
         <h2>Journey</h2>
+        <hr>
         <ul>
             {% for flight in flights %}
                 <li> UFID{{ flight.id }}MA <a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
+                <hr>
             {% empty %}
                 <div class="alert alert-danger" role="alert">No Journey.</div>
             {% endfor %}

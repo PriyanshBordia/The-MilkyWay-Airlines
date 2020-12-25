@@ -64,7 +64,7 @@ h3
 
 h4
 {
-    color: violet;
+    color: rgb(141, 130, 238);
     font-weight: lighter;
 }
 
@@ -188,15 +188,23 @@ label
   text-decoration: none !important;
 }
 
+@media only screen and (max-device-width: $sm)
+{
+    table, tr, th, td
+    {
+        max-width: 95%;
+    }
+}
+
 // table
 table, tr, th, td
 {
-    width: 95%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 10px 10px 10px;
     text-align: center;
     border: 2px solid #bd8c7d;
+    overflow: scroll;
     // "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
