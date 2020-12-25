@@ -24,7 +24,7 @@
                 {% csrf_token %}
 
                 <!-- <div > -->
-                    <select class="form-control" name="flight_id">
+                    <select class="form-control" name="flight_id" required>
                         <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
 
                         {% for flight in flights %}
@@ -79,10 +79,10 @@
                 <br>
 
                 <div class="row">
-                    <select class="form-control mb-4" name="hospitality">
+                    <select class="form-control mb-4 mt-2" name="hospitality" required>
                         <option value="" disabled selected>Hospitality</option>
                         <option value="FC">First Class</option>
-                        <option value="BC">Bussiness Class</option>
+                        <option value="BC">Business Class</option>
                         <option value="EC">Economy Class</option>
                     </select>
 

@@ -64,6 +64,7 @@ h3
 
 h4
 {
+    color: violet;
     font-weight: lighter;
 }
 
@@ -83,9 +84,11 @@ label
 .helptext, li, li a
 {
     display: block;
-    margin: 10px 10px 10px 10px;
-    color: rgb(255, 255, 255);
-    background-color: #0e4355;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    color: #0e4355;
+    background-color: rgb(255, 255, 255); 
     font-size: 22px;
     font-weight: lighter;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -93,15 +96,9 @@ label
 
 .helptext:hover, li:hover, li a:hover
 {
-    color: #0e4355;
-    background-color: rgb(255, 255, 255); 
+    background-color: whitesmoke;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-}
-
-li
-{
-    padding: 12px
 }
 
 #username
@@ -194,7 +191,9 @@ li
 // table
 table, tr, th, td
 {
-    margin: 20px 10px 10px 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 10px 10px 10px;
     text-align: center;
     border: 2px solid #bd8c7d;
