@@ -8,8 +8,9 @@
 ### Fasten Your seatbelts we willl take you on a journey you never went before.!
 
 
-You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).
-
+> You can book tickets [here](https://the-milky-way-airlines.herokuapp.com).<br>
+> Find the site [here](https://the-milkway-airlines.business.site/?m=true).<br>
+> If any suggestions please create a new issues using feature template.
 
 #### To run app on local machine:
 ```
