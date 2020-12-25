@@ -22,8 +22,8 @@ import dj_database_url
 import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # This is new:
 # dotenv_file = os.path.join(BASE_DIR, ".env")
@@ -77,7 +77,7 @@ ROOT_URLCONF = 'the_milkyway_airlines.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(os.path.join(BASE_DIR, 'templates'))],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -210,15 +210,16 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
-#store the addresses of e-mails sent
+#Send reset pass e-mails
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'priyanshbordia3@gmail.com'
-EMAIL_HOST_PASSWORD = 'oizswiyjzsgauwtb'
+EMAIL_HOST_USER = 'the.milkyway.airlines@gmail.com'
+EMAIL_HOST_PASSWORD = 'fcykzkpmplwdgpgn'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'The MilkyWay Airlines Team <noreply@milkyway.io>'
 
+# EMAIL_BACKEND = "django.core.mail.backends..EmailBackend"
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # # Configure Django App for Heroku.
