@@ -48,17 +48,17 @@
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                    <input class="form-control col-md-5 mb-3" type="number" autocomplete="off" autofocus placeholder="Age" name="age" required>
+                    <input class="form-control col-md-5 mb-3" type="number" autocomplete="off" autofocus placeholder="Age" name="age" min = "1" required>
                     <span class="mr-5"></span>
                     <span class="ml-5"></span>
                     <input class="form-control col-md-5 mb-3" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                    <input class="form-control col-md-5 mb-3" type="date" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
+                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date" min="" id="minDate">
                     <span class="mr-5"></span>
                     <span class="ml-5"></span>
-                    <input class="form-control col-md-5 mb-3" type="date" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
+                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date" min="" id="minDate">
                 </div>
                 <br>
                 <br>
@@ -106,4 +106,32 @@
             </form>
         <div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var today = new Date();
+            var month = today.getMonth() + 1;
+            var day = today.getDate();
+            var year = today.getFullYear();
+
+            var hrs = today.getHours() + 1;
+            var mins = today.getMinutes();
+
+            var minTime = (hrs % 12) + ':' + mins;
+
+            alert(minTime);
+
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var minDate = day + '/' + month + '/' + year;
+
+            alert(minDate);
+
+            document.getElementById('minDate').setAttribute("max", minDate);
+            document.getElementById('minDate').setAttribute("default", minDate);
+        });
+    </script>
 {% endblock %}
