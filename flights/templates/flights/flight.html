@@ -41,7 +41,7 @@
                         <th>Last Name</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        <th>E-mail</th>
+                        <th>Details</th>
                     <tr>
                 </thead>
                 
@@ -53,7 +53,8 @@
                             <td>{{ passenger.last }}</td>
                             <td>{{ passenger.age }}</td>
                             <td>{{ passenger.sex }}</td>
-                            <td>{{ passenger.email }}</td>
+                            <td><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'passenger' passenger.id %}" role="button">Check</a></td>
+
                         </tr>
                     {% endfor %}
                 </tbody>
