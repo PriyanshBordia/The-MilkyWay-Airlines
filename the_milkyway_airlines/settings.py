@@ -35,7 +35,7 @@ DEBUG = env('DEBUG', default=True)
 
 WHITENOISE_AUTOREFRESH = True
 
-ALLOWED_HOSTS = ['the-milky-way-airlines.herokuapp.com',]
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), ]
 
 ADMINS = [('priyansh', 'priyanshbordia3@gmail.com')]
 
@@ -206,8 +206,8 @@ LOGOUT_REDIRECT_URL = 'home'
 #Send reset pass e-mails
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = env(EMAIL_HOST_USER)
-EMAIL_HOST_PASSWORD = env(EMAIL_HOST_PASSWORD)
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'The MilkyWay Airlines Team <noreply@milkyway.io>'
