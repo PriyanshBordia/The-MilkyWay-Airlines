@@ -20,46 +20,46 @@ $ sh run.sh 1
 
 ### `Registeration Page`:
 
-![Register](/screenshots/register.png)
+![Register](../screenshots/register.png)
 
 ### `Login Page`:
 
-![Login](/screenshots/login.png)
+![Login](../screenshots/login.png)
 
 ### `Booking Page`:
 
-![Book](/screenshots/book.png)
+![Book](../screenshots/book.png)
 
 ### `Travel Page`:
 
-![Travel](/screenshots/travel1.png)
-![Travel](/screenshots/travel2.png)
+![Travel](../screenshots/travel1.png)
+![Travel](../screenshots/travel2.png)
 
 
 ### `Flights Details`:
 
-![Flight](/screenshots/flight.png)
+![Flight](../screenshots/flight.png)
 
 ### `Flights Page`:
 
-![Flights](/screenshots/flights.png)
+![Flights](../screenshots/flights.png)
 
 ### `Users Details`:
 
-![User](/screenshots/user.png)
+![User](../screenshots/user.png)
 
 ### `Users Page`:
 
-![Users](/screenshots/users.png)
+![Users](../screenshots/users.png)
 
 ### `Passengers Details`:
 
-![Flight](/screenshots/passenger.png)
+![Flight](../screenshots/passenger.png)
 
 ### `Passengers Page`:
 
-![Flights](/screenshots/passengers.png)
+![Flights](../screenshots/passengers.png)
 
 ### `Password Reset`:
 
-![Reset](/screenshots/reset.png)
+![Reset](../screenshots/reset.png)

@@ -27,13 +27,9 @@ TODO
 
 Installation
 ************
-
-First make sure you have Python 3.8 or higher installed. You can download Python |download_python|.
+   First make sure you have Python 3.8 or higher installed. You can download Python |download_python|.
 
 .. |download_python| raw:: html
-
-   <a href="https://www.python.org/downloads/ target="_blank">here</a>
-
 
 To run this project on local machine:
 
