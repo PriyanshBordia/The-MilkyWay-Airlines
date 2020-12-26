@@ -62,7 +62,7 @@ Snippets
 
 .. image:: ../../screenshots/register.png
 .. image:: ../../screenshots/login.png
-.. image:: ../../screenshots/home.png
+.. image:: ../../screenshots/reset.png
 .. image:: ../../screenshots/travel1.png
 .. image:: ../../screenshots/travel2.png
 .. image:: ../../screenshots/flight.png
