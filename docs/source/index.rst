@@ -55,21 +55,28 @@ Features
 --------
 Snippets
 --------
-.. image: ../../screenshots.login.png
-.. image: ../../screenshots.login.png
-.. image: ../../screenshots.login.png
+.. image:: ../../screenshots/register.png
+.. image:: ../../screenshots/login.png
+.. image:: ../../screenshots/home.png
+.. image:: ../../screenshots/travel1.png
+.. image:: ../../screenshots/travel2.png
+.. image:: ../../screenshots/flight.png
+.. image:: ../../screenshots/flights.png
+.. image:: ../../screenshots/user.png
+.. image:: ../../screenshots/users.png
+.. image:: ../../screenshots/passenger.png
+.. image:: ../../screenshots/passengers.png
 
 
 ------------------
 About Contributors
 ------------------
-   Hi.! There I my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
-   - Link to personal website is `website`_.
-   - Link to github account is `github`_.
+Hi.! there my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
+
+* Link to personal website is `website`_.
+* Link to github account is `github`_.
 
 
 .. _website: https://priyanshbordia.github.io
-   :target: _blank
 
 .. _github: https://github.com/PriyanshBordia
-   :target: _blank
