@@ -9,6 +9,7 @@ Experience insanity again.!
    :depth: 2
 
 
+------------
 Introduction
 ------------
    - ``The MilkyWay Airlines`` is a light weight ``Django`` project where you can login and book flight tickets for different destinations.
@@ -16,7 +17,7 @@ Introduction
    - ``postgresql`` was used to store data and the app was deployed on ``heroku``.
 
 
-
+------------
 Installation
 ------------
    - First make sure you have Python 3.8 or higher installed. You can `download`_ ``Python``.
@@ -37,9 +38,10 @@ To run this project on local machine:
    $ pip freeze > requirements.txt
    $ sh run.sh 1
 
---------
+
+********
 Features
---------
+********
 * Register
 * Login
 * Reset Password
@@ -52,9 +54,10 @@ Features
 * View Passenger
 * View Passengers
 
---------
+
+********
 Snippets
---------
+********
 .. image:: ../../screenshots/register.png
 .. image:: ../../screenshots/login.png
 .. image:: ../../screenshots/home.png
@@ -68,9 +71,9 @@ Snippets
 .. image:: ../../screenshots/passengers.png
 
 
-------------------
+******************
 About Contributors
-------------------
+******************
 Hi.! there my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
 
 * Link to personal website is `website`_.
