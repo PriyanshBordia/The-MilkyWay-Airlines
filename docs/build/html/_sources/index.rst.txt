@@ -76,7 +76,7 @@ Snippets
 ------------------
 About Contributors
 ------------------
-Hi.! there my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
+Hi.! there my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields. I play football.
 
 * Link to personal website is `website`_.
 * Link to github account is `github`_.
