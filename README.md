@@ -61,3 +61,11 @@ $ sh run.sh 1
 ### `Passengers Page`:
 
 ![Flights](./screenshots/passengers.png)
+
+### `Reset Password`:
+
+![Reset](./screenshots/reset.png)
+
+### `E -mail Sent Success`:
+
+![Done](./screenshots/done.png)
