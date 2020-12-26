@@ -1,6 +1,6 @@
-``The MilkyWay Airline``
-==========================
-
+"""""""""""""""""""""
+The MilkyWay Airlines
+"""""""""""""""""""""
 
 Experience insanity again.!
 """""""""""""""""""""""""""
@@ -39,9 +39,9 @@ To run this project on local machine:
    $ sh run.sh 1
 
 
-********
+--------
 Features
-********
+--------
 * Register
 * Login
 * Reset Password
@@ -55,9 +55,10 @@ Features
 * View Passengers
 
 
-********
+--------
 Snippets
-********
+--------
+
 .. image:: ../../screenshots/register.png
 .. image:: ../../screenshots/login.png
 .. image:: ../../screenshots/home.png
@@ -71,9 +72,9 @@ Snippets
 .. image:: ../../screenshots/passengers.png
 
 
-******************
+------------------
 About Contributors
-******************
+------------------
 Hi.! there my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
 
 * Link to personal website is `website`_.

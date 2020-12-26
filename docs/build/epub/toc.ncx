@@ -12,7 +12,7 @@
   <navMap>    
     <navPoint id="navPoint1" playOrder="1">
       <navLabel>
-        <text>The MilkyWay Airline</text>
+        <text>The MilkyWay Airlines</text>
       </navLabel>
       <content src="index.xhtml" />  
     </navPoint>

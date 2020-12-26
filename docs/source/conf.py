@@ -22,8 +22,9 @@ copyright = '2020, Priyansh Bordia'
 author = 'Priyansh Bordia'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.2'
 
+version = '1.0.1'
 
 # -- General configuration ---------------------------------------------------
 
