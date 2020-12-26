@@ -35,7 +35,7 @@ DEBUG = env('DEBUG', default=True)
 
 WHITENOISE_AUTOREFRESH = True
 
-ALLOWED_HOSTS = env(ALLOWED_HOSTS)
+ALLOWED_HOSTS = [the-milky-way-airlines.herokuapp.com,]
 
 ADMINS = [('priyansh', 'priyanshbordia3@gmail.com')]
 
