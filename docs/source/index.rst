@@ -9,13 +9,13 @@
    :maxdepth: 3
    :caption: Contents:
 
-.. Indices and tables
-.. ==================
-
+Indices and tables
+==================
 .. * :ref:`genindex`
 .. * :ref:`api`
 .. * :ref:`modindex`
 .. * :ref:`search`
+
 
 TODO
 -----
@@ -30,9 +30,10 @@ Introduction
 
 Installation
 ************
-   First make sure you have Python 3.8 or higher installed. You can download Python |download|.
+   First make sure you have Python 3.8 or higher installed. You can download ``Python`` |download|.
 
 .. |download| raw:: html
+
 
 To run this project on local machine:
 *************************************
@@ -45,8 +46,9 @@ To run this project on local machine:
    $ sh run.sh 1
 
 
+========
 Features
-********
+========
 * Register
 * Login
 * Reset Password
