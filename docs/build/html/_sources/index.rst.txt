@@ -1,27 +1,12 @@
-==========================
 ``The MilkyWay Airline``
 ==========================
 
----------------------------
-Experience insanity again.!
----------------------------
 
+Experience insanity again.!
+"""""""""""""""""""""""""""
 
 .. contents:: Overview
    :depth: 2
-
-.. toctree::
-   :hidden:
-   :maxdepth: 3
-   :caption: Contents:
-
-
-Indices and tables
-==================
-.. * :ref:`genindex`
-.. * :ref:`api`
-.. * :ref:`modindex`
-.. * :ref:`search`
 
 
 Introduction
@@ -36,7 +21,7 @@ Installation
 ------------
    - First make sure you have Python 3.8 or higher installed. You can `download`_ ``Python``.
 
-.. _download: https://python.org
+.. _download: https://www.python.org
    :target: _blank
 
 
@@ -70,16 +55,21 @@ Features
 --------
 Snippets
 --------
-.. image:: ../../screenshots.login.png
-.. image:: ../../screenshots.login.png
-.. image:: ../../screenshots.login.png
+.. image: ../../screenshots.login.png
+.. image: ../../screenshots.login.png
+.. image: ../../screenshots.login.png
 
 
 ------------------
 About Contributors
 ------------------
    Hi.! There I my name is Priyansh Bordia and I am an CSE UnderGrad at LNMIIT, Jaipur, India. I enjoy working on project that help me get more experience of different technologies and fields.
-   Link to my personal website is `here`_. 
+   - Link to personal website is `website`_.
+   - Link to github account is `github`_.
 
-.. _here: https::
+
+.. _website: https://priyanshbordia.github.io
+   :target: _blank
+
+.. _github: https://github.com/PriyanshBordia
    :target: _blank
