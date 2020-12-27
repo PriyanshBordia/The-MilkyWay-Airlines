@@ -65,6 +65,7 @@ label {
   margin-top: 10px;
   color: #0e4355;
   background-color: white;
+  text-align: center;
   font-size: 22px;
   font-weight: lighter;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -180,7 +181,7 @@ tbody tr:nth-child(even) {
 }
 
 td {
-  color: #395870;
+  color: #386283;
   font-size: 1.5;
   font-weight: 1.5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

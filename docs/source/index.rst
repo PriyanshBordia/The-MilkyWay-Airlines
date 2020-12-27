@@ -11,7 +11,7 @@ Experience insanity again.!
    :depth: 2
 
 
-------------
+
 Introduction
 ------------
    - ``The MilkyWay Airlines`` is a light weight ``Django`` project where you can login and book flight tickets for different destinations.

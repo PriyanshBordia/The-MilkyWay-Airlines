@@ -3,7 +3,7 @@
 {% extends "flights/base.html" %}
 
 {% block title %}
-    Flight MA{{ flight.id }}
+    Flight UFID{{ flight.id }}MA
 {% endblock %}
 
 {% block head %}
@@ -20,7 +20,7 @@
 {% block body %}
     <div class="flight">
         <h1><img src="https://img.icons8.com/cotton/64/000000/non-stop-flight--v1.png" />&nbsp;Flight UFID{{ flight.id }}MA</h1>
-        <br>
+        <hr>
         <ul>
             <li><strong>Origin: </strong>{{ flight.origin }}</li>
             <li><strong>Destination: </strong> {{ flight.destination }}</li>
@@ -39,8 +39,6 @@
                         <th>UPIDMA</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
                         <th>Details</th>
                     <tr>
                 </thead>
@@ -51,8 +49,6 @@
                             <td>{{ passenger.id }}</td>
                             <td>{{ passenger.first }}</td>
                             <td>{{ passenger.last }}</td>
-                            <td>{{ passenger.age }}</td>
-                            <td>{{ passenger.sex }}</td>
                             <td><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'passenger' passenger.id %}" role="button">Check</a></td>
 
                         </tr>
