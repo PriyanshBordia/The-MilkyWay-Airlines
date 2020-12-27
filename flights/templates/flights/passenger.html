@@ -31,50 +31,12 @@
         <h1>Passenger UPIDMA{{ passenger.id }}</h1>
         <hr>
         <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>UPIDMA</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>E-mail</th>
-                <tr>
-            </thead>
+        <h4><strong>First Name : </strong>{{ passenger.first }}</h4>
+        <h4><strong>Last Name : </strong>{{ passenger.last }}</h4>
+        <h4><span><strong>Age : </strong>{{ passenger.age }} &nbsp; &nbsp; &nbsp; &nbsp;<strong>Gender: </strong>{{ passenger.sex }}</span></h4>
+        <h4><strong>E-mail : </strong>{{ passenger.email }}</h4>
+        <h4><strong>Contact : </strong>{{ passenger.ph_no }}</h4>
         
-            <tbody>
-                <tr>
-                    <td>{{ passenger.id }}</td>
-                    <td>{{ passenger.first }}</td>
-                    <td>{{ passenger.last }}</td>
-                    <td>{{ passenger.age }}</td>
-                    <td>{{ passenger.sex }}</td>
-                    <td>{{ passenger.email }}</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- <br> -->
-        <!-- {% if non_flights %}
-            <form class="form-group"  action="{% url 'bookid' passenger.id %}" method="POST">
-                
-                {% csrf_token %}
-
-                <select id="flight-select-menue" name="flight_id" title="Origin -> Destination">
-                    {% for flight in non_flights %}
-                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                    {% empty %}
-                        <div class="alert alert-warning" role="alert">No Flight.!</div>
-                    {% endfor %}
-                </select>
-                <br>
-                <button class="book-flight-button btn btn-outline-success mt-5" type="submit">Book Flight.</button>
-            </form>
-        {% else %}
-            <div class="alert alert-success" role="alert"> No flight to Book </div>
-        {% endif %} -->
-
         <br>
 
         <hr>

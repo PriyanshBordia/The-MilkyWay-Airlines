@@ -34,8 +34,6 @@
                     <th>UPIDMA</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Age</th>
                     <th>Journey Details</th>
                 </tr>
             </thead>
@@ -45,8 +43,6 @@
                         <td>{{ passenger.id }}</td>
                         <td>{{ passenger.first }}</td>
                         <td>{{ passenger.last }}</td>
-                        <td>{{ passenger.sex }}</td>
-                        <td>{{ passenger.age }}</td>
                         <td><a class="btn btn-outline-warning btn-md ml-2 mr-2 mt-2 mb-2" href="{% url 'passenger' passenger.id %}" role="button">Check</a></td>
                     </tr>
                   {% empty %}

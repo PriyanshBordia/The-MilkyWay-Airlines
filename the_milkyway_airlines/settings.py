@@ -35,7 +35,7 @@ DEBUG = env('DEBUG', default=True)
 
 WHITENOISE_AUTOREFRESH = True
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), ]
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1']
 
 ADMINS = [('priyansh', 'priyanshbordia3@gmail.com')]
 

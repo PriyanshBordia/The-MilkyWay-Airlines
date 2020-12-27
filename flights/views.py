@@ -65,12 +65,6 @@ def book(request):
 	except TypeError:
 		return render(request, "flights/error.html", context={"message": "Incompatible DataType!!", "type": "Type Error!!",})
 
-	try:
-		sex = str(request.POST.get("sex"))
-	except KeyError:
-		return render(request, "flights/error.html", context={"message": "Select appropriate gender from the options provided.!!", "type": "KeyError!!"})
-
-	sex = sex[0]
 
 	try:
 		origin_date = str(request.POST.get("origin_date"))
@@ -82,7 +76,20 @@ def book(request):
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
 
+	try:
+		sex = str(request.POST.get("sex"))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message": "Select appropriate gender from the options provided.!!", "type": "KeyError!!"})
 
+	sex = sex[0]
+
+	try:
+		seat = str(request.POST.get("seat"))
+	except KeyError:
+		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
+
+	seat = seat[0]
+	
 	try:
 		hospitality = str(request.POST.get("hospitality"))
 	except KeyError:

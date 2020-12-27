@@ -55,25 +55,25 @@
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date" min="" id="minDate">
+                    <input id="startDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date" min="" >
                     <span class="mr-5"></span>
                     <span class="ml-5"></span>
-                    <input class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date" min="" id="minDate">
+                    <input id="endDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date" min="">
                 </div>
                 <br>
                 <br>
                 <div class="row">
-                    <label for="male" class="mr-4 ml-auto"><input id="male" class="mr-4" type="radio" name="sex" value="M"> Male</label>
-                    <label for="female" class="mr-4 ml-4"><input id="female" class="mr-4"  type="radio" name="sex" value="F"> Female</label>
-                    <label for="other" class="mr-auto ml-4"><input id="other" class="mr-4" type="radio" name="sex" value="X"> Other</label>
+                    <label for="male" class="mr-4 ml-auto"><input id="male" type="radio" name="sex" value="M"> Male</label>
+                    <label for="female" class="ml-4 mr-4"><input id="female" type="radio" name="sex" value="F"> Female</label>
+                    <label for="other" class="mr-auto ml-4"><input id="other" type="radio" name="sex" value="X"> Other</label>
                 </div>
 
                 <br>
 
                 <div class="row">
-                    <label for="aisle" class="mr-4 ml-auto"><input id="aisle" class="mr-4" type="radio" name="seat" value="A"> Aisle </label>
-                    <label for="middle" class="mr-4 ml-4"><input id="midle" class="mr-4" type="radio" name="seat" value="M"> Middle </label>
-                    <label for="window" class="mr-auto ml-4"><input id="window" class="mr-4" type="radio"  name="seat" value="W"> Window</label>
+                    <label for="aisle" class="mr-4 ml-auto"><input id="aisle" type="radio" name="seat" value="A"> Aisle </label>
+                    <label for="middle" class="mr-4 ml-4"><input id="midle" type="radio" name="seat" value="M"> Middle </label>
+                    <label for="window" class="mr-auto ml-4"><input id="window" type="radio"  name="seat" value="W"> Window</label>
                 </div>
 
                 <br>
@@ -110,28 +110,37 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             var today = new Date();
+
             var month = today.getMonth() + 1;
             var day = today.getDate();
             var year = today.getFullYear();
-
-            var hrs = today.getHours() + 1;
-            var mins = today.getMinutes();
-
-            var minTime = (hrs % 12) + ':' + mins;
-
-            alert(minTime);
 
             if (month < 10)
                 month = '0' + month.toString();
             if (day < 10)
                 day = '0' + day.toString();
+            
+            var minDate = year + '-' + month + '-' + day;
+            
+            var hrs = (today.getHours()) % 12;
 
-            var minDate = day + '/' + month + '/' + year;
+            if (hrs < 10)
+                hrs = '0' + hrs.toString();
 
-            alert(minDate);
+            var minTime = hrs + ':00:00:00';            
 
-            document.getElementById('minDate').setAttribute("max", minDate);
-            document.getElementById('minDate').setAttribute("default", minDate);
+            minDate = minDate + 'T' + minTime.toString();
+
+            document.getElementById('startDate').setAttribute('min', minDate);
+            document.getElementById('startDate').setAttribute('default', minDate);
+
+            document.querySelector('#startDate').onselect = () => {
+                
+                minDate = document.getElementById('startDate').select();
+
+                document.getElementById('endDate').setAttribute('min', minDate);
+                document.getElementById('endDate').setAttribute('default', minDate);
+            }
         });
     </script>
 {% endblock %}
