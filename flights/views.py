@@ -72,9 +72,10 @@ def book(request):
 		return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
 
 	try:
-		origin_date = str(request.POST.get("destination_date"))
+		destination_date = str(request.POST.get("destination_date"))
 	except KeyError:
 		return render(request, "flights/error.html", context={"message": "Select a valid date.!!", "type": "KeyError!!"})
+
 
 	try:
 		sex = str(request.POST.get("sex"))

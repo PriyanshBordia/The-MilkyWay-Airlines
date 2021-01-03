@@ -27,6 +27,12 @@ Installation
 .. _download: https://www.python.org
    :target: _blank
 
+   - You must have postgreSql installed locally. You can `download`_``postgreSql``.
+
+.. _download: https://www.postgresql.org
+   :target: _blank
+
+
 
 
 *************************************
@@ -39,6 +45,8 @@ To run this project on local machine:
    $ cd The-MilkyWay-Airlines
    $ pip freeze > requirements.txt
    $ sh run.sh 1
+
+.. note:: You must change the database in settings
 
 
 --------
