@@ -59,15 +59,20 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>First make sure you have Python 3.8 or higher installed. You can <a class="reference external" href="https://www.python.org:target:_blank">download</a> <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p></li>
+<li><p>You must have postgreSql installed locally. You can download <code class="docutils literal notranslate"><span class="pre">postgreSql</span></code> <a class="reference external" href="https://www.postgresql.org:target:_blank">here</a>.</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="to-run-this-project-on-local-machine">
 <h5>To run this project on local machine:<a class="headerlink" href="#to-run-this-project-on-local-machine" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
-$ <span class="nb">cd</span> The-MilkyWay-Airlines
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
+$ cd The-MilkyWay-Airlines
 $ pip freeze &gt; requirements.txt
-$ sh run.sh <span class="m">1</span>
+$ sh run.sh 1
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must change the database in <code class="docutils literal notranslate"><span class="pre">flights/settings.py</span></code>.</p>
 </div>
 </div>
 </div>
