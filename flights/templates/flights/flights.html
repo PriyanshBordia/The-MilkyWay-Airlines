@@ -11,8 +11,8 @@
         .flights
         {
             max-width: 800px;
-            margin: 20px 20px 20px 20px;
-            padding: 20px 20px 20px 20px;
+            margin: 20px;
+            padding: 20px;
         }
         
     </style>
@@ -29,7 +29,7 @@
                 <li><h4>UFID{{ flight.id }}MA</h4><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
                 <hr>
             {% empty %}
-                <div class="alert alert-danger" role="alert">No Fligths.</div>
+                <div class="alert alert-danger" role="alert">No Flights.</div>
             {% endfor %}
         </ul>
         <hr>
