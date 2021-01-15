@@ -12,135 +12,114 @@
 {% endblock %} -->
 
 {% block body %}
-    <div class="container container-fluid text-center mt-3 mr-auto ml-auto">
-        <div class="book-flight-container justify-content-center">
-            <h1> The MilkyWay Airlines &#9992;</h1>
-            <br>
-            <h5>Experience insanity again.!</h5>
-            <hr>
-            <br>
-            <form class="form-group" action="{% url 'book' %}" method="post">
 
-                {% csrf_token %}
-
-                <!-- <div > -->
-                    <select class="form-control" name="flight_id" required>
-                        <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
-
-                        {% for flight in flights %}
-                            <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
-                        {% empty %}
-                            <div class="alert alert-warning" role="alert">No Flight.!</div>
-                        {% endfor %}
-                    </select>
-                <!-- </div> -->
-
+    {% if user.is_authenticated %}
+        <div class="container container-fluid text-center mt-3 mr-auto ml-auto">
+            <div class="book-flight-container justify-content-center">
+                <h1> The MilkyWay Airlines &#9992;</h1>
                 <br>
+                <h5>Experience insanity again.!</h5>
+                <hr>
                 <br>
+                <form class="form-group" action="{% url 'book' %}" method="post">
 
-                <div class="form-text h2">Passenger Details <img src="https://img.icons8.com/clouds/100/000000/passenger-with-baggage.png" /></div>
-                <br>
-                <div class="row justify-content-center">
-                    <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" required>
-                    <span class="mr-5"></span>
-                    <span class="ml-5"></span>
-                    <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
+                    {% csrf_token %}
+
+                    <!-- <div > -->
+                        <select class="form-control" name="flight_id" required>
+                            <option value="" disabled selected> Select a Flight (Origin -> Destination) </option>
+
+                            {% for flight in flights %}
+                                <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }}</option>
+                            {% empty %}
+                                <div class="alert alert-warning" role="alert">No Flight.!</div>
+                            {% endfor %}
+                        </select>
+                    <!-- </div> -->
+
+                    <br>
+                    <br>
+
+                    <div class="form-text h2">Passenger Details <img src="https://img.icons8.com/clouds/100/000000/passenger-with-baggage.png" /></div>
+                    <br>
+                    <div class="row justify-content-center">
+                        <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="First Name" name="first" required>
+                        <span class="mr-5"></span>
+                        <span class="ml-5"></span>
+                        <input class="form-control col-md-5 mb-3" type="text" autocomplete="off" autofocus placeholder="Last Name" name="last" required>
+                    </div>
+                    <br>
+                    <div class="row justify-content-center">
+                        <input class="form-control col-md-5 mb-3" type="number" autocomplete="off" autofocus placeholder="Age" name="age" min = "1" required>
+                        <span class="mr-5"></span>
+                        <span class="ml-5"></span>
+                        <input class="form-control col-md-5 mb-3" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
+                    </div>
+                    <br>
+                    <div class="row justify-content-center">
+                        <input id="startDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
+                        <span class="mr-5"></span>
+                        <span class="ml-5"></span>
+                        <input id="endDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row justify-content-center">
+                        <label for="male" class="mr-4 ml-auto"><input id="male" type="radio" name="sex" value="M"> Male</label>
+                        <label for="female" class="ml-4 mr-4"><input id="female" type="radio" name="sex" value="F"> Female</label>
+                        <label for="other" class="mr-auto ml-4"><input id="other" type="radio" name="sex" value="X"> Other</label>
+                    </div>
+
+                    <br>
+
+                    <div class="row justify-content-center">
+                        <label for="aisle" class="mr-4 ml-auto"><input id="aisle" type="radio" name="seat" value="A"> Aisle </label>
+                        <label for="middle" class="mr-4 ml-4"><input id="midle" type="radio" name="seat" value="M"> Middle </label>
+                        <label for="window" class="mr-auto ml-4"><input id="window" type="radio"  name="seat" value="W"> Window</label>
+                    </div>
+
+                    <br>
+
+                    <div class="row justify-content-center">
+                        <select class="form-control mb-4 mt-2" name="hospitality" required>
+                            <option value="" disabled selected>Hospitality</option>
+                            <option value="FC">First Class</option>
+                            <option value="BC">Business Class</option>
+                            <option value="EC">Economy Class</option>
+                        </select>
+
+                        <select class="form-control mt-4" name="foods">
+                            <option value="" disabled selected>Cuisines</option>
+                            {% for food in foods %}
+                                <option value="{{ food.id }}">{{ food.name }}</option>
+                            {% empty %}
+                                <div class="alert alert-info" role="alert">No Food.!</div>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <button class="book-flight-button btn btn-outline-warning mt-5" type="reset">Reset</button>
+
+                    <br>
+
+                    <button class = "book-flight-button btn btn-outline-success mt-5" type="submit">Book Flight.</button>
+                </form>
+            <div>
+        </div>
+
+    {% else %}
+        <div class="container container-fluid text-center mt-4 pt-3">
+            <div class="form-home-container justify-content-center">
+                <span><img src="https://img.icons8.com/clouds/200/000000/meeting.png" /></span>
+                <div class="home-head h2 mt-2 mr-auto ml-0">
+                    <span id="username">Welcome</span>, <br>
+                    Log In to travel around the globe.
                 </div>
-                <br>
-                <div class="row justify-content-center">
-                    <input class="form-control col-md-5 mb-3" type="number" autocomplete="off" autofocus placeholder="Age" name="age" min = "1" required>
-                    <span class="mr-5"></span>
-                    <span class="ml-5"></span>
-                    <input class="form-control col-md-5 mb-3" type="email" autocomplete="off" autofocus placeholder="E-mail" name="email" required>
-                </div>
-                <br>
-                <div class="row justify-content-center">
-                    <input id="startDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Departure" name="origin_date">
-                    <span class="mr-5"></span>
-                    <span class="ml-5"></span>
-                    <input id="endDate" class="form-control col-md-5 mb-3" type="datetime-local" autocomplete="off" autofocus placeholder="Arrival" name="destination_date">
-                </div>
-                <br>
-                <br>
-                <div class="row justify-content-center">
-                    <label for="male" class="mr-4 ml-auto"><input id="male" type="radio" name="sex" value="M"> Male</label>
-                    <label for="female" class="ml-4 mr-4"><input id="female" type="radio" name="sex" value="F"> Female</label>
-                    <label for="other" class="mr-auto ml-4"><input id="other" type="radio" name="sex" value="X"> Other</label>
-                </div>
+                <a class="form-home-button btn btn-outline-info mt-3" href="{% url 'login' %}" role="button">Log in</a>
+            </div>
+        </div>
+    {% endif %}
 
-                <br>
-
-                <div class="row justify-content-center">
-                    <label for="aisle" class="mr-4 ml-auto"><input id="aisle" type="radio" name="seat" value="A"> Aisle </label>
-                    <label for="middle" class="mr-4 ml-4"><input id="midle" type="radio" name="seat" value="M"> Middle </label>
-                    <label for="window" class="mr-auto ml-4"><input id="window" type="radio"  name="seat" value="W"> Window</label>
-                </div>
-
-                <br>
-
-                <div class="row justify-content-center">
-                    <select class="form-control mb-4 mt-2" name="hospitality" required>
-                        <option value="" disabled selected>Hospitality</option>
-                        <option value="FC">First Class</option>
-                        <option value="BC">Business Class</option>
-                        <option value="EC">Economy Class</option>
-                    </select>
-
-                    <select class="form-control mt-4" name="foods">
-                        <option value="" disabled selected>Cuisines</option>
-                        {% for food in foods %}
-                            <option value="{{ food.id }}">{{ food.name }}</option>
-                        {% empty %}
-                            <div class="alert alert-info" role="alert">No Food.!</div>
-                        {% endfor %}
-                    </select>
-                </div>
-
-                <br>
-
-                <button class="book-flight-button btn btn-outline-warning mt-5" type="reset">Reset</button>
-
-                <br>
-
-                <button class = "book-flight-button btn btn-outline-success mt-5" type="submit">Book Flight.</button>
-            </form>
-        <div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var today = new Date();
-
-            var month = today.getMonth() + 1;
-            var day = today.getDate();
-            var year = today.getFullYear();
-
-            if (month < 10)
-                month = '0' + month.toString();
-            if (day < 10)
-                day = '0' + day.toString();
-            
-            var minDate = year + '-' + month + '-' + day;
-            
-            var hrs = (today.getHours()) % 12;
-
-            if (hrs < 10)
-                hrs = '0' + hrs.toString();
-
-            var minTime = hrs + ':00:00:00';            
-
-            minDate = minDate + 'T' + minTime.toString();
-
-            document.getElementById('startDate').setAttribute('min', minDate);
-            document.getElementById('startDate').setAttribute('default', minDate);
-
-            document.querySelector('#startDate').onselect = () => {
-                
-                minDate = document.getElementById('startDate').select();
-
-                document.getElementById('endDate').setAttribute('min', minDate);
-                document.getElementById('endDate').setAttribute('default', minDate);
-            }
-        });
-    </script>
 {% endblock %}
