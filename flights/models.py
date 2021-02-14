@@ -67,13 +67,12 @@ class Ticket(models.Model):
     Types = [('A', 'Aisle'), ('M', 'Middle'), ('W', 'Window'), ]
 
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE, related_name="flight")
-    # passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE, related_name="passenger")
 
     hospitality = models.CharField(max_length=1, choices=Modes, blank=False, null=False)
     seat = models.CharField(max_length=1, choices=Types, blank=False, null=False, default='M')
 
     price = models.FloatField(validators=[MinValueValidator(1)], blank=False, null=False)
-    food = models.ManyToManyField(Food, related_name="cusines", blank=True)
+    food = models.ManyToManyField(Food, related_name="cuisines", blank=True)
 
     booking_date = models.DateTimeField(blank=False, null=False, default=timezone.now)
 
@@ -87,7 +86,7 @@ class Ticket(models.Model):
 
 class Passenger(models.Model):
 
-    options = (('M', 'Male'), ('F', 'Female'), ('X', 'Not Prefered to say'),)
+    options = (('M', 'Male'), ('F', 'Female'), ('X', 'Not Preferred to say'),)
 
     first = models.CharField(max_length=21, blank=False, null=False)
     last = models.CharField(max_length=21, blank=False, null=False)
@@ -95,13 +94,14 @@ class Passenger(models.Model):
     age = models.IntegerField(validators=[MinValueValidator(1)], blank=False, null=False, default=1)
     sex = models.CharField(max_length=1, choices=options, blank=False, null=False, default='X')
 
-    email = models.EmailField(blank=False, null=False, default='hard@mail.co')
+    email = models.EmailField(blank=False, null=False)
     ph_no = models.BigIntegerField(blank=True, null=False, default=0000000)
 
     flights = models.ManyToManyField(Flight, related_name="passengers", blank=True)
+
     tickets = models.ManyToManyField(Ticket, related_name="journeys", blank=True)
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
 
     def __str__(self):
         return f"{self.first} {self.last}  {self.sex} {self.age}"
@@ -114,17 +114,9 @@ class Passenger(models.Model):
         # managed = False
 
 
-# class Bridge(models.Model):
-
-#     passengers = models.ManyToManyField(Passenger, related_name="relatives", blank=False)
-
-#     def __str__(self):
-#         return f"{self.user_id}"
-
-
 class Cancel(models.Model):
 
-    ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation", blank=False)
+    ticketId = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="cancellation", blank=False, null=False)
 
     def __str__(self):
         return f"{self.ticketID}"

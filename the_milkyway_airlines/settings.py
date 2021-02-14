@@ -101,14 +101,14 @@ DATABASES = {
         'PORT': env('DB_PORT'),
     },
 
-    'local': {
-    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    # 'local': {
+    # 	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': '',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # }
 }
 
 LOGGING = {
