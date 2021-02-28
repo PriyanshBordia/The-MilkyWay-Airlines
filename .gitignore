@@ -26,5 +26,5 @@ docs/_build/
 hs_err_pid*
 
 .env
-.vscode/
+.vscode
 .DS_Store
