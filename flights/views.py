@@ -19,7 +19,7 @@ def travel(request):
 
 
 def book(request):
-	user_id = request.user.id
+	user_id = User.objects.get(pk=request.user.id)
 	try:
 		flight_id  = int(request.POST.get("flight_id"))
 		flight = Flight.objects.get(pk=flight_id)
