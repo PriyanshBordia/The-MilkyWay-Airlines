@@ -274,20 +274,3 @@ def update(request):
 		return render(request, "flights/error.html", context = {"message": "User Doesn't Exist!", "type": "Value DoesNotExist.!!", })
 
 	return render(request, "flights/user.html", context = {"user_details": user_details, "relatives": relatives})
-
-
-# Send E-mail Link
-def resetLink(request):
-
-	try:
-		to = str(request.POST.get('email'))
-	except KeyError:
-		return render(request, "flights/error.html", context={"message": "Select a valid type.!!", "type": "KeyError!!"})
-
-	sendmail(
-	'Password Reset Link MWay Airlines',
-	'Hello.!, there below is the link where you can reset your password.',
-	'19ucs257@lnmiit.ac.in',
-	to,
-	fail_silently=False,
-)

@@ -30,11 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG', default=True)
+DEBUG = env('DEBUG', default=False)
 
 WHITENOISE_AUTOREFRESH = True
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), '127.0.0.1']
 
 ADMINS = [('priyansh', 'priyanshbordia3@gmail.com')]
 
@@ -101,14 +101,14 @@ DATABASES = {
         'PORT': env('DB_PORT'),
     },
 
-    # 'local': {
-    # 	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': '',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    #     'HOST': 'localhost',
-    #     'PORT': '',
-    # }
+    'local': {
+    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
 
 LOGGING = {
@@ -191,7 +191,7 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-	# os.path.join(BASE_DIR, '/static'),
+	os.path.join(BASE_DIR, '/static'),
     os.path.join(BASE_DIR, 'flights/static'),
 )
 
