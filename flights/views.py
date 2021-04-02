@@ -125,10 +125,6 @@ def book(request):
 
 	return HttpResponseRedirect(reverse("flight", args=(flight_id, )))
 
-
-def bookid(request, p_id):
-	pass
-
 def flight(request, flight_id):
 
 	try:
