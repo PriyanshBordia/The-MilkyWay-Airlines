@@ -20,6 +20,8 @@ def travel(request):
 
 def book(request):
 
+	user_id = request.user.id
+
 	try:
 		flight_id  = int(request.POST.get("flight_id"))
 		flight = Flight.objects.get(pk=flight_id)
@@ -106,17 +108,17 @@ def book(request):
 	ph_no = (9378214503 + (flight_id * 10) % request.user.id)
 
 
-	p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex)
+	p = Passenger.objects.filter(first=first, last=last, age=age, email=email, sex=sex, user=user_id)
 	f = Flight.objects.filter()
 
 	if not p:
-		p = Passenger(first=first, last=last, age=age, email=email, ph_no=ph_no, sex=sex)
+		p = Passenger(first=first, last=last, age=age, email=email, ph_no=ph_no, sex=sex, user=user_id)
 		p.save()
 		p.flights.add(flight)
 		p.save()
 
 	elif p not in flight.passengers.all():
-		p = Passenger.objects.get(first=first, last=last, age=age, email=email, sex=sex)
+		p = Passenger.objects.get(first=first, last=last, age=age, email=email, sex=sex, user=user_id)
 		p.flights.add(flight)
 		p.save()
 
