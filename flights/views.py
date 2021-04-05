@@ -59,7 +59,7 @@ def book(request):
 	try:
 		email = str(request.POST.get("email"))
 	except KeyError:
-		return render(request, "flights/error.html", context={"message": "Enter a e-mail address!!", "type": "KeyError!!"})
+		return render(request, "flights/error.html", context={"message": "Enter an e-mail address!!", "type": "KeyError!!"})
 	except ValueError:
 		return render(request, "flights/error.html", context={"message": "Invalid Value to given field!!", "type": "Value Error!!"})
 	except TypeError:
