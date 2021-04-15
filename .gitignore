@@ -28,3 +28,4 @@ hs_err_pid*
 .env
 .vscode/*
 .DS_Store
+*.ini
