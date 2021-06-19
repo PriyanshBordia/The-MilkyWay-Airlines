@@ -32,8 +32,6 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=False)
 
-WHITENOISE_AUTOREFRESH = True
-
 ALLOWED_HOSTS = [env('ALLOWED_HOSTS')]
 
 ADMINS = [('Priyansh Bordia', 'priyanshbordia2@gmail.com')]
@@ -64,6 +62,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+WHITENOISE_AUTOREFRESH = True
+
 ROOT_URLCONF = 'the_milkyway_airlines.urls'
 
 TEMPLATES = [
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'the_milkyway_airlines.wsgi.application'
 
 DATABASES = {
     'default': {
-    	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    	'ENGINE': env('ENGINE'),
         'NAME': env('DB_NAME'),
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
