@@ -15,7 +15,7 @@
 > If any suggestions please create a new issue using feature template.
 
 #### To run app on local machine:
-```
+```bash
 $ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
 $ python3 -m venv venv
 $ source venv/bin/activate
