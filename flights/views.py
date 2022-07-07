@@ -178,6 +178,7 @@ def passengers(request):
 
 
 def user(request):
+	user_details, relatives = [], []
 
 	user_id = request.user.id
 	try:
