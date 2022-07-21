@@ -20,7 +20,7 @@ $ git clone https://github.com/PriyanshBordia/The-MilkyWay-Airlines.git
 $ python3 -m venv venv
 $ source venv/bin/activate
 $ cd The-MilkyWay-Airlines
-$ pip freeze > requirements.txt
+$ pip install -r requirements.txt
 $ sh run.sh 1
 ```
 
